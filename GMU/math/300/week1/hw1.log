@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/nixos.org) (preloaded format=pdflatex 1980.1.1)  28 JAN 2025 14:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/nixos.org) (preloaded format=pdflatex 1980.1.1)  28 JAN 2025 16:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -75,36 +75,35 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/nix/store/r06y6r58bbkrws7gg2gr9xc9r14g8jlj-texlive-2023-env/share/texmf-var/f
-onts/map/pdftex/updmap/pdftex.map}] [2] [3] (./hw1.aux)
+onts/map/pdftex/updmap/pdftex.map}] [2] (./hw1.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 559 strings out of 475567
- 10826 string characters out of 5769522
+ 556 strings out of 475567
+ 10794 string characters out of 5769522
  1935187 words of memory out of 5000000
- 22769 multiletter control sequences out of 15000+600000
- 560708 words of font info for 47 fonts, out of 8000000 for 9000
+ 22767 multiletter control sequences out of 15000+600000
+ 560373 words of font info for 46 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 35i,5n,50p,218b,183s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </home/liminal18/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000
-.600pk></nix/store/vgq4ms1x62isfq40qzg2vaa1xk98kvcy-texlive-2023-env-texmfdist/
-fonts/type1/public/amsfonts/cm/cmbx12.pfb></nix/store/vgq4ms1x62isfq40qzg2vaa1x
-k98kvcy-texlive-2023-env-texmfdist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-nix/store/vgq4ms1x62isfq40qzg2vaa1xk98kvcy-texlive-2023-env-texmfdist/fonts/typ
-e1/public/amsfonts/cm/cmmi7.pfb></nix/store/vgq4ms1x62isfq40qzg2vaa1xk98kvcy-te
-xlive-2023-env-texmfdist/fonts/type1/public/amsfonts/cm/cmr10.pfb></nix/store/v
-gq4ms1x62isfq40qzg2vaa1xk98kvcy-texlive-2023-env-texmfdist/fonts/type1/public/a
-msfonts/cm/cmr7.pfb></nix/store/vgq4ms1x62isfq40qzg2vaa1xk98kvcy-texlive-2023-e
-nv-texmfdist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></nix/store/vgq4ms1x62is
-fq40qzg2vaa1xk98kvcy-texlive-2023-env-texmfdist/fonts/type1/public/amsfonts/sym
-bols/msbm10.pfb>
-Output written on hw1.pdf (3 pages, 77226 bytes).
+ 35i,5n,50p,487b,162s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</nix/store/vgq4ms1x62isfq40qzg2vaa1xk98kvcy-texlive-2023-env-texmfdist/fonts
+/type1/public/amsfonts/cm/cmbx12.pfb></nix/store/vgq4ms1x62isfq40qzg2vaa1xk98kv
+cy-texlive-2023-env-texmfdist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></nix/s
+tore/vgq4ms1x62isfq40qzg2vaa1xk98kvcy-texlive-2023-env-texmfdist/fonts/type1/pu
+blic/amsfonts/cm/cmmi7.pfb></nix/store/vgq4ms1x62isfq40qzg2vaa1xk98kvcy-texlive
+-2023-env-texmfdist/fonts/type1/public/amsfonts/cm/cmr10.pfb></nix/store/vgq4ms
+1x62isfq40qzg2vaa1xk98kvcy-texlive-2023-env-texmfdist/fonts/type1/public/amsfon
+ts/cm/cmr7.pfb></nix/store/vgq4ms1x62isfq40qzg2vaa1xk98kvcy-texlive-2023-env-te
+xmfdist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></nix/store/vgq4ms1x62isfq40q
+zg2vaa1xk98kvcy-texlive-2023-env-texmfdist/fonts/type1/public/amsfonts/symbols/
+msbm10.pfb>
+Output written on hw1.pdf (2 pages, 76680 bytes).
 PDF statistics:
- 54 PDF objects out of 1000 (max. 8388607)
- 33 compressed objects within 1 object stream
+ 46 PDF objects out of 1000 (max. 8388607)
+ 27 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
