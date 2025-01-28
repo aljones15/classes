@@ -1,0 +1,110 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/nixos.org) (preloaded format=pdflatex 1980.1.1)  28 JAN 2025 14:28
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**hw1.tex
+(./hw1.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-02-20>
+
+(/nix/store/vgq4ms1x62isfq40qzg2vaa1xk98kvcy-texlive-2023-env-texmfdist/tex/lat
+ex/base/article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+
+(/nix/store/vgq4ms1x62isfq40qzg2vaa1xk98kvcy-texlive-2023-env-texmfdist/tex/lat
+ex/base/size10.clo
+File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count188
+\c@section=\count189
+\c@subsection=\count190
+\c@subsubsection=\count191
+\c@paragraph=\count192
+\c@subparagraph=\count193
+\c@figure=\count194
+\c@table=\count195
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+)
+(/nix/store/vgq4ms1x62isfq40qzg2vaa1xk98kvcy-texlive-2023-env-texmfdist/tex/lat
+ex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks17
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(/nix/store/vgq4ms1x62isfq40qzg2vaa1xk98kvcy-texlive-2023-env-texmfdist/tex/lat
+ex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count196
+\l__pdf_internal_box=\box51
+) (./hw1.aux)
+\openout1 = `hw1.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 10.
+
+
+(/nix/store/vgq4ms1x62isfq40qzg2vaa1xk98kvcy-texlive-2023-env-texmfdist/tex/lat
+ex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 10.
+
+
+(/nix/store/vgq4ms1x62isfq40qzg2vaa1xk98kvcy-texlive-2023-env-texmfdist/tex/lat
+ex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+{/nix/store/r06y6r58bbkrws7gg2gr9xc9r14g8jlj-texlive-2023-env/share/texmf-var/f
+onts/map/pdftex/updmap/pdftex.map}] [2] [3] (./hw1.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-02-20>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 559 strings out of 475567
+ 10826 string characters out of 5769522
+ 1935187 words of memory out of 5000000
+ 22769 multiletter control sequences out of 15000+600000
+ 560708 words of font info for 47 fonts, out of 8000000 for 9000
+ 319 hyphenation exceptions out of 8191
+ 35i,5n,50p,218b,183s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </home/liminal18/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000
+.600pk></nix/store/vgq4ms1x62isfq40qzg2vaa1xk98kvcy-texlive-2023-env-texmfdist/
+fonts/type1/public/amsfonts/cm/cmbx12.pfb></nix/store/vgq4ms1x62isfq40qzg2vaa1x
+k98kvcy-texlive-2023-env-texmfdist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+nix/store/vgq4ms1x62isfq40qzg2vaa1xk98kvcy-texlive-2023-env-texmfdist/fonts/typ
+e1/public/amsfonts/cm/cmmi7.pfb></nix/store/vgq4ms1x62isfq40qzg2vaa1xk98kvcy-te
+xlive-2023-env-texmfdist/fonts/type1/public/amsfonts/cm/cmr10.pfb></nix/store/v
+gq4ms1x62isfq40qzg2vaa1xk98kvcy-texlive-2023-env-texmfdist/fonts/type1/public/a
+msfonts/cm/cmr7.pfb></nix/store/vgq4ms1x62isfq40qzg2vaa1xk98kvcy-texlive-2023-e
+nv-texmfdist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></nix/store/vgq4ms1x62is
+fq40qzg2vaa1xk98kvcy-texlive-2023-env-texmfdist/fonts/type1/public/amsfonts/sym
+bols/msbm10.pfb>
+Output written on hw1.pdf (3 pages, 77226 bytes).
+PDF statistics:
+ 54 PDF objects out of 1000 (max. 8388607)
+ 33 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
