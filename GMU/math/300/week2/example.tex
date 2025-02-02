@@ -1,0 +1,94 @@
+\documentclass{article}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{amsthm}
+\usepackage{fullpage}
+\usepackage[shortlabels]{enumitem}
+
+\title{Amazing Example!}
+\author{Casey Blacker}
+\date{}
+
+\theoremstyle{plain}
+\newtheorem*{thm}{Theorem}
+
+\theoremstyle{definition}
+\newtheorem{defi}{Definition}
+
+\newcommand{\R}{\mathbb{R}}
+\renewcommand{\d}{\mathrm{d}}
+
+\renewcommand{\b}[1]{\mathbb{#1}}
+
+
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\section{Introduction}
+My favourite\footnote{This is the British spelling.} function is $f(x)=\sin(x^2)$. My other\footnote{This\footnote{test} is the American spelling.} favorite is
+\[\tag{$\ast$}\label{eq:other_favorite}
+    g(t) = e^{t^2+3t-4+\{a\}}
+\]
+Let $n$ be a natural number.\newline
+Let n be a natural number.
+
+\vspace{1cm}
+\noindent
+My favorite number is $2$.
+\[
+    6 = 7\left(\frac{12+\sin x^3}{2}\right)
+\]
+By Equation (\ref{eq:other_favorite}), we have $0<1$.
+
+The natural numbers are
+\[
+    \b{N} = \{0,1,2,\ldots\}
+\]
+
+\begin{enumerate}[a)]
+    \item First item.
+    \item The second one.
+    \item How about a third?
+\end{enumerate}
+
+\begin{itemize}
+    \item First item.
+    \item The second one.
+    \item How about a third?
+\end{itemize}
+
+Let $x\in \mathbb{R}$. Let $y\in\b{Z}$.
+
+\[
+    \frac{\partial f}{\partial x}
+\]
+
+\[
+    \int_0^{100}\! e^x \,\mathrm{d}x = \huge[e^x\huge]_0^{100}
+\]
+
+
+\section{More Amazing Examples}
+\begin{thm}
+\[
+    \frac{2+10-4}{2} = 4.
+\]
+\end{thm}
+
+\begin{proof}
+    We have
+\begin{align*}
+    \frac{2+10-4}{2}
+        &=  \frac{12-4}{2}      \\
+        &=  \frac{8}{2}         \\
+        &=  4.
+\end{align*}
+\end{proof}
+
+\begin{defi}
+    A \emph{set} is a \textbf{collection} of \textit{things}.
+\end{defi}
+
+\end{document}
