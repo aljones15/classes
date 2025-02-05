@@ -1,21 +1,48 @@
-\documentclass{article}
+\documentclass{book}
   \usepackage{amsfonts}
-  \usepackage{tikz}
+  \usepackage{amsthm}
+  \usepackage[T1]{fontenc}
+  \usepackage{titlesec}
+  \usepackage[symbol]{footmisc}
+  \newtheorem*{theorem}{Theorm}
+  \newtheorem{lemma}{Lemma}
 \begin{document}
   MATH-300 \hfill Andrew Jones
+  \begin{center} Homework 2 \end{center}
   \begin{center}
-    Homework 2
-  \end{center}
-  \begin{center}
-    Pages 22 - 24 From The Differentiable Viewpoint \\
+    Pages 22 - 24 \\
+    From the Differentiable Viewpoint \\
     By John W. Milnor \\
     The University Press of Virginia
   \end{center}
-  In general, it is too much to hope that the set of critical values of a \\
-  smooth map be finite. But this set will be ``small,'' in the sense indicated \\
-  by the next theorem, which was proved by A. Sard in 1942 following \\
-  earlier work by A.P. Morse, (References [30], [24].) \\
-  \begin{tikzpicture}
-    \draw (0,0) -- (4,0) -- (4,4) -- (0,4) -- (0,0);
-  \end{tikzpicture}
+  $\xi$2. THE THEOREM OF SARD AND BROWN \\
+  In general, it is too much to hope that the set of critical values of a \\ smooth map be finite. But this set will be ``small,'' in the sense indicated\\ by the next theorem, which was proved by A. Sard in 1942 following\\ earlier work by A.P. Morse, (References [30], [24].)
+  \begin{theorem}
+  $let f : U -> R^n$ be a smooth map, defined on an open set $U \subset R^m$, and let
+  \begin{center}
+  $C = \{x\in U|\ rank\ df_{x} < n \}$
+  \end{center}
+  Then the image $f(C) \subset R^n$ has Lebesgue measure zero \footnote[1]{In other words, given any $\xi > 0$, it is possible to cover $f(C)$ by a sequence of cubes in $R^n$ having total n-dimensional volume less than $\xi$ }
+  \end{theorem}
+  Since a set of measure zero cannot contain any nonvacuous open set, //
+  it follows that the complement $R^n - f(C)$ must be everywhere dense\footnote[1]{Proved by Arthur B. Brown in 1935. This result was rediscovered by Dubovickil in 1953 and by Thorn in 1954. (References [5], [8], [36].)} in $R^n$. \\
+  The proof will be given in $\xi3$. It is essential for the proof that $f$ should \\
+  have many derivatives. (Compare Whitney [38].) \\
+  We will be mainly interested in the case $m \gte n$. If $m < n$, then \\
+  clearly $C = U$; hence the theorem says simply that $f(U)$ has measure \\
+  zero. \\
+  More generally consider a smooth map $f : M => N$, from a manifold \\
+  of dimension $m$ to a manifold of dimension $n$. Let $C$ be the set of all \\
+  $x\in \mathbb{M}$ such that
+  \begin{align*}
+    df_{x} : TM_{x} -> TN_{f(x)}
+  \end{align*}
+  \newpage
+  Regular values \hfill 11 \\ \\
+  has rank less than $n$ (i.e. is not onto). Then $C$ will be called the set \\
+  of critical points, $f(C)$ the set of critical values, and the complement \\
+  $N - f(C)$ the set of regular values of $f$. (This agrees with our previous \\
+  definitions in the case $m = n$.) Since $M$ can be covered by a countable \\
+  collection of neighborhoods each diffeomorphic to an open subset of \\
+  $R^m$, we have:
 \end{document}
