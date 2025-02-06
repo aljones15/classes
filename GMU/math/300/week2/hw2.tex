@@ -60,9 +60,24 @@
   \end{corollary}
   In order to exploit this corollary we will need the following:
   \begin{lemma}
-  If $f: M\to N$ is a smooth map between manifolds of dimension $m\geq n$, and if $y\in N$ is a regular value, then the set $f^{-1}(y) \subset M$ is a smooth manifold of dimension $m - n$.
+  If $f: M \to N$ is a smooth map between manifolds of dimension $m\geq n$, and if $y\in N$ is a regular value, then the set $f^{-1}(y) \subset M$ is a smooth manifold of dimension $m - n$.
   \end{lemma}
-  \begin{proof} Let $x\in f^{-1}(y)$. Since $y$ is a regular value, the derivative $df_{x}$ must map $TM_{x}$ 
-  \end{proof}
-  
+  \begin{proof} Let $x\in f^{-1}(y)$. Since $y$ is a regular value, the derivative $df_{x}$ must map $TM_{x}$ onto $TN_{y}$. The null space $FUNKYR\subset TM_{x}$ of $df_{x}$ will therefore be an $(m - n)$-dimensional vector space.
+  \end{proof} 
+    If $M \subset R^{k}$ choose a linear map $L : R^K \to R^{m-n}$ that is nonsingular on this subspace $FUNKYR \subset TM_{x} \subset R^k$. Now define
+    \begin{align*}
+    F : M \to N X R^{m-n}
+    \end{align*}
+    by $F(\xi) = (f(\xi), L(\xi))$. The derivative $dF_{x}$ is clearly given by the formula
+    \begin{align*}
+      dF_{x}(v) = (df_{x}(v), L(v)).
+    \end{align*}
+    Thus $dF_{x}$ is nonsigular. Hence $F$ maps some neighborhood $U$ of $x$ diffeomorphically onto a neighborhood $V$ of $(y, L(x))$. Note that $f^{-1}(y)$ corresponds, under $F$, to hyperplane $y X R^{m-n}\cap V$. This proves that $f^{-1}(y)$ is a smooth manifold of dimension $m - n$. 
+    As an example we can give an easy proof that the unit sphere $S^{n-1}$ is a smooth manifold. Consider the function $f : R^m \to R$ defined by
+    \begin{align*}
+      f(x) = x^2_{1} + x^2_{2} + ... + x^2_{m}.
+    \end{align*}
+    Any $y \neq 0$ is a regular value, and the smooth manifold $f^{-1}(1)$ is the unit sphere.
+    If $M'$ is a manifold which is contained in $M$, it has already been noted that $TM'_{x}$ for $x\in M'$ is a subscape of $TM_{x}$ for $x\in M'$. The orthogonal complement of $TM'_{x}$ in $TM_{x}$ is then a vector space of dimension $m - m'$ called the $the space of normal vectors to M' in M at x$.
+    In particular let $M' = f^{-1}(y)$ for a regular value $y of f: M \to N$.
 \end{document}
