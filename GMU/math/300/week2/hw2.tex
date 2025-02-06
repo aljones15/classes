@@ -79,5 +79,19 @@
     \end{align*}
     Any $y \neq 0$ is a regular value, and the smooth manifold $f^{-1}(1)$ is the unit sphere.
     If $M'$ is a manifold which is contained in $M$, it has already been noted that $TM'_{x}$ for $x\in M'$ is a subscape of $TM_{x}$ for $x\in M'$. The orthogonal complement of $TM'_{x}$ in $TM_{x}$ is then a vector space of dimension $m - m'$ called the $the space of normal vectors to M' in M at x$.
-    In particular let $M' = f^{-1}(y)$ for a regular value $y of f: M \to N$.
+    In particular let $M' = f^{-1}(y)$ for a regular value $y$ of $f: M \to N$.
+    \newpage
+  \begin{lemma} The null space of $df_{x} : TM_{x} \to TN_{y}$ is precisely equal to the tangent space $TM'_{x} \subset TM_{x}$ of the submanifold $M' = f^{-1}(y)$. Hence $df_{x}$ maps the orthogonal complement of $TM'_{x}$ isomorphically onto $TN_{y}$.
+
+  \end{lemma}
+  \begin{proof} From the diagram \\
+    INSERT DIAGRAM HERE \\
+  we see that $df_{x}$ maps the subspace $TM'_{x} \subset TM_{x}$ to zero. Counting dimensions we see that $df_{x}$ $maps\ the\ space\ of\ normal\ vectors\ to\ M'\ isomorphically\ onto\ TN_{y}$.
+  \end{proof}
+  \section{Manifolds with Boundary}
+  The lemmas above can be sharpened so as to apply to a map defined on a smooth "manifold with boundary." Consider first the closed half-space
+  \begin{align*}
+    H^m = {(x_{1}, ..., x_{m})\in R^m | x_{m}\geq 0}.
+  \end{align*}
+  The boundary $ALPHAH^m$ is defined to be the hyperplance $R^{m-1} X 0 \subset R^M$.
 \end{document}
