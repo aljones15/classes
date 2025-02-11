@@ -6,6 +6,7 @@
   \usepackage{mathptmx}
   \usepackage{titlesec}
   \usepackage[symbol]{footmisc}
+  \usepackage{tikz}
   \newtheorem*{theorem}{Theorem}
   \newtheorem{lemma}{Lemma}
   \newtheoremstyle{corollary}%
@@ -16,19 +17,20 @@
   {\bfseries}% name of head font
   {}% punctuation between head and body
   {  }% space after theorem head; " " = normal interword space
-  {\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ (#3)}}}
-  
+  {\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ (#3)}}} 
   \theoremstyle{corollary}
   \newtheorem*{corollary}{Corollary}
-\begin{document}
+  \newtheorem*{definition}{DEFINITION}
+  \pagestyle{empty}
+  \begin{document}
   \chapter*{
     \begin{center}
     $\xi$2. THE THEOREM \\ OF SARD AND BROWN
     \end{center}
   }
-  In general, it is too much to hope that the set of critical values of a \\ smooth map be finite. But this set will be ``small,'' in the sense indicated\\ by the next theorem, which was proved by A. Sard in 1942 following\\ earlier work by A.P. Morse, (References [30], [24].)
+  In general, it is too much to hope that the set of critical values of a smooth map be finite. But this set will be ``small,'' in the sense indicated by the next theorem, which was proved by A. Sard in 1942 following earlier work by A.P. Morse, (References [30], [24].)
   \begin{theorem}
-  $let f : U -> R^n$ be a smooth map, defined on an open set $U \subset R^m$, and let
+  $let f : U \to R^n$ be a smooth map, defined on an open set $U \subset R^m$, and let
   \begin{center}
   $C = \{x\in U|\ rank\ df_{x} < n \}$
   \end{center}
@@ -47,7 +49,6 @@
   \begin{align*}
     df_{x} : TM_{x}\to TN_{f(x)}
   \end{align*}
-  \newpage
   Regular values \hfill 11 \\ \\
   has rank less than $n$ (i.e. is not onto). Then $C$ will be called the set \\
   of critical points, $f(C)$ the set of critical values, and the complement \\
@@ -62,9 +63,9 @@
   \begin{lemma}
   If $f: M \to N$ is a smooth map between manifolds of dimension $m\geq n$, and if $y\in N$ is a regular value, then the set $f^{-1}(y) \subset M$ is a smooth manifold of dimension $m - n$.
   \end{lemma}
-  \begin{proof} Let $x\in f^{-1}(y)$. Since $y$ is a regular value, the derivative $df_{x}$ must map $TM_{x}$ onto $TN_{y}$. The null space $FUNKYR\subset TM_{x}$ of $df_{x}$ will therefore be an $(m - n)$-dimensional vector space.
+  \begin{proof} Let $x\in f^{-1}(y)$. Since $y$ is a regular value, the derivative $df_{x}$ must map $TM_{x}$ onto $TN_{y}$. The null space $\Re \subset TM_{x}$ of $df_{x}$ will therefore be an $(m - n)$-dimensional vector space.
   \end{proof} 
-    If $M \subset R^{k}$ choose a linear map $L : R^K \to R^{m-n}$ that is nonsingular on this subspace $FUNKYR \subset TM_{x} \subset R^k$. Now define
+    If $M \subset R^{k}$ choose a linear map $L : R^K \to R^{m-n}$ that is nonsingular on this subspace $\Re \subset TM_{x} \subset R^k$. Now define
     \begin{align*}
     F : M \to N X R^{m-n}
     \end{align*}
@@ -78,20 +79,36 @@
       f(x) = x^2_{1} + x^2_{2} + ... + x^2_{m}.
     \end{align*}
     Any $y \neq 0$ is a regular value, and the smooth manifold $f^{-1}(1)$ is the unit sphere.
-    If $M'$ is a manifold which is contained in $M$, it has already been noted that $TM'_{x}$ for $x\in M'$ is a subscape of $TM_{x}$ for $x\in M'$. The orthogonal complement of $TM'_{x}$ in $TM_{x}$ is then a vector space of dimension $m - m'$ called the $the space of normal vectors to M' in M at x$.
+    If $M'$ is a manifold which is contained in $M$, it has already been noted that $TM'_{x}$ for $x\in M'$ is a subscape of $TM_{x}$ for $x\in M'$. The orthogonal complement of $TM'_{x}$ in $TM_{x}$ is then a vector space of dimension $m - m'$ called the \emph{the space of normal vectors to M' in M at} $x$.
     In particular let $M' = f^{-1}(y)$ for a regular value $y$ of $f: M \to N$.
-    \newpage
   \begin{lemma} The null space of $df_{x} : TM_{x} \to TN_{y}$ is precisely equal to the tangent space $TM'_{x} \subset TM_{x}$ of the submanifold $M' = f^{-1}(y)$. Hence $df_{x}$ maps the orthogonal complement of $TM'_{x}$ isomorphically onto $TN_{y}$.
 
   \end{lemma}
   \begin{proof} From the diagram \\
-    INSERT DIAGRAM HERE \\
-  we see that $df_{x}$ maps the subspace $TM'_{x} \subset TM_{x}$ to zero. Counting dimensions we see that $df_{x}$ $maps\ the\ space\ of\ normal\ vectors\ to\ M'\ isomorphically\ onto\ TN_{y}$.
+    \begin{center}
+    \begin{tikzpicture}
+      \draw[thick,->] (4,4) -- (4,0) node[anchor=north west] {y};
+      \draw[thick,->] (4,0) -- (8,0) node[anchor=north west] {N};
+      \draw[thick,->] (4,4) -- (8,4) node[anchor=north west] {M};
+      \draw[thick,->] (8,4) -- (8,0);
+    \end{tikzpicture}
+    \end{center}
+    we see that $df_{x}$ maps the subspace $TM'_{x} \subset TM_{x}$ to zero. Counting dimensions we see that $df_{x}$ \emph{maps the space of normal vectors to M' isomorphically onto} $TN_{y}$.
   \end{proof}
   \section{Manifolds with Boundary}
   The lemmas above can be sharpened so as to apply to a map defined on a smooth "manifold with boundary." Consider first the closed half-space
   \begin{align*}
     H^m = {(x_{1}, ..., x_{m})\in R^m | x_{m}\geq 0}.
   \end{align*}
-  The boundary $ALPHAH^m$ is defined to be the hyperplance $R^{m-1} X 0 \subset R^M$.
+  The boundary $\partial H^m$ is defined to be the hyperplance $R^{m-1} \times 0 \subset R^M$.
+  \begin{definition}
+    A subset $X \subset R^k$ is called a \emph{smooth m-manifold with boundary} if each $x\in X$ has a neighbohood $U \cup X$ diffeomorphic to an open subset $V\cup H^m$ of $H^m$. The \emph{boundary} ${\partial X}$ is the set of all points in $X$ which correspond to points of $\partial H^m$ under such a diffeomorphism.
+  \end{definition}
+  It is not hard to show that $\partial x$ is a well-defined smooth manifold of dimension $m - 1$. The \emph{interior} $X - \partial X$ is a smooth manifold of dimension $m$.
+  The tangent space $TX_{z}$ is defined just as in $\xi 1$, so that $TX_{x}$ is a full $m$-dimensional vector space, even if $x$ is a boundary point.
+  Here is one method for generating examples. Let $M$ be a manfiold without boundary and let $g : M \to R$ have $0$ as regular value.
+  \begin{lemma}
+    The set of $x$ in $M$ with $g(x) \geq 0$ is a smooth manifold, with boundary equal to $g^{-1}(0)$.
+  \end{lemma}
+  The proof is just like the proof of Lemma 1.
 \end{document}
