@@ -41,14 +41,20 @@
     \end{proof}
   \item Give an example of a function $f : A\to A$ that is injective but not surjective.
     \begin{proof}
-      $g : b\to 2b$ maps to only the even co-domain
+      $g : b\mapsto 2b$ maps to only the even co-domain
     \end{proof}
   \item Give an example of a function $g : A\to A$ that is surjective but not injective. 
     \begin{proof}
-
+       $f : a\mapsto \sin(a) $ every number in the co-domain is covered, but multiple numbers in the domain map to the same value.
     \end{proof}
   \item Let $f : A\to B$ and $g : B\to A$. If $g \circ f = id_{a}$, then both $f$ and $g$ are bijections.
-  \item If $f : A\to A$ is surjective, and if A is a finite set, then $f$ is injective.
+   \begin{proof}
+      As previously proved the composition of two surjective functions are surjective and the same for injective, hence for $g \circ f$ to be bijective both $f$ and $g$ must also be bijective.
+    \end{proof}
+  \item If $f : A\to A$ is surjective, and if $A$ is a finite set, then $f$ is injective.
+    \begin{proof}
+By definition of surjective $\forall a\in A: \exists b\in A: f(b) = a$. By definition of a function no parameter may map to more than one value. Hence, if the domain and co-domain are both a finite set and the function is surjective then the function must be injective.
+    \end{proof}
   \item If $f : A\to A$ satisfies the property that $f \circ f = id_{a}$ then $f$ is a bijection.
     \begin{proof}
       As previously proved the composition of two surjective functions are surjective and the same for injective, hence for $f \circ f$ to be bijective $f$ must also be bijective.
