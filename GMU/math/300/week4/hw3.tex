@@ -10,10 +10,20 @@
   \begin{enumerate}
   \item If $A\cap B = \emptyset$ and $B\cap C = \emptyset$, then $A\cap C = \emptyset$
     \begin{proof}
-$\forall a\in A$
+      Assume that $A = \{a\}$ and $C = \{a\}$ and $B = \{b\}$ 
+      It follows that: $A\cap B = \emptyset$ and $B\cap C = \emptyset$ however $A\cap C = \{a\}$
+      There for: $\exists A: \exists C: A\cap C \neq \emptyset$ and $A\cap B = \emptyset$ and $B\cap C = \emptyset$  
     \end{proof}
   \item If $A\not\subseteq B$ and $B\not\subseteq C$, then $A\not\subseteq C$ 
+    \begin{proof}
+      Assume that $A = \{a\}$ and $C = \{a, c\}$ and $B = \{b\}$ 
+      It follows that: $A\not\subseteq B$ and $B\not\subseteq C$ however $A\subset C$
+      There for: $\exists A: \exists C: A\subset C$ and $A\not\subseteq B$ and $B\not\subseteq C$  
+    \end{proof}
   \item If $A\subseteq \emptyset,$ then $a= \emptyset$ 
+    \begin{proof}
+
+    \end{proof}
   \item If $A\subseteq C$ and $B\subseteq C$, then $A\cap B\subseteq C$
   \item If $f : A\to B$ is injective and $g : B\to C$ is injective, then $g \circ f : A\to C$ is injective. 
   \item If $f : A\to B$ is surjective and $g : B\to C$ is surjective, then $g \circ f : A\to C$ is surjective 
