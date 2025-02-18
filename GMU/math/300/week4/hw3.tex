@@ -10,15 +10,13 @@
   \begin{enumerate}
   \item If $A\cap B = \emptyset$ and $B\cap C = \emptyset$, then $A\cap C = \emptyset$
     \begin{proof}
-      Let $A = \{a\}$ and $C = \{a\}$ and $B = \{b\}$ 
-      It follows that: $A\cap B = \emptyset$ and $B\cap C = \emptyset$ however $A\cap C = \{a\}$
-      There for: $\exists A: \exists C: A\cap C \neq \emptyset$ and $A\cap B = \emptyset$ and $B\cap C = \emptyset$  
+      Let $A = \{a\}$ and $C = \{a, c\}$ and $B = \{b\}$.
+      Observe $\{a\}\cap \{b\} = \emptyset$ and $\{b\}\cap \{a, c\} = \emptyset$ while $\{a\}\cap \{a,c\} = \{a\}$
     \end{proof}
   \item If $A\not\subseteq B$ and $B\not\subseteq C$, then $A\not\subseteq C$ 
     \begin{proof}
-      Assume that $A = \{a\}$ and $C = \{a, c\}$ and $B = \{b\}$ 
-      It follows that: $A\not\subseteq B$ and $B\not\subseteq C$ however $A\subset C$
-      There for: $\exists A: \exists C: A\subset C$ and $A\not\subseteq B$ and $B\not\subseteq C$  
+      Let $A = \{a\}$ and $C = \{a, c\}$ and $B = \{b\}$ 
+      Observe $\{a\}\not\subseteq \{b\}$ and $\{b\}\not\subseteq \{a, c\}$, while $\{a\}\subset \{a, c\}$
     \end{proof}
   \item If $A\subseteq \emptyset,$ then $a= \emptyset$ 
     \begin{proof}
