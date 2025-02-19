@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{amsfonts}
 \usepackage{amsthm}
+\usepackage{mathtools}
 \begin{document}
   MATH-300 \hfill Andrew Jones
   \begin{center}
@@ -29,29 +30,33 @@
   % 4
   \item If $A\subseteq C$ and $B\subseteq C$, then $A\cap B\subseteq C$
     \begin{proof}
-     Assume that $A\subseteq C$ and $B\subseteq C$ there for 2 cases can occur for $A\cap B\subseteq C$ \\
-     Case 1: $A\cap B = \emptyset$ there for $A\cap C\subseteq C$ as $\emptyset \subset C$ \\
-     Case 2: $A\cap B \neq \emptyset$ then $\forall e\in A\cap B: e\in C$ there for $A\cap B \subseteq C$
+     Fix  $x \in A\cap B$ by defintion of intersection $x\in A$ and $x\in B$. From the inclusion $A\subseteq C$ it follows that $x\in C$.
    \end{proof}
   % 5
   \item If $f : A\to B$ is injective and $g : B\to C$ is injective, then $g \circ f : A\to C$ is injective. 
     \begin{proof}
-      Assume that $\forall x,y\in A$ if $f(x) = f(y)$ then $x = y$ and the same for $g$. $f(A) \subseteq B$ and $g(B) \subseteq C$ there for as both f and g are injective, the subset of $B$ passed from $f$ to $g$ will also be injective. Hence $g \circ f$ is injective.
+      Fix $x,y\in A$ and suppose $g(f(x)) = g(f(y))$. By injectivity of $g$ we have $f(x) = f(y)$ and by injectivity of f we conclude that $x = y$.
     \end{proof}
   % 6
   \item If $f : A\to B$ is surjective and $g : B\to C$ is surjective, then $g \circ f : A\to C$ is surjective 
     \begin{proof}
-         By the definition of surjective $f$ maps to all values in $B$, similarly $g$ maps to all values in $C$. Hence $g \circ f$ maps to all values in $C$ and is surjective. 
+      Fix $c\in C$. The surjectivity of $g$ implies the existence of $b\in B$ with $g(b) =c$, while that of $f$ yields an $a\in A$ with $f(a) = b$. We have, $g(f(a)) = g(b) = c$. 
     \end{proof}
   % 7
   \item Give an example of a function $f : A\to A$ that is injective but not surjective.
     \begin{proof}
-      $g : b\mapsto 2b$ maps to only the even co-domain
+      Fix $b\in \mathbb{Z}$. $g : b\mapsto 2b$ maps to only the even co-domain.
     \end{proof}
   % 8
   \item Give an example of a function $g : A\to A$ that is surjective but not injective. 
     \begin{proof}
-       $f : a\mapsto \sin(a) $ every number in the co-domain is covered, but multiple numbers in the domain map to the same value.
+      Let $f: \mathbb{N} \to \mathbb{N}$ be given by
+        $$
+        \begin{dcases}
+          k-1 & k \geq 1 \\
+          0 & k = 0
+        \end{dcases}
+       $$
      \end{proof}
   % 9
   \item Let $f : A\to B$ and $g : B\to A$. If $g \circ f = id_{a}$, then both $f$ and $g$ are bijections.
