@@ -35,7 +35,7 @@
   % 5
   \item If $f : A\to B$ is injective and $g : B\to C$ is injective, then $g \circ f : A\to C$ is injective. 
     \begin{proof}
-      Fix $x,y\in A$ and suppose $g(f(x)) = g(f(y))$. By injectivity of $g$ we have $f(x) = f(y)$ and by injectivity of f we conclude that $x = y$.
+      Fix $x,y\in A$ and suppose $g(f(x)) = g(f(y))$. By injectivity of $g$ we have $f(x) = f(y)$ and by injectivity of $f$ we conclude that $x = y$.
     \end{proof}
   % 6
   \item If $f : A\to B$ is surjective and $g : B\to C$ is surjective, then $g \circ f : A\to C$ is surjective 
@@ -76,7 +76,11 @@ By definition of surjective $\forall a\in A: \exists b\in A: f(b) = a$. By defin
   % 11
   \item If $f : A\to A$ satisfies the property that $f \circ f = id_{a}$ then $f$ is a bijection.
     \begin{proof}
-      As previously proved the composition of two surjective functions are surjective and the same for injective, hence for $f \circ f$ to be bijective $f$ must also be bijective.
+      Let $x,y\in A$ with $f(x) = f(y)$. By applying $f$ to $f$, we have
+      \begin{center}
+$x = f \circ f(x) = f \circ f(y) = y$
+      \end{center}
+whence $f$ is injective. Fix $b\in A$. From the identity $f(f(b)) = b$ we conclude that $f$ is surjective.
     \end{proof}
   \end{enumerate}
 \end{document}
