@@ -61,8 +61,13 @@
   % 9
   \item Let $f : A\to B$ and $g : B\to A$. If $g \circ f = id_{a}$, then both $f$ and $g$ are bijections.
    \begin{proof}
-      As previously proved the composition of two surjective functions are surjective and the same for injective, hence for $g \circ f$ to be bijective both $f$ and $g$ must also be bijective.
-    \end{proof}
+     Put $f : \{0\} \mapsto 1$ and $g: \mathbb{N} \to  \{0\}$. Then
+       \begin{center}
+         $g \circ f: \{0\} \to \{0\}$ \\
+         $0 \mapsto 0$
+         Observe that $g \circ f$ is a bijection while $g$ is not a bijection.
+       \end{center}
+   \end{proof}
   % 10
   \item If $f : A\to A$ is surjective, and if $A$ is a finite set, then $f$ is injective.
     \begin{proof}
