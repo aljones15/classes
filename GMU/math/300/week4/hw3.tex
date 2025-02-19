@@ -8,51 +8,62 @@
   \end{center}
   $Let\ A,\ B,\ and\ C$ be sets. Prove or disprove the following statements. \\
   \begin{enumerate}
+  % 1
   \item If $A\cap B = \emptyset$ and $B\cap C = \emptyset$, then $A\cap C = \emptyset$
     \begin{proof}
       Let $A = \{a\}$ and $C = \{a, c\}$ and $B = \{b\}$.
       Observe $\{a\}\cap \{b\} = \emptyset$ and $\{b\}\cap \{a, c\} = \emptyset$ while $\{a\}\cap \{a,c\} = \{a\}$
     \end{proof}
+  % 2
   \item If $A\not\subseteq B$ and $B\not\subseteq C$, then $A\not\subseteq C$ 
     \begin{proof}
       Let $A = \{a\}$ and $C = \{a, c\}$ and $B = \{b\}$ 
       Observe $\{a\}\not\subseteq \{b\}$ and $\{b\}\not\subseteq \{a, c\}$, while $\{a\}\subset \{a, c\}$
     \end{proof}
+  % 3
   \item If $A\subseteq \emptyset,$ then $a= \emptyset$ 
     \begin{proof}
       Assume the negation $A\subseteq \emptyset$ and $A \neq \emptyset$.
       If $A \neq \emptyset$ then $A\not\subseteq \emptyset$ by definition of $\emptyset$ 
     \end{proof}
+  % 4
   \item If $A\subseteq C$ and $B\subseteq C$, then $A\cap B\subseteq C$
     \begin{proof}
      Assume that $A\subseteq C$ and $B\subseteq C$ there for 2 cases can occur for $A\cap B\subseteq C$ \\
      Case 1: $A\cap B = \emptyset$ there for $A\cap C\subseteq C$ as $\emptyset \subset C$ \\
      Case 2: $A\cap B \neq \emptyset$ then $\forall e\in A\cap B: e\in C$ there for $A\cap B \subseteq C$
-    \end{proof}
+   \end{proof}
+  % 5
   \item If $f : A\to B$ is injective and $g : B\to C$ is injective, then $g \circ f : A\to C$ is injective. 
     \begin{proof}
       Assume that $\forall x,y\in A$ if $f(x) = f(y)$ then $x = y$ and the same for $g$. $f(A) \subseteq B$ and $g(B) \subseteq C$ there for as both f and g are injective, the subset of $B$ passed from $f$ to $g$ will also be injective. Hence $g \circ f$ is injective.
     \end{proof}
+  % 6
   \item If $f : A\to B$ is surjective and $g : B\to C$ is surjective, then $g \circ f : A\to C$ is surjective 
     \begin{proof}
          By the definition of surjective $f$ maps to all values in $B$, similarly $g$ maps to all values in $C$. Hence $g \circ f$ maps to all values in $C$ and is surjective. 
     \end{proof}
+  % 7
   \item Give an example of a function $f : A\to A$ that is injective but not surjective.
     \begin{proof}
       $g : b\mapsto 2b$ maps to only the even co-domain
     \end{proof}
+  % 8
   \item Give an example of a function $g : A\to A$ that is surjective but not injective. 
     \begin{proof}
        $f : a\mapsto \sin(a) $ every number in the co-domain is covered, but multiple numbers in the domain map to the same value.
-    \end{proof}
+     \end{proof}
+  % 9
   \item Let $f : A\to B$ and $g : B\to A$. If $g \circ f = id_{a}$, then both $f$ and $g$ are bijections.
    \begin{proof}
       As previously proved the composition of two surjective functions are surjective and the same for injective, hence for $g \circ f$ to be bijective both $f$ and $g$ must also be bijective.
     \end{proof}
+  % 10
   \item If $f : A\to A$ is surjective, and if $A$ is a finite set, then $f$ is injective.
     \begin{proof}
 By definition of surjective $\forall a\in A: \exists b\in A: f(b) = a$. By definition of a function no parameter may map to more than one value. Hence, if the domain and co-domain are both a finite set and the function is surjective then the function must be injective.
     \end{proof}
+  % 11
   \item If $f : A\to A$ satisfies the property that $f \circ f = id_{a}$ then $f$ is a bijection.
     \begin{proof}
       As previously proved the composition of two surjective functions are surjective and the same for injective, hence for $f \circ f$ to be bijective $f$ must also be bijective.
