@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{fullpage}
+\usepackage{comment}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+\renewcommand{\emptyset}{\varnothing}
+\renewcommand{\subset}{\subseteq}
+
+
+
+\title{Worksheet 3 Answer Key}
+\author{}\date{}
+
+
+
+\begin{document}
+\maketitle
+
+\noindent
+We will prove 3, 4, 5, 6, 10, and 11, and disprove 1, 2, and 9.
+
+\begin{enumerate}
+	\item Let $A=C=\{0\}$ and $B=\{1\}$. We have $\{0\}\cap\{1\}=\emptyset$ while $\{0\}\cap\{0\}\neq\emptyset$.
+	\item Let $A=C=\{0\}$ and $B=\{1\}$. We have $\{0\}\not\subset\{1\}$ and $\{1\}\not\subset\{0\}$, while $\{0\}\subset\{0\}$.
+	\item Suppose that $A\subset\emptyset$. From $\emptyset\subset A$, we conclude that $A=\emptyset$.
+	\item Fix $x\in A\cap B$. By the definition of intersection, we have $x\in A$ and $x\in B$. From the inclusion $A\subset C$, it follows that $x\in C$.
+	\item Let $a,a'\in A$ and suppose that $g(f(a)) = g(f(a'))$. By the injectivity of $g$ we obtain $f(a)=f(a')$, and by the injectivity of $f$ we conclude that $a=a'$.
+	\item Fix $c\in C$. The surjectivity of $g$ implies the existence of a $b\in B$ with $g(b)=c$, while that of $f$ yields an $a\in A$ with $f(a)=b$. Observe that, $g(f(a))=g(b)=c$.
+	\item Consider $f:\N\to\N$ defined by
+		\[
+			f(k) = k+1.
+		\]
+	\item Let $f:\N\to\N$ be given by
+		\[
+			f(k) =
+				\begin{cases}
+					k-1	&\text{ if }k\geq 1	\\
+					0	&\text{ if }k=0.
+				\end{cases}
+		\]
+	\item Let $f:\{0\}\hookrightarrow\N$ be the inclusion map, and let $g:\N\to\{0\}$ be the constant map with value $0$. Then
+		\begin{align*}
+			g\circ f:	\{0\}	&\to		\{0\}		\\
+					0\;	&\mapsto	\;0
+		\end{align*}
+		is a bijection, while neither $f$ nor $g$ is a bijection.
+	\item Suppose for a contradiction that $f:A\to A$ is not injective. It follows that the size of the image of $f$ is strictly less than the size of the domain $A$. Consequently, the image of $f$ is not equal to $A$. This contradicts the surjectivity of $f$.
+	\item Let $x,x'\in A$ with $f(x)=f(x')$. By applying $f$ to both sides of the preceding equality, we have
+		\[
+			x = f\circ f(x) = f\circ f(x') = x'
+		\]
+		whence $f$ is injective. Now fix $y\in A$. From the identity $f(f(y)) = y$ we conclude that $f$ is surjective.
+\end{enumerate}
+
+
+
+\end{document}
+
+
+
+
+
+
+
