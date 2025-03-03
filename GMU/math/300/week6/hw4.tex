@@ -32,14 +32,19 @@
       \begin{proof}
         Assume the relation R has an inverse and let $a\in A$ and $b\in B$:
         \begin{center}
-          $a(R^{-1})^{-1}b \iff \exists b^{'}\in B: b = b^{'} \wedge b^{'}R^{-1}a$ \\
+          $a(R^{-1})^{-1}b \iff bR^{-1}a$ \\
           $\iff b(R^{-1})^{-1}a$
         \end{center}
       \end{proof}
     % 4
     \item $(S \circ R)^{-1} = R^{-1}\circ S^{-1}$
       \begin{proof}
-        
+        Let $a\in A$, $b\in B$, and $c\in C$
+        \begin{center}
+          $c(S \circ R)^{-1}a \iff \exists c^{'}\in C: c = c^{'} \wedge c^{'}S^{-1}b$ \\
+          $\iff \exists b^{'}\in B: b=b^{'} \wedge b^{'}R^{-1}a$ \\
+          $\iff c(R^{-1} \circ S^{-1})a$
+        \end{center}
       \end{proof}
     % 5
     \item $(T \circ S) \circ R = T \circ (S \circ R)$
