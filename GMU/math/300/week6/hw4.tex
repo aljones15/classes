@@ -13,43 +13,49 @@
     \item $I_A \circ R = R$
       \begin{proof}
         Let $a\in A$ and $b\in B$ and observe:
-        \begin{center}
-          $a(I_a \circ R)b \iff \exists a^`\in A: a = a^` \wedge a^`Rb$ \\
-          $\iff aRb$
-        \end{center}
+        \begin{align*}
+          a(I_a \circ R)b \iff \exists a^`\in A: a = a^` \wedge a^`Rb \\
+          \iff aRb
+        \end{align*}
       \end{proof}
     % 2
     \item $R \circ I_A = R$
       \begin{proof}
         Let $a\in A$ and $b\in B$ and observe:
-        \begin{center}
-          $a(R \circ I_a)b \iff \exists b^{'}\in B: b = b^{'} \wedge aRb^{'}$ \\
-          $\iff aRb$
-        \end{center}
+        \begin{align*}
+          a(R \circ I_a)b \iff \exists b^{'}\in B: b = b^{'} \wedge aRb^{'} \\
+          \iff aRb
+        \end{align*}
       \end{proof}
     % 3
     \item $(R^{-1})^{-1} = R$
       \begin{proof}
         Assume the relation R has an inverse and let $a\in A$ and $b\in B$:
-        \begin{center}
-          $a(R^{-1})^{-1}b \iff bR^{-1}a$ \\
-          $\iff b(R^{-1})^{-1}a$
-        \end{center}
+        \begin{align*}
+          a(R^{-1})^{-1}b \iff bR^{-1}a \\
+          \iff b(R^{-1})^{-1}a
+        \end{align*}
       \end{proof}
     % 4
     \item $(S \circ R)^{-1} = R^{-1}\circ S^{-1}$
       \begin{proof}
         Let $a\in A$, $b\in B$, and $c\in C$
-        \begin{center}
-          $c(S \circ R)^{-1}a \iff \exists c^{'}\in C: c = c^{'} \wedge c^{'}S^{-1}b$ \\
-          $\iff \exists b^{'}\in B: b=b^{'} \wedge b^{'}R^{-1}a$ \\
-          $\iff c(R^{-1} \circ S^{-1})a$
-        \end{center}
+        \begin{align*}
+          c(S \circ R)^{-1}a \iff \exists c^{'}\in C: c = c^{'} \wedge c^{'}S^{-1}b \\
+          \iff \exists b^{'}\in B: b=b^{'} \wedge b^{'}R^{-1}a \\
+          \iff c(R^{-1} \circ S^{-1})a
+        \end{align*}
       \end{proof}
     % 5
     \item $(T \circ S) \circ R = T \circ (S \circ R)$
       \begin{proof}
-        
+        Fix $a\in A$, $b\in B$, $c\in C$, and $d\in D$
+        \begin{align*}
+          a(T\circ S)\circ Rd \iff \exists a^{'}\in A: a^{'}=a \wedge a^{'}Rb \\
+          \iff \exists b^{'}\in B: b^{'}=b \wedge b^{'}Sc \\
+          \iff \exists c^{'}\in C: c^{'}=c \wedge c^{'}Td \\
+          \iff aT\circ(S\circ R)d
+        \end{align*}
       \end{proof}
     % 6
     \item $Dom R = Rng R^{-1}$
