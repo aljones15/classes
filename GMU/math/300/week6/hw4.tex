@@ -58,21 +58,20 @@
         \end{align*}
       \end{proof}
     % 6
-    \item $Dom R = Rng R^{-1}$
-      \begin{proof}
-        Suppose R is invertible and let $d\in DomR$
-        \begin{align*}
-          Dom R &\iff \exists r\in RngR^{-1}: r = d \\
-          &\iff RngR^{-1}
-        \end{align*}
+    \item $Dom\,R = Rng\,R^{-1}$
+      \begin{proof} ($\subseteq$)
+        Suppose R is invertible and fix $r\in Rng\,R^{-1}$. By definition of inverse it follows that $r\in Dom\,R$.
+      \end{proof}
+      \begin{proof} ($\supseteq$)
+Fix $d\in Dom\,R$. By definition of domain it follows that $d \in Rng\,R^{-1}$.
       \end{proof}
     % 7
-    \item $Rng R = Dom R^{-1}$
-      \begin{proof}
-        Suppose R is invertible and $r\in Rng R$
-        \begin{align*}
-TBD
-        \end{align*}
+    \item $Rng\,R = Dom\,R^{-1}$
+      \begin{proof} ($\supseteq$)
+        Suppose R is invertible and $r\in Rng\,R$. By the definition of inverse $r\in Dom\,R^{-1}$.
+      \end{proof}
+      \begin{proof} ($\subseteq$)
+Fix $d\in Dom\,R^{-1}$. By the defintion of domain it follows that $d\in Rng\,R$.
       \end{proof}
   \end{enumerate}
   For Question 8–10, suppose that $A = B = C$.
