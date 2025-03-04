@@ -89,7 +89,13 @@ Fix $d\in Dom\,R^{-1}$. By the defintion of domain it follows that $d\in Rng\,R$
     % 9 reflexive, transitive, antisymmetric
     \item If $R$ is a partial order, then $R \circ R$ is a partial order.
       \begin{proof}
-        
+        Suppose R is a partial order from $A$ to $B$ and $A = B$
+        \begin{align*}
+          R &\iff \forall a\in A: aRa \\
+            &\iff \forall a,b, c\in A: (aRb \wedge bRc) => aRc \\
+            &\iff \forall a,b\in A: (aRb \wedge bRa) => a = b \\
+              &\iff R \circ R
+        \end{align*}
       \end{proof}
     % 10 reflexive, transitive, antisymmetric
     \item If $R$ and $S$ are partial orders, then it is not generally true that $S \circ R$ is a partial order.
