@@ -94,13 +94,13 @@ Fix $d\in Dom\,R^{-1}$. By the defintion of domain it follows that $d\in Rng\,R$
           R &\iff \forall a\in A: aRa \\
             &\iff \forall a,b, c\in A: (aRb \wedge bRc) => aRc \\
             &\iff \forall a,b\in A: (aRb \wedge bRa) => a = b \\
-              &\iff R \circ R
+            &\iff R \circ R
         \end{align*}
       \end{proof}
     % 10 reflexive, transitive, antisymmetric
     \item If $R$ and $S$ are partial orders, then it is not generally true that $S \circ R$ is a partial order.
       \begin{proof}
-        
+        Let $R = \le$ and $S = |$. Fix $a = 3$ and $b = 5$. Observe that $3 \le 5$, however $3 | 5$ hence $S \circ R$ is not a partial order.
       \end{proof}
   \end{enumerate}
   \textbf{Bonus Questions}
@@ -109,7 +109,7 @@ Fix $d\in Dom\,R^{-1}$. By the defintion of domain it follows that $d\in Rng\,R$
     % 11
     \item $R \circ S \neq S \circ R$.
       \begin{proof}
-        
+        Suppose $R = \le$ and $S = |x|$. Fix $a = -3$ and $b = 5$. Observe that $-3 (R \circ S)5 \neq -3 (S \circ R) 5$.  
       \end{proof}
     % 12
     \item $S \circ R$ is an equivalence relation, but neither $R$ nor $S$ is an equivalence relation.
