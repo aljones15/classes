@@ -76,17 +76,22 @@ Fix $d\in Dom\,R^{-1}$. By the defintion of domain it follows that $d\in Rng\,R$
   \end{enumerate}
   For Question 8–10, suppose that $A = B = C$.
   \begin{enumerate} \setcounter{enumi}{7}
-    % 8
+    % 8 reflexive, transitive, and symmetric
     \item If $R$ and $S$ are equivalence relations, then $S \circ R$ is an equivalence relation.
       \begin{proof}
-        
+        Suppose $R$ is an equivalence relation from $A$ to $B$ and $S$ is an equivalence relation from $B$ to $C$ and $A = B = C$.
+        \begin{align*}
+          S \circ R &\iff \forall a\in A : aSa \wedge aRa \\
+          &\iff \forall a,b,c\in A: (aSb \wedge bSc) => aSa \wedge (aRb \wedge bRc) => aRc \\
+            &\iff \forall a,b\in A: (aSb \wedge bSa) \wedge (aRb \wedge bRa) 
+        \end{align*}
       \end{proof}
-    % 9
+    % 9 reflexive, transitive, antisymmetric
     \item If $R$ is a partial order, then $R \circ R$ is a partial order.
       \begin{proof}
         
       \end{proof}
-    % 10
+    % 10 reflexive, transitive, antisymmetric
     \item If $R$ and $S$ are partial orders, then it is not generally true that $S \circ R$ is a partial order.
       \begin{proof}
         
