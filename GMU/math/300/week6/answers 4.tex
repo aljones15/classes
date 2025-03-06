@@ -1,0 +1,152 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{fullpage}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+\DeclareMathOperator{\Dom}{Dom}
+\DeclareMathOperator{\Rng}{Rng}
+
+
+
+\title{Worksheet 4 Answer Key}
+\author{}\date{}
+
+
+
+\begin{document}\maketitle
+
+\begin{enumerate}
+	\item Let $a\in A$ and $b\in B$ and observe that
+		\begin{align*}
+			a(I_A\circ R)b
+				&\iff	\exists a'\in A : aI_Aa' \wedge a'Rb	\\
+				&\iff	aRb.
+		\end{align*}
+	\item Fix $a\in A,b\in B$ and note that
+		\begin{align*}
+			a(R\circ I_B)b
+				&\iff	\exists a'\in A : aRb' \wedge b'I_Bb	\\
+				&\iff	aRb.
+		\end{align*}
+	\item Choose $a\in A$ and $b\in B$. We have
+		\begin{align*}
+			a(R^{-1})^{-1}b
+				&\iff	bR^{-1}a	\\
+				&\iff	aRb.
+		\end{align*}
+	\item Fix $a\in A, c\in C$ and observe that
+		\begin{align*}
+			c(S\circ R)^{-1}a
+				&\iff	a(S\circ R)c					\\
+				&\iff	\exists b\in B : aRb\wedge bSc			\\
+				&\iff	\exists b\in B : bR^{-1}a\wedge cS^{-1}b	\\
+				&\iff	c(R^{-1}\circ S^{-1})a.
+		\end{align*}
+	\item Let $a\in A$ and $d\in D$. We have
+		\begin{align*}
+			a(T\circ S)\circ Rd
+				&\iff	\exists b\in B : aRb \wedge b(T\circ S)d			\\
+				&\iff	\exists b\in B : aRb \wedge (\exists c\in C : bSc\wedge cTd)	\\
+				&\iff	\exists b\in B : \exists c\in C : aRb \wedge bSc\wedge cTd	\\
+				&\iff	\exists c\in C : (\exists b\in B :aRb \wedge bSc)\wedge cTd	\\
+				&\iff	aT\circ(S\circ R)d.
+		\end{align*}
+	\item Fix $a\in A$ and observe that
+		\begin{align*}
+			a\in\Dom R
+				&\iff	\exists b\in B : aRb		\\
+				&\iff	\exists b\in B : bR^{-1}a	\\
+				&\iff	a\in\Rng R^{-1}.
+		\end{align*}
+	\item Fix $b\in B$ and observe that
+		\begin{align*}
+			b\in\Rng R
+				&\iff	\exists a\in A : aRb		\\
+				&\iff	\exists a\in A : bR^{-1}a	\\
+				&\iff	a\in\Dom R^{-1}.
+		\end{align*}
+	\item Let $A=\{1,2,3\}$ and define the relations
+		\begin{align*}
+			R	&=	\{(1,1),(1,2),(2,1)(2,2),(3,3)\}	\\
+			S	&=	\{(1,1),(2,2),(2,3),(3,2),(3,3)\}.
+		\end{align*}
+		Note that both $R$ and $S$ are equivalence relations on $A$, while
+		\[
+			S\circ R = A^2\backslash \{(3,1)\}
+		\]
+		is neither transitive nor symmetric. \label{quest:equivalence_relations_not_closed_under_composition}
+	\item Fix $a,b,c\in A$.
+
+		If $aRa$ then $a(R\circ R)a$, whence $(R\circ R)$ is reflexive.
+
+		Suppose that $a(R\circ R)b$ and $b(R\circ R)c$. Transitivity of $R$ provides $aRb$ and $bRc$, from which we obtain $a(R\circ R)c$. This establishes the transitivy of $R\circ R$.
+
+		Now suppose that $a(R\circ R)b$ and $b(R\circ R)a$. As above, the transitivity of $R$ yields $aRb$ and $bRa$, and antisymmetry provides $a=b$. We conclude that $R\circ R$ is antisymmetric.
+	\item Define the relations $R$ and $S$ on $A=\Z$ by
+		\begin{align*}
+			mRn	&\iff	m\leq n		\\
+			mSn	&\iff	m\geq n.
+		\end{align*}
+		Observe that both $R$ and $S$ are partial orders, while
+		\[
+			S\circ R = \Z\times\Z
+		\]
+		is not antisymmetric. \label{quest:partial_orders_not_closed_under_composition}
+	\item Let $A=\{1,2,3\}$ and let $R$ and $S$ be the relations of Question \ref{quest:equivalence_relations_not_closed_under_composition}. We have
+		\begin{align*}
+			S\circ R
+				&=	A^2\backslash \{(3,1)\}		\\
+				&\neq	A^2\backslash \{(1,3)\}		\\
+				&=	R\circ S.
+		\end{align*}
+	\item Let $A$, $R$, and $S$ be given as in Question \ref{quest:partial_orders_not_closed_under_composition}.
+\end{enumerate}
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

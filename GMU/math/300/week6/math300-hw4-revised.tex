@@ -1,0 +1,120 @@
+\documentclass{article}
+  \usepackage{amsfonts}
+  \usepackage{amsthm}
+  \usepackage{mathtools}
+\begin{document}
+    MATH-300 \hfill Andrew Jones
+  \begin{center}
+  {\huge Worksheet 4}
+  \end{center}
+  Let $R$ be a relation from $A$ to $B$, let $S$ be a relation from $B$ to $C$, and let $T$ be a relation from $C$ to $D$. \\ Prove the following statements. \\
+  \begin{enumerate}
+    % 1
+    \item $I_A \circ R = R$
+      \begin{proof}
+        Let $a\in A$ and $b\in B$ and observe that
+        \begin{align*}
+          a(I_a \circ R)b &\iff \exists a'\in A: a = a' \wedge a'Rb \\
+	  &\iff aRb.
+        \end{align*}
+      \end{proof}
+    % 2
+    \item $R \circ I_A = R$
+      \begin{proof}
+        Let $a\in A$ and $b\in B$ and observe that
+        \begin{align*}
+          a(R \circ I_a)b &\iff \exists b'\in B: b = b' \wedge aRb' \\
+	  &\iff aRb.
+        \end{align*}
+      \end{proof}
+    % 3
+    \item $(R^{-1})^{-1} = R$
+      \begin{proof}
+        Assume the relation R has an inverse and let $a\in A$ and $b\in B$. We have
+        \begin{align*}
+          a(R^{-1})^{-1}b &\iff bR^{-1}a \\
+	  &\iff b(R^{-1})^{-1}a.
+        \end{align*}
+      \end{proof}
+    % 4
+    \item $(S \circ R)^{-1} = R^{-1}\circ S^{-1}$
+      \begin{proof}
+      Let $a\in A$, $b\in B$, and $c\in C$. We have
+        \begin{align*}
+          c(S \circ R)^{-1}a &\iff \exists c'\in C: c = c' \wedge c'S^{-1}b \\
+          &\iff \exists b'\in B: b=b' \wedge b'R^{-1}a \\
+	  &\iff c(R^{-1} \circ S^{-1})a.
+        \end{align*}
+      \end{proof}
+    % 5
+    \item $(T \circ S) \circ R = T \circ (S \circ R)$
+      \begin{proof}
+      Fix $a\in A$, $b\in B$, $c\in C$, and $d\in D$. Observe that
+        \begin{align*}
+          a(T\circ S)\circ Rd &\iff \exists a'\in A: a'=a \wedge a'Rb \\
+          &\iff \exists b'\in B: b'=b \wedge b'Sc \\
+          &\iff \exists c'\in C: c'=c \wedge c'Td \\
+	  &\iff aT\circ(S\circ R)d.
+        \end{align*}
+      \end{proof}
+    % 6
+    \item $\mathrm{Dom}\,R = \mathrm{Rng}\,R^{-1}$
+      \begin{proof} ($\subseteq$)
+      Suppose $R$ is invertible and fix $r\in \mathrm{Rng}\,R^{-1}$. By definition of inverse it follows that $r\in \mathrm{Dom}\,R$.
+      \end{proof}
+      \begin{proof} ($\supseteq$)
+      Fix $d\in \mathrm{Dom}\,R$. By definition of domain it follows that $d \in \mathrm{Rng}\,R^{-1}$.
+      \end{proof}
+    % 7
+    \item $\mathrm{Rng}\,R = \mathrm{Dom}\,R^{-1}$
+      \begin{proof} ($\supseteq$)
+      Suppose $R$ is invertible and $r\in \mathrm{Rng}\,R$. By the definition of inverse $r\in \mathrm{Dom}\,R^{-1}$.
+      \end{proof}
+      \begin{proof} ($\subseteq$)
+      Fix $d\in \mathrm{Dom}\,R^{-1}$. By the defintion of domain it follows that $d\in \mathrm{Rng}\,R$.
+      \end{proof}
+  \end{enumerate}
+  For Question 8–10, suppose that $A = B = C$.
+  \begin{enumerate} \setcounter{enumi}{7}
+    % 8 reflexive, transitive, and symmetric
+    \item If $R$ and $S$ are equivalence relations, then $S \circ R$ is an equivalence relation.
+      \begin{proof}
+        Suppose $R$ is an equivalence relation from $A$ to $B$ and $S$ is an equivalence relation from $B$ to $C$ and $A = B = C$. We have
+        \begin{align*}
+          S \circ R &\iff \forall a\in A : aSa \wedge aRa \\
+          &\iff \forall a,b,c\in A: (aSb \wedge bSc) \implies aSa \wedge (aRb \wedge bRc) \implies aRc \\
+	  &\iff \forall a,b\in A: (aSb \wedge bSa) \wedge (aRb \wedge bRa).
+        \end{align*}
+      \end{proof}
+    % 9 reflexive, transitive, antisymmetric
+    \item If $R$ is a partial order, then $R \circ R$ is a partial order.
+      \begin{proof}
+      Suppose R is a partial order from $A$ to $B$ and $A = B$. We have
+        \begin{align*}
+          R &\iff \forall a\in A: aRa \\
+            &\iff \forall a,b, c\in A: (aRb \wedge bRc) \implies aRc \\
+	    &\iff \forall a,b\in A: (aRb \wedge bRa) \implies a = b \\
+	    &\iff R \circ R.
+        \end{align*}
+      \end{proof}
+    % 10 reflexive, transitive, antisymmetric
+    \item If $R$ and $S$ are partial orders, then it is not generally true that $S \circ R$ is a partial order.
+      \begin{proof}
+        Let $R = \le$ and $S = |$. Fix $a = 3$ and $b = 5$. Observe that $3 \le 5$, however $3 | 5$ hence $S \circ R$ is not a partial order.
+      \end{proof}
+  \end{enumerate}
+  \textbf{Bonus Questions}
+  Give an example of two relations $R$ and $S$ on a set $A$ such that \\
+  \begin{enumerate} \setcounter{enumi}{10}
+    % 11
+    \item $R \circ S \neq S \circ R$.
+      \begin{proof}
+        Suppose $R = \le$ and $S = |x|$. Fix $a = -9$ and $b = 5$. Observe that $-9 (R \circ S)5 \neq -9 (S \circ R) 5$.  
+      \end{proof}
+    % 12
+    \item $S \circ R$ is an equivalence relation, but neither $R$ nor $S$ is an equivalence relation.
+      \begin{proof}
+        
+      \end{proof}
+   \end{enumerate}
+\end{document}
