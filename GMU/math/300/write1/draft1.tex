@@ -59,21 +59,23 @@ The binomial theorem expresses the expansion of two monomial terms such as $(x +
   Let an unfair coin be flipped twice with $P(Tails) = 0.3$ and $P(Heads) = 0.7$ \\
   We know the probability must sum to 1. In two flips then, $(T + H)^2 = T^2 + 2TH + H^2$. This aligns with the outcomes of $TT$, $TH$, $HT$, and $HH$ for 2 flips. Substituting in the probabilities we have $0.3^2 + 2*0.3*0.7 + 0.7^2 = 1$.
 \end{example}
- To compute the expansion of two monomials the theorem uses:
+To compute the expansion of two monomials the theorem uses:
+% defintion 1
 \begin{definition}[Factorial n!]
   Count everyway to permute a set of n distinct objects
   \begin{align*}
     n! = {\displaystyle\prod_{i=1}^{n}i}
   \end{align*}
-  with $0! = 1$ and $n \geq 0$.
+  where $0! = 1$ and $n \geq 0$.
 \end{definition}
 Building on factorials, the theorem uses the
-% add defintion for binomial coeffecient here
+% definition 2
 \begin{definition}[Binomial Coefficient]
 	$\binom{n}{k} = \frac{n!}{k!(n-k)!}$
 \end{definition}
 to count combinations of groups of events.
 The inductive proof of the theorem uses:
+% proof 1
 \begin{proof}[Pascal's Identity]
   \begin{align*}
     \binom{n - 1}{k} + \binom{n - 1}{k - 1} &= \frac{(n-1)!}{k!(n - 1 - k)!} + \frac{(n - 1)!}{(k-1)!(n-k)!} \\
@@ -85,6 +87,7 @@ The inductive proof of the theorem uses:
 \end{proof}
 
 % add proof for Binomial Theorem here
+% proof 2
 \begin{proof}
 
 \end{proof}
@@ -100,6 +103,7 @@ The inductive proof of the theorem uses:
 	\]
 \end{lemma}
 
+% proof 3
 \begin{proof}
 	A direct computation yields
 	\begin{align*}
