@@ -108,12 +108,23 @@ Many combinations can be simplified by the use of Pascal's identity:
 % SECOND SECTION
 
 \section{Multinomial Theorem}
+While the binomial theorem works for 2 independent events, the multinomial theorem generalizes to any number of groups/events.
 % definition 3
 \begin{definition}[Multinomial Coeffecient]
   \begin{align*}
     \binom{N}{n_1,..,n_r} = \frac{N!}{n_1!,..,n_r!}
   \end{align*}
+  Where $n_1$ to $n_r$ are different group sizes.
 \end{definition}
+
+\begin{example}
+  For 13 items we want to know how many combinations of 5, 5, and 3 can be made
+  \begin{align*}
+    \binom{13}{5,5,3} &= \binom{13}{5}\binom{8}{5}\binom{3}{3} \\
+                      &= \frac{13!}{5!(13-5)!}\frac{8!}{5!(8-5)!}\frac{3!}{3!(3-3)!} \\
+                        &=\frac{13!}{5!5!3!}
+  \end{align*}
+\end{example}
 
 % proof 3
 \begin{proof}
