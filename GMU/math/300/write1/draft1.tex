@@ -55,19 +55,27 @@ Note that
 
 \section{Binomial Theorem}
 To use the binomial theorem an event most only have 2 outcomes.
+The bionomial theorem accounts for multiple combinations of
+outcomes.
+\begin{example}
+
+\end{example}
+
+To do this the theorem uses:
 \begin{definition}[Factorial n!]
-  The count of all ways to permute a set of n distinct objects
+  Count everyway to permute a set of n distinct objects
   \begin{align*}
     n! = {\displaystyle\prod_{i=1}^{n}i}
   \end{align*}
   with $0! = 1$ and $n \geq 0$.
 \end{definition}
-
+Building on factorials, the theorem uses the
 % add defintion for binomial coeffecient here
 \begin{definition}[Binomial Coefficient]
 	$\binom{n}{k} = \frac{n!}{k!(n-k)!}$
 \end{definition}
-
+to count combinations of groups of events.
+The inductive proof of the theorem uses:
 \begin{proof}[Pascal's Identity]
   \begin{align*}
     \binom{n - 1}{k} + \binom{n - 1}{k - 1} &= \frac{(n-1)!}{k!(n - 1 - k)!} + \frac{(n - 1)!}{(k-1)!(n-k)!} \\
