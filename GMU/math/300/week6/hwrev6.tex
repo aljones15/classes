@@ -40,12 +40,7 @@
       % no comment from prof
     \item $(S \circ R)^{-1} = R^{-1}\circ S^{-1}$
       \begin{proof}
-        Let $a\in A$, $b\in B$, and $c\in C$
-        \begin{align*}
-          c(S \circ R)^{-1}a &\iff \exists c^{'}\in C: c = c^{'} \wedge c^{'}S^{-1}b \\
-          &\iff \exists b^{'}\in B: b=b^{'} \wedge b^{'}R^{-1}a \\
-          &\iff c(R^{-1} \circ S^{-1})a
-        \end{align*}
+        Suppose $(c,a)\in (S \circ R)^{-1}$. Then by implication: $a (S \circ R)^{-1}$. Hence, there exists a $b \in B$ such that $bSc$ and $aRb$ and $cS^{-1}b$ and $bR^{-1}a$. Therefore $(c,a)\in (R^{-1} \circ S^{-1})$ and $(R^{1} \circ S^{-1}) \subseteq (S \circ R)^{-1}$. The converse implication is obtained by retracing the given steps.
       \end{proof}
       % 5 correction needed here
       % no comment from prof
