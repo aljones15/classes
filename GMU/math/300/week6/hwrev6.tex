@@ -46,13 +46,7 @@
       % no comment from prof
     \item $(T \circ S) \circ R = T \circ (S \circ R)$
       \begin{proof}
-        Fix $a\in A$, $b\in B$, $c\in C$, and $d\in D$
-        \begin{align*}
-          a(T\circ S)\circ Rd &\iff \exists a^{'}\in A: a^{'}=a \wedge a^{'}Rb \\
-          &\iff \exists b^{'}\in B: b^{'}=b \wedge b^{'}Sc \\
-          &\iff \exists c^{'}\in C: c^{'}=c \wedge c^{'}Td \\
-          &\iff aT\circ(S\circ R)d
-        \end{align*}
+        Assume $(a,d)\in (T \circ S) \circ R$. It follows that $b\in B$ such that $aRb$ and $b(T \circ S)d$. Hence there is a $c\in C$ such that $bSc$ and $cTd$. This implies $a(S \circ R)c$, hence $aT\circ (S \circ R)d$. So we can conclude $T \circ (S \circ R) \subseteq (T \circ S) \circ R$. The converse implication is similar.
       \end{proof}
       % 6 correction needed here
       % It is unclear how you are using the definition of inverse or
@@ -60,19 +54,19 @@
       % Additionally, all relations are invertible.
     \item $Dom\,R = Rng\,R^{-1}$
       \begin{proof} ($\subseteq$)
-        Fix $r\in Rng\,R^{-1}$. By definition of inverse it follows that $r\in Dom\,R$.
+        Fix $a \in A$ and observe that $a \in Dom\,R$. There there must exist $b\in B$ such that $aRb$ and $bR^{-1}a$. Hence $a \in Rng\,R^{-1}$ and $Rng\,R^{-1} \subseteq Dom\,R$.
       \end{proof}
       \begin{proof} ($\supseteq$)
-Fix $d\in Dom\,R$. By definition of domain it follows that $d \in Rng\,R^{-1}$.
+Fix $a \in A$ and observe $a \in Rng\,R^{-1}$. There must be $b\in B$ such that $bR^{1}a$ and $aRb$. Hence $a \in Dom\,R$ and $Dom\,R \subseteq Rng\,R^{-1}$.
       \end{proof}
       % 7 correction needed here
       % (Same comments as for Question 6.)
     \item $Rng\,R = Dom\,R^{-1}$
       \begin{proof} ($\supseteq$)
-        Suppose R is invertible and $r\in Rng\,R$. By the definition of inverse $r\in Dom\,R^{-1}$.
+        Suppose $b\in Rng\,R$. This implies $a \in A$ such that $aRb$ and $bR^{1}a$. Hence by the invertibility of R, $b\in Dom\,R^{-1}$ and $Dom\,R^{-1} \subseteq Rng\,R$.
       \end{proof}
       \begin{proof} ($\subseteq$)
-Fix $d\in Dom\,R^{-1}$. By the defintion of domain it follows that $d\in Rng\,R$.
+Fix $b\in Dom\,R^{-1}$. By implication we have $a \in A$ such that $bR^{-1}a$ and $aRb$. So it follows that $b \in Rng\,R$ and $Rng\,R \subseteq Dom\,R^{-1}$.
       \end{proof}
   \end{enumerate}
   For Question 8–10, suppose that $A = B = C$.
