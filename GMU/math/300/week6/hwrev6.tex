@@ -88,10 +88,13 @@ Fix $b\in Dom\,R^{-1}$. By implication we have $a \in A$ such that $bR^{-1}a$ an
       \begin{proof}
         Fix $a,b,c\in A$:
         \begin{align*}
-          aRa \wedge aRc &\iff aRa \Rightarrow a(R \circ R)a \\
-            &\iff \forall a,b, c\in A: (aRb \wedge bRc) => aRc \\
-            &\iff \forall a,b\in A: (aRb \wedge bRa) => a = b \\
-            &\iff a(R \circ R)a \wedge a(R \circ R)c
+          aRc &\iff aRa \wedge bRb \wedge cRc \\
+            &\iff (aRb \wedge bRc) \Rightarrow aRc \\
+            &\iff (aRb \wedge bRa) \Rightarrow a = b \\
+            &\iff (a(R \circ R)b \wedge b(R \circ R)a) \Rightarrow a = b \\
+            &\iff a(R \circ R)a \wedge b(R \circ R)b \wedge c(R \circ R)c \\
+            &\iff (a(R \circ R)b \wedge b(R \circ R)c) \Rightarrow a(R \circ R)c \\ 
+            &\iff a(R \circ R)c
         \end{align*}
       \end{proof}
       % 10 reflexive, transitive, antisymmetric
