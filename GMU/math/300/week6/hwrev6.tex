@@ -86,12 +86,12 @@ Fix $b\in Dom\,R^{-1}$. By implication we have $a \in A$ such that $bR^{-1}a$ an
     % correction needed for 9
     \item If $R$ is a partial order, then $R \circ R$ is a partial order.
       \begin{proof}
-        Suppose R is a partial order from $A$ to $B$ and $A = B$
+        Fix $a,b,c\in A$:
         \begin{align*}
-          R &\iff \forall a\in A: aRa \\
+          aRa \wedge aRc &\iff aRa \Rightarrow a(R \circ R)a \\
             &\iff \forall a,b, c\in A: (aRb \wedge bRc) => aRc \\
             &\iff \forall a,b\in A: (aRb \wedge bRa) => a = b \\
-            &\iff R \circ R
+            &\iff a(R \circ R)a \wedge a(R \circ R)c
         \end{align*}
       \end{proof}
       % 10 reflexive, transitive, antisymmetric
