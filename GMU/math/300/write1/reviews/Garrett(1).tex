@@ -1,0 +1,110 @@
+\documentclass{article}
+\usepackage[dvipsnames]{xcolor}				% see  https://en.wikibooks.org/wiki/LaTeX/Colors
+\usepackage[backgroundcolor=SkyBlue!30]{todonotes}	% see  https://tug.ctan.org/macros/latex/contrib/todonotes/todonotes.pdf
+\usepackage{graphicx, fullpage, amsmath, amsthm, amssymb} % Required for inserting images
+\newtheorem{theorem}{Theorem}[section]
+\usepackage[english]{babel}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+
+
+
+\title{MATH 300 Writing Assignment 1}
+\author{Garrett Martin}
+\date{March 2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+Probability is the mathematical expression of uncertainty. It is the means through which the seemingly random phenomena and events of the world is expressed and quantified.\todo{This is beautiful. Good work.} What is the mortality rate of this disease, and how effective is its treatment? How likely is a candidate to win an election, and how big of an upset was it when they lost? In layman's terms, it is the numerical "how crazy is that?". Probability is applied in virtually all aspects of life, from engineering to medicine to merely going about one's day. 
+
+But what actually is probability? As stated, it is the mathematical expression of the frequency at which a given event occurs. Several different distributions of probability exist, each used to determine likelihoods of events or permutations of events in specific orders or perhaps across certain lengths of time.
+
+Let us first define likelihood, the means by which we measure probability.
+
+\begin{definition}[Likelihood]
+The likelihood of an outcome or outcomes occurring from an event is defined as a ratio between all favorable outcomes and all possible outcomes.
+\end{definition}
+
+We can make an interesting observation here. Since the number of favorable outcomes must necessarily be less than or equal to the number of possible outcomes, we can define a space within which the likelihood of an event or events must exist.\todo{This sounds like a start on Boole's inequality definined informally.}
+
+\begin{lemma}
+    Set $x$ as the likelihood of an event or events occurring. The likelihood of an event or events occurring is $0\leq x\leq 1$. Furthermore, the sum of likelihoods an event or events occurring and not occurring respectively is $x+(1-x)=1$.
+\end{lemma}
+
+\begin{proof}
+    Let $A$ be the set of all outcomes, $B\subseteq A$ be the set of all desired outcomes, and $C\subseteq A$ be the set of all undesired outcomes. By definition, we have $B\cap C=\varnothing$. Furthermore, we have $B\cup C=A$. \todo{Provided that $A \neq \emptyset$ or $0$}
+\end{proof}
+
+Let us make a final observation on likelihoods. Since all likelihoods must fall between 0 and 1 inclusive, we can make definitive statements about impossible and guaranteed outcomes.
+
+\begin{definition}[Impossible and Guaranteed Outcomes]
+    The likelihood of an impossible event is 0, and the likelihood of a guaranteed event is 1.
+\end{definition}
+
+\section{Probability Over Discrete Sets}
+
+While there are many ways one could group the ways in which probabilities are calculated and used, as an introduction I would like to very broadly generalize probabilities as being across discrete or continuous sets.
+
+\begin{definition}[Discrete Set]
+    A discrete set is an event with a finite number of possible outcomes. An example is picking a card out of a standard 52 card deck.\todo{Perhaps an example of a discrete or continous set?}
+\end{definition}
+
+Let us look at a simple probability scenario across a discrete set to start. Suppose I have a bag with ten marbles. Three of these marbles are red, while the rest are blue. Without looking in the bag, what are the odds that I choose a red marble?
+
+First, let us determine how to find the likelihood of an event. For discrete sets, the simplest method is by dividing the number of favorable outcomes by the number of possible outcomes.
+
+\begin{lemma}
+For discrete sets, the likelihood of an outcome or outcomes from an event is the number of favorable outcomes divided by the number of total outcomes. \todo{I really like the Lemmas with proofs. Good job here.}
+\end{lemma}
+
+\begin{proof}
+Let $a_1, a_2, ...a_n\in A$ such that $A$ is the set of all possible outcomes of an event and $B\subseteq A$ be the set of all desired outcomes. Set $x$ such that $x$ is equal to the number of elements in $B$. By definition of likelihood, we have likelihood as a ratio between all favorable outcomes, $B$, and all possible outcomes, $A$. This ratio can be defined by $x/n$. Thus, we have likelihood as the number of favorable outcomes divided by the number of possible outcomes.
+\end{proof}
+
+Let us put this into practice. With ten total marbles in the bag, three of which are red, we have a likelihood of selecting a red marble as $3/10$. Similarly, we have the likelihood of selecting a blue marble, which comprise the remaining seven marbles, as $7/10$. Let us make this more advanced and attempt to derive the likelihood of a sequence of outcomes. What are the odds that I choose a red marble, put it back in the bag, then choose another red marble?
+
+\begin{lemma}
+    The likelihood of a sequence of outcomes is equal to the likelihood of each individual outcome multiplied with each other.\todo{Does this work if the outcomes are dependent?}
+\end{lemma}
+
+\begin{proof}
+    Set $A_1, A_2, ...A_n$ as the sets of all possible outcomes of each event, and set $a_n$ equal to the number of outcomes in set $A_n$. Set $B_n$ and $b_n$ similarly as the sets of all desired outcomes and number of elements in each set, respectively. At each event $x$, observe that only $b_x$ of all $a_x$ outcomes are desirable, or only a proportion $\frac{b_x}{a_x}$ of all outcomes. By definition of proportions, we can multiply $\frac{b_1}{a_1} \cdot \frac{b_2}{a_2} \cdot ... \frac{b_n}{a_n}$ to obtain the proportion of all outcomes that only have desirable outcomes.
+\end{proof}
+
+Applying this, we have $3/10 \cdot 3/10$, or $9/100$, as the likelihood of randomly selecting two red marbles in a row with replacement.
+
+\section{Probability Over Continuous Sets}
+
+We've already addressed discrete sets, but what about continuous sets? What makes them so different? Let us first define them.
+
+\begin{definition}[Continuous Set]
+    A continuous set is an event with infinite possible outcomes. An example is the weight of five randomly chosen apples. \todo{Just make the example an example. Also do specify that continous is not $\mathbb{Z}$, but can be $\mathbb{R}$}
+\end{definition}
+
+With infinite possible options, it begs the question; what are the odds of any given possible outcome being chosen?
+
+\begin{lemma}
+    The likelihood of a specific outcome for a continuous set being chosen is 0.
+\end{lemma}
+
+\begin{proof}
+    Let $A$ be the set of all possible outcomes, and let $A$ be infinite. Let $x\in A$ and let $y$ be equal to the number of elements in $A$. By definition of likelihood, we have the likelihood of $x$ being picked at random as $\frac{x}{y}$. Since y is constantly approaching infinity, by definition of limits we have the likelihood equal to 0.
+\end{proof}
+
+If the likelihood of choosing any specific outcome from a continuous pool of outcomes is 0, how can we determine the likelihood of an event from a continuous set? Recall that likelihood is a ratio between all favorable outcomes and all possible outcomes. We can thus make true statements of the size of the range of favorable outcomes relative to the size of the range of all outcomes. Let's look at an example to see this. Suppose my thermostat is on the fritz, and each time I walk into my house it is set to a random temperature between 64 and 80 degrees Fahrenheit. What is the likelihood that when I walk in the temperature is at least 75 degrees?
+
+\begin{lemma}
+    The likelihood of an event on a continuous set is equal to the range of all possible desired outcomes divided by the range of all possible outcomes of the event.
+\end{lemma}
+
+\begin{proof}
+    Let $A\subseteq\mathbb{R}\mid 0\leq (a\in A)$ be the set of all possible outcomes and $B\subseteq A\mid a_{min}\leq (b\in B)\leq a_{max}$ be the set of all desired outcomes. By definition of likelihood, observe that the likelihood can be expressed as $\frac{b_{max}-b_{min}}{a_{max}-a_{min}}$. We have a fraction that represents a proportion of all possible outcomes that are desirable.
+\end{proof}
+
+Let us apply this to our thermostat problem. We can set up our ratio as $\frac{80-75}{80-64}$. This simplifies to $\frac{5}{16}$, which is our likelihood for this problem.
+
+\end{document}

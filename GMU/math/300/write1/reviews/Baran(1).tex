@@ -1,0 +1,210 @@
+\documentclass{article}
+\usepackage[dvipsnames]{xcolor}				% see  https://en.wikibooks.org/wiki/LaTeX/Colors
+\usepackage[backgroundcolor=SkyBlue!30]{todonotes}	% see  https://tug.ctan.org/macros/latex/contrib/todonotes/todonotes.pdf
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+\usepackage{fullpage}
+
+
+\title{Writing Assignment 1}
+\author{Baran Sevim}
+\date{ }
+
+
+
+\theoremstyle{plain}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+
+
+\newcommand{\R}{\mathbb{R}}
+
+
+\begin{document}
+\maketitle
+
+\section{Groups}
+\subsection{Basics}
+\todo{Add some context here on the usage of groups. An example of a group, an element, it's inverse, and the identity element would help.}
+\subsubsection{Definition}
+\begin{definition}
+\
+    A \textit{group} is a non-empty set \(G\) together with a rule that assigns to each pair \(g, h\) of elements of \(G\) an element \(g \times h\) such that 
+    \begin{itemize}
+        \item \(g \times h \in G\). We say that \(G\) is \textit{closed} under \(*\).
+    \end{itemize}
+    \begin{itemize}
+        \item \(g \ast (h \ast k) = (g \ast h) \ast k\) for all \(g, h, k \in G\). We say that \(*\) is associative.
+    \end{itemize}
+    \begin{itemize}
+        \item There exists an \textit{identity element} \(e \in G\) such \(e * g = g * e = g\) for all \(g \in G\).
+    \end{itemize}
+    \begin{itemize}
+        \item Every element \(g \in G\) has an inverse \(g^{-1}\) such that \(g * g^{-1} = g^{-1} * g = e\).
+    \end{itemize}
+    
+\
+
+\end{definition}
+
+\subsection{Symmetries of Graphs}
+\subsubsection{Definition: Graph}
+\begin{definition}
+    A \textit{graph} is a finite set of vertices joined by edges. We will assume that there is at most one edge joining two given vertices and no edge joins a vertex to itself. The \textit{valency} of a vertex is the number of edges emerging from it.
+  \end{definition}
+\todo{This is great as a definition, but how does it relate to the definition of groups above?}
+
+\subsubsection{Definition: Symmetry}
+\begin{definition}
+    A \textit{symmetry} of a graph is a permutation of the vertices that preserves the edges. More precisely, let \(V\) denote the set of vertices of a graph. Thena  symmetry is a bijection \(f : V \mapsto V\) such that \(f(v_1)\) and \(f(v_2)\) are joined by an edge if and only if \(v_1\) and \(v_2\) are joined by an edge.
+\end{definition}
+
+
+\begin{theorem}
+
+    The symmetries of a graph form a group.
+
+\end{theorem}
+
+\todo{You use f * g but say it is their composition which is $f \circ g$. I might be wrong here though.}
+\begin{proof}
+If \(f: V \mapsto V\) and \(g: V \mapsto V\) we define the group operation \(f * g\) to be their composition (as maps), so \(f * g = f \circ g\), i.e \textit{do g first, then f}. The composition of symmetries is clearly a symmetry, so the operation is closed. Since the compositon of maps is associative
+\begin{align*}
+    (f * g) * h :=(f \circ g) \circ h = f \circ (g \circ h) := f * (g * h)
+\end{align*}
+for all symmetries \(f, g, h\). The identity map \(e\) which sends every vertex to itself is a symmetry, and obviously \(e \circ f = f \circ e = f\) for all symmetries \(f\). Lastly, if \(f: V \mapsto V\) is a symmetry then it is bijective, so its inverse \(f^{-1}\) exists and is also a symmetry. It is characterized by \(f \circ f^{-1} = f^{-1} \circ f = e\).
+
+\end{proof}
+
+\begin{theorem}
+    In a finite group, every element his finite order.
+\end{theorem}
+
+\begin{proof}
+    Let \(g \in G\). Consider the infinite sequence \(g, g^2, g^3, \dots\) If \(G\) is finite, then there must be repetitions in this infinite sequence. Hence there exists \(m, n \in \mathbb{N}\) with \(m > n\) such that \(g^m = g^n\). By cancellation, \(g^{m-n} = e\).
+\end{proof}
+
+\subsection{Products}
+\begin{definition}
+    The easiest way of making a new group from given ones.
+\end{definition}
+
+\begin{theorem}
+    Let \(G, H\) be groups. The product \(G \times H = \{(g, h) \mid g \in G, h \in H \}\)
+    \begin{itemize}
+        \item The group operation is \((g, h) * (g', h') := (g * g'_G\)
+    \end{itemize}
+\end{theorem}
+
+\begin{proof}
+    
+\end{proof}
+
+Source: 
+  Wemyss, Michael (2011). Introduction to Group Theory, University of Glasgow
+
+Latex code is below
+
+\begin{verbatim}
+\documentclass{article}
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+\usepackage{fullpage}
+
+
+\title{Writing Assignment 1}
+\author{Baran Sevim}
+\date{ }
+
+
+
+\theoremstyle{plain}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+
+
+\newcommand{\R}{\mathbb{R}}
+
+
+\begin{document}
+\maketitle
+
+\section{Groups}
+\subsection{Basics}
+
+\subsubsection{Definition}
+\begin{definition}
+\
+    A \textit{group} is a non-empty set \(G\) together with a rule that assigns to each pair \(g, h\) of elements of \(G\) an element \(g \times h\) such that 
+    \begin{itemize}
+        \item \(g \times h \in G\). We say that \(G\) is \textit{closed} under \(*\).
+    \end{itemize}
+    \begin{itemize}
+        \item \(g \ast (h \ast k) = (g \ast h) \ast k\) for all \(g, h, k \in G\). We say that \(*\) is associative.
+    \end{itemize}
+    \begin{itemize}
+        \item There exists an \textit{identity element} \(e \in G\) such \(e * g = g * e = g\) for all \(g \in G\).
+    \end{itemize}
+    \begin{itemize}
+        \item Every element \(g \in G\) has an inverse \(g^{-1}\) such that \(g * g^{-1} = g^{-1} * g = e\).
+    \end{itemize}
+    
+\
+
+\end{definition}
+
+\subsection{Symmetries of Graphs}
+\subsubsection{Definition: Graph}
+\begin{definition}
+    A \textit{graph} is a finite set of vertices joined by edges. We will assume that there is at most one edge joining two given vertices and no edge joins a vertex to itself. The \textit{valency} of a vertex is the number of edges emerging from it.
+\end{definition}
+
+\subsubsection{Definition: Symmetry}
+\begin{definition}
+    A \textit{symmetry} of a graph is a permutation of the vertices that preserves the edges. More precisely, let \(V\) denote the set of vertices of a graph. Thena  symmetry is a bijection \(f : V \mapsto V\) such that \(f(v_1)\) and \(f(v_2)\) are joined by an edge if and only if \(v_1\) and \(v_2\) are joined by an edge.
+\end{definition}
+
+
+\begin{theorem}
+
+    The symmetries of a graph form a group.
+
+\end{theorem}
+
+
+\begin{proof}
+If \(f: V \mapsto V\) and \(g: V \mapsto V\) we define the group operation \(f * g\) to be their composition (as maps), so \(f * g = f \circ g\), i.e \textit{do g first, then f}. The composition of symmetries is clearly a symmetry, so the operation is closed. Since the compositon of maps is associative
+\begin{align*}
+    (f * g) * h :=(f \circ g) \circ h = f \circ (g \circ h) := f * (g * h)
+\end{align*}
+for all symmetries \(f, g, h\). The identity map \(e\) which sends every vertex to itself is a symmetry, and obviously \(e \circ f = f \circ e = f\) for all symmetries \(f\). Lastly, if \(f: V \mapsto V\) is a symmetry then it is bijective, so its inverse \(f^{-1}\) exists and is also a symmetry. It is characterized by \(f \circ f^{-1} = f^{-1} \circ f = e\).
+
+\end{proof}
+
+\begin{theorem}
+    In a finite group, every element his finite order.
+\end{theorem}
+
+\begin{proof}
+    Let \(g \in G\). Consider the infinite sequence \(g, g^2, g^3, \dots\) If \(G\) is finite, then there must be repetitions in this infinite sequence. Hence there exists \(m, n \in \mathbb{N}\) with \(m > n\) such that \(g^m = g^n\). By cancellation, \(g^{m-n} = e\).
+\end{proof}
+
+\subsection{Products}
+\begin{definition}
+    The easiest way of making a new group from given ones.
+\end{definition}
+
+\begin{theorem}
+    Let \(G, H\) be groups. The product \(G \times H = \{(g, h) \mid g \in G, h \in H \}\)
+    \begin{itemize}
+        \item The group operation is \((g, h) * (g', h') := (g * g'_G\)
+    \end{itemize}
+\end{theorem}
+
+\begin{proof}
+    
+\end{proof}
+\end{verbatim}
+
+\end{document}
+
