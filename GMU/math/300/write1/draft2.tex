@@ -42,16 +42,30 @@
 
 \section*{Introduction}
 
-The application of the Binomial and Multinomial theorems in probability can often lack clarity. This article aims to clarify the connection between polynomial expansion of binomials, combinations, total probability, and probability mass functions.
+The application of the Binomial and Multinomial theorems in probability can often lack clarity. However, the relations between polynomials and probability can provide insight into how models work in probability. This article aims to clarify the connection between expansions of multinomials and binomials, combinations, total probability, and probability mass functions.
 
 % FIRST SECTION
 
 \section{Binomial Theorem}
-The binomial theorem expresses the expansion of two monomial terms such as $(x + y)^2 = x^2 + 2xy + y^2$. However, in probability the binomial theorem can express the probability of all combinations of two independent events.
+The binomial theorem expresses the expansion of two monomial terms $x$ and $y$ such that $(x + y)^2 = x^2 + 2xy + y^2$. The later is useful in algebra and other fields of mathematics, but how binomial expansion relates to probability is not intuitvely obvious. The solution is to treat $x$ and $y$ as two independent events. The resulting binomial expansion can express the sample space or total probability of all combinations of two independent events.
 \begin{example}
   Let an unfair coin be flipped twice with $P(Tails) = 0.3$ and $P(Heads) = 0.7$ \\
-  We know the probability must sum to 1. In two flips then, $(T + H)^2 = T^2 + 2TH + H^2$. This aligns with the outcomes of $TT$, $TH$, $HT$, and $HH$ for 2 flips. Substituting in the probabilities we have $0.3^2 + 2*0.3*0.7 + 0.7^2 = 1$.
+  We know the probability must sum to 1. In two flips then, $(T + H)^2 = T^2 + 2TH + H^2$. This aligns with the outcomes of $T^2 = TT$, $2TH = TH + HT$, and $H^2 = HH$ for 2 flips. Additionally, substituting in the probabilities we have $0.3^2 + 2*0.3*0.7 + 0.7^2 = 1$.
 \end{example}
+\begin{theorem}
+  The Binomial Theorem can express the sum of all probabilities of two independent events.
+\end{theorem}
+\begin{proof}
+  Let $A$ and $B$ be independent events with probability $A = \frac{1}{a}$ and $B = (1 - \frac{1}{a})$. By the binomial theorem we have
+  \begin{align*}
+    &(\frac{1}{a} + (1-\frac{1}{a}))^2 \\
+    &\frac{1}{a}^2 + 2\frac{1}{a}(1-\frac{1}{a} + (1-\frac{1}{a})^2 \\
+    &\frac{1}{a^2} + 2\frac{1}{a}\frac{a-1}{a} + \frac{(a-1)^2}{a^2} \\
+    &\frac{1}{a^2} + \frac{2(a-1)}{a^2} + \frac{a^2-2a+1}{a^2} \\
+    &\frac{a^2+2-2+2a-2a}{a^2} \\
+    &\frac{a^2}{a^2} = 1
+  \end{align*}
+\end{proof}
 To compute the expansion of two monomials the theorem uses:
 % defintion 1
 \begin{definition}[Factorial n!]
@@ -112,7 +126,7 @@ Many combinations can be simplified by the use of Pascal's identity:
 % SECOND SECTION
 
 \section{Multinomial Theorem}
-While the binomial theorem works for 2 independent events, the multinomial theorem generalizes to any number of groups/events. It uses the multinomial coeffecient.
+While the binomial theorem applies to two independent events, the multinomial theorem generalizes to any number of groups or events. The theorem uses the multinomial coeffecient.
 % definition 3
 \begin{definition}[Multinomial Coeffecient]
   \begin{align*}
