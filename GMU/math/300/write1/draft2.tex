@@ -1,0 +1,149 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage[shortlabels]{enumitem}
+\usepackage{fullpage}
+
+% mathematical environments - see https://en.wikibooks.org/wiki/LaTeX/Theorems
+
+\theoremstyle{plain}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
+
+% commands
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+
+\renewcommand{\emptyset}{\varnothing}
+\renewcommand{\subset}{\subseteq}
+\renewcommand{\supset}{\supseteq}
+\renewcommand{\d}{\mathrm{d}}
+
+
+
+\title{Parsing Binomials \& Multinomials in Probability}
+\author{Andrew Jones}\date{}
+
+\begin{document}\maketitle
+
+
+% INTRODUCTION
+
+\section*{Introduction}
+
+The use of the Binomial and Multinomial theorems in Probability can often not be intuitively obviously. This text intends to highlight the relations between computing polynomials from binomials with combinations, total probability, and probability mass functions.
+
+% FIRST SECTION
+
+\section{Binomial Theorem}
+The binomial theorem expresses the expansion of two monomial terms such as $(x + y)^2 = x^2 + 2xy + y^2$. However, in probability the binomial theorem can express the probability of all combinations of two independent events.
+\begin{example}
+  Let an unfair coin be flipped twice with $P(Tails) = 0.3$ and $P(Heads) = 0.7$ \\
+  We know the probability must sum to 1. In two flips then, $(T + H)^2 = T^2 + 2TH + H^2$. This aligns with the outcomes of $TT$, $TH$, $HT$, and $HH$ for 2 flips. Substituting in the probabilities we have $0.3^2 + 2*0.3*0.7 + 0.7^2 = 1$.
+\end{example}
+To compute the expansion of two monomials the theorem uses:
+% defintion 1
+\begin{definition}[Factorial n!]
+  Count everyway to permute a set of n distinct objects
+  \begin{align*}
+    n! = {\displaystyle\prod_{i=1}^{n}i}
+  \end{align*}
+  where $0! = 1$ and $n \geq 0$.
+\end{definition}
+Building on factorials, the theorem uses the
+% definition 2
+\begin{definition}[Binomial Coefficient]
+  Count everyway to combine a set of n objects of k size
+  \begin{align*}
+    \binom{n}{k} = \frac{n!}{k!(n-k)!}
+  \end{align*}
+\end{definition}
+Note that the binomial coeffecient can be used to determine the number of combinations of a particular size the binomial theorem produces.
+\begin{example}
+  3 flips of a coin yields:
+  \begin{align*}
+  &(T + H)^3 = TTT + TTH + THT + HTT + HHT+ HTH + THH + HHH \\
+  &= T^3 + 3T^2H + 3H^2T + H^3 \\
+  &\binom{3}{3} = 1\ \text{hence}\ T^3 = TTT\ \text{or}\ H^3 = HHH \\
+  &\binom{3}{2} = 3\ \text{hence}\ 3T^2H = TTH + THT + HTT\ \text{or}\ 3H^2T = HHT+HTH+THH \\
+  \end{align*}
+\end{example}
+\begin{remark}
+  The total number of combinations of the binomial is $2^n$. \\
+  $2^3 = T^3 + 3T^2H + 3H^2T + H^3 = 1 + 3 + 3 + 1 = 8$
+\end{remark}
+Many combinations can be simplified by the use of Pascal's identity:
+% proof 1
+\begin{proof}[Pascal's Identity]
+  \begin{align*}
+    \binom{n - 1}{k} + \binom{n - 1}{k - 1} &= \frac{(n-1)!}{k!(n - 1 - k)!} + \frac{(n - 1)!}{(k-1)!(n-k)!} \\
+    &= (n - 1)![\frac{n-k}{k!(n-k)!} + \frac{k}{k(n-k)!}] \\
+    &= (n - 1)!\frac{n}{k!(n-k)!} \\
+    &= \frac{n!}{k!(n - k)!} \\
+    &= \binom{n}{k}
+  \end{align*}
+\end{proof}
+% add proof for Binomial Theorem here
+% proof 2
+\begin{proof}[Binomial Theorem]
+  Assume that $(a + b)^n = \sum_{k=0}^{n} \binom{n}{k} a^kb^{n-k}$ and by the the definition of the binomial coeffecient $n \geq 0$. For the case $(n = 0) \Rightarrow (a + b)^0 = 1$. For the case $n \ge 0$.
+  \begin{align*}
+    (a + b)^{n+1} &= (a + b)(a + b)^n = (a+b)\sum_{k=0}^{n}\binom{n}{k}a^kb^{n-k} \\
+                  &= \sum^{n}_{k=0}\binom{n}{k}a^{k+1}n{n-k} + \sum^{n}_{k=o}\binom{n}{k}a^{k}b^{n-k+1} \\
+    m &= k + 1 \\
+                  &= \sum^{n+1}_{m=1}\binom{n}{m-1}a^{m}b^{n-m+1}+\sum^{n}_{k=0}\binom{n}{k}a^{k}b^{n-k+1} \\
+                  &= b^{n+1}+\sum^{n}_{k=1}[\binom{n}{k} + \binom{n}{k-1}]a^kb^{n-k+1}+a^{n+1}\\
+                  &= b^{n+1}+\sum^{n}_{k=1}\binom{n+1}{k}a^{k}b^{n-k+1}+a^{n+1} \\
+                  &= \sum^{n+1}_{k}\binom{n+1}{k}a^{k}b^{n+1-k}
+  \end{align*}
+\end{proof}
+
+% SECOND SECTION
+
+\section{Multinomial Theorem}
+While the binomial theorem works for 2 independent events, the multinomial theorem generalizes to any number of groups/events. It uses the multinomial coeffecient.
+% definition 3
+\begin{definition}[Multinomial Coeffecient]
+  \begin{align*}
+    \binom{N}{n_1..n_r} = \frac{N!}{n_1!..n_r!}
+  \end{align*}
+  Where $n_1$ to $n_r$ are different group sizes.
+\end{definition}
+
+\begin{example}
+  For 13 items we want to know how many combinations of 5, 5, and 3 can be made
+  \begin{align*}
+    \binom{13}{5,5,3} &= \binom{13}{5}\binom{8}{5}\binom{3}{3} \\
+                      &= \frac{13!}{5!(13-5)!}\frac{8!}{5!(8-5)!}\frac{3!}{3!(3-3)!} \\
+                      &=\frac{13!}{5!5!3!}
+  \end{align*}
+\end{example}
+We now combine the multinomial coeffecients with monomials raised to a power to get:
+\begin{definition}[multinomial theorem]
+  \begin{align*}
+    (x_1+...+x_r)^n = \sum_{(n1,...,nr)}\binom{n}{n1,...,nr}x_1^{n1}...x_r^{nr} \\
+    \text{where}\ n1 + ... + nr = n
+  \end{align*}
+\end{definition}
+% proof
+\begin{proof}[Multinomial Theorem]
+  Fix $r = 1$ and observe that $(x_1)^n=\sum_{(n1 = 1)}\binom{n}{n1 = 1}x_1^{n1 = 1} = nx_1$ \\
+  Fix $m = r + 1$ and $(x_r + x_{r+1})^n = \sum_{(r, ..., r+1)}\binom{n}{x_1,...,x_{r+1}}x_1^rx_{r+1}^{r+1}$  and observe that this is provable using the binomial theorem.
+\end{proof}
+
+\section{Possible Outcomes to Equations}
+
+
+
+\end{document}
