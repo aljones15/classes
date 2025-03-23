@@ -47,7 +47,7 @@ The application of the Binomial and Multinomial theorems in probability can ofte
 % FIRST SECTION
 
 \section{Binomial Theorem}
-The Binomial Theorem expresses the expansion of two monomial terms $x$ and $y$ such that $(x + y)^2 = x^2 + 2xy + y^2$. The later is useful in algebra and other fields of mathematics, but how binomial expansion relates to probability is not intuitvely obvious. The solution is to treat $x$ and $y$ as the two possible outcomes of an independent event. The resulting binomial expansion can express the sample space or total probability of all combinations of the two outcomes for multiple independent events.
+The Binomial Theorem expresses the expansion of two monomial terms $x$ and $y$ such that $(x + y)^2 = x^2 + 2xy + y^2$. The later is useful in algebra and other fields of mathematics, but how a binomial expansion relates to probability is not intuitvely obvious. The solution is to treat $x$ and $y$ as the two possible outcomes of an independent event. The resulting binomial expansion can express the sample space or total probability of all combinations of the two outcomes for multiple independent events.
 \begin{example}
   Let an unfair coin be flipped twice with $P(Tails) = 0.3$ and $P(Heads) = 0.7$ \\
   We know the probability must sum to 1. In two flips then, $(T + H)^2 = T^2 + 2TH + H^2$. This aligns with the outcomes of $T^2 = TT$, $2TH = TH + HT$, and $H^2 = HH$ for 2 flips. Additionally, substituting in the probabilities we have $0.3^2 + 2*0.3*0.7 + 0.7^2 = 1$.
@@ -69,16 +69,16 @@ The Binomial Theorem expresses the expansion of two monomial terms $x$ and $y$ s
 The uses of the Binomial Theorem are obvious especially in calculating large numbers of events. To compute the expansion of two monomials the theorem uses:
 % defintion 1
 \begin{definition}[Factorial n!]
-  Count everyway to permute a set of n distinct objects
+  The factorial of a nonnegative integer $n$ is given by
   \begin{align*}
     n! = {\displaystyle\prod_{i=1}^{n}i}
   \end{align*}
-  where $0! = 1$ and $n \geq 0$.
+  where $0! = 1$.
 \end{definition}
 Building on factorials, the theorem uses the
 % definition 2
 \begin{definition}[Binomial Coefficient]
-  Count everyway to combine a set of n objects of k size
+  Count everyway to combine a set of $n$ objects of $k$ size
   \begin{align*}
     \binom{n}{k} = \frac{n!}{k!(n-k)!}
   \end{align*}
