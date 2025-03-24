@@ -1,0 +1,54 @@
+- [ ] Consider expanding the introduction to provide a more comprehensive overview of the document’s purpose and to motivate the topic. *1*
+- [ ] Rephrase for better flow: For example, ”The application of Binomial and Multinomial theorems in probability can often lack intuitive clarity.” *1*
+- [ ] It would be helpful to briefly explain what the text intends to highlight. For example: ”This text aims to clarify the connection between polynomial expansion of binomials, combinations, total probability, and probability mass functions.” *1*
+- [ ] In the example, it would be helpful to explicitly state how each term in the expansion corresponds to a specific outcome (e.g., T 2 = T T, 2T H = T H + HT, H 2 = HH) to make the connection clearer. *1*
+- [ ] Rephrase for clarity: ”While the binomial theorem applies to two independent events, the multinomial theorem generalizes this to any number of groups or events.” *3*
+- [ ] The proof for the Multinomial Theorem is incomplete. It only shows the base case and suggests using the binomial theorem. A full inductive proof is needed. *3*
+- [ ] Replace with ’intuitive’ *4*
+- [ ] ’We intend’ *4*
+- [ ] This is a theorem, opportunity to have a proof for the most fundamental part of paper. *4*
+- [ ] Use math mode for variables *4*
+- [ ] How does this formula count every possible permutation? Could just define a factorial and make a proof that it can be used that way. Qn Consider rewriting definition to just say: ”The factorial of a nonnegative integer n is given by n! = i=1 i”, then following with a theorem or proposition about how the number of permutations of a set of n distinct objects is equal to n!. *4*
+- [ ] Similar issue to definition above: states a theorem and the formula for a definition without proving they are connected. *4*
+- [x] Should state what Pascal’s Identity actual is as a lemma before proving it. *5*
+- [ ] Where does this formula come from? This proof would only say that if (a + b)n = k=0 nk ak bn−k , then Pn+1 n+1 k n+1−k (a + b)n+1 = k. Should prove the statement as a lemma before using it in a theorem k a b proof. *5*
+- [ ] Don’t replace the word ’proof’ from the proof with what you are proving. *5*
+- [ ] State what the binomial theorem is before proving *5*
+- [ ] Use \begin{theorem}rather than definition. The proof comes right afterwards. *6*
+- [x] Empty section. Already have three sections so this can just be deleted. *7*
+- [ ] There are a lot of newcommands, renewcommands, and newtheorems at the beginning of your tex.file that are unnecessary to have because you don’t use them in your paper. *8*
+- [ ] According to the AMS style guide section 3.1 the text that follows a section head should have an indent. *8*
+- [ ] I believe that ”theorems” should be capitalized and ”Probability” should be lowercased. Also I think it the sentence would flow better if you said ”intuitively obvious”. *8*
+- [ ] I would say ”of size k” instead of ”k size”. *8*
+- [ ] Add a ”.” after the formula above. *8*
+- [ ] Add a ”.” after the THH above. *9*
+- [ ] Add a ”.” at the end of your proof after nk . *9*
+- [ ] Add a ”.” at the end of your proof. *9*
+- [ ] I believe that ”Where” should not be capitalized and you shouldn’t start you sentence with the math formula above. Consider giving more details to the Multinomial Coeffecient before just saying what the formula is after the ”Definition 3”. Same critique for ”Defintion 4”. *10*
+- [ ] Add a ”.” at the end of your example after 5!5!3! *10*
+- [ ] Obviously need to add information to this section. *10*
+- [ ] probability should be lowercase *11*
+- [ ] display mode for the math here could clean up the example and make it more easily read *11*
+- [ ] here as well, display mode for the math here could clean up the example and make it more easily read *11*
+- [ ] Make sure to have consistent use of tabs and indentation *11*
+- [ ] overall tex comment, consider using spaces between e.g. the tex code so the tex is more easily read. separating the definitions and paragraphs can help clarify sections so you can easily see where it is within the code *11*
+- [ ] is this sentence finished or is it leading to the next definition? it is a little unclear here what the sentence does. *11*
+- [ ] indentation issue *11*
+- [ ] i would rewrite this to align these equations, you are using the align function but the equations are not really aligned in a logical manner. maybe rewriting the equations since the ”or” is throwing me off in reading them. not sure how they should be centered. *12*
+- [ ] consistent indent *12*
+- [ ] the second section here the tex is more organized and clearly read since you used more blank lines between sections like after definition 3 and before the example. i can look at it and see which part of the code does what, instead of trying to look through a big block of text. *13*
+- [ ] tab issue *13*
+- [ ] intuitively obvious. *15*
+- [ ] probability, the binomial... *15*
+- [ ] ”where 0! = 1” is more of a note as it is has yet to be used. You could replace 0 by n and define what n! is. *15*
+- [ ] Can use the remark theorem style to make ”note” look like ”Example 2.” below. *15*
+- [ ] This entire section could be put under as a note. *16*
+- [ ] add a period when you are done with proofs. As so, nk . *16*
+- [ ] works for two... *16*
+- [ ] Multinomial Coefficient *16*
+- [ ] A bit confusing, maybe say combinations of 5 items, another 5 items, and 3 items. *17*
+- [ ] Not sure what happened here but this whole section seems to be missing? *17*
+- [ ] Quick note that I want to mention before I get started is that all the feedback I give are just mere suggestions. Your paper looks amazing just the way it is and also helps mine out as well. *18*
+- [ ] For defintions, I noticed in class and in the template the professor gave us, we would have the word we are defining in the text of the definiton as well, but also emphasized as well. Kind of like this: The defintion is . . . *18*
+- [ ] I would recommend having the align be at the = sign. *19*
+- [ ] nother thing I would recommend is for equations that might require more space is to give them thier own displace style. You could do something like *19*
