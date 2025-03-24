@@ -42,15 +42,15 @@
 % INTRODUCTION
 
 \section*{Introduction}
-The application of the Binomial and Multinomial theorems in probability can often lack clarity. However, the relations between polynomials and probability can provide insight into how models work in probability. This article aims to clarify the connection between expansions of multinomials and binomials, combinations, total probability, and probability mass functions.
+The application of the Binomial and Multinomial theorems in probability can often lack clarity. However, the relations between polynomials and probability can provide insight into how models work in probability. This article aims to clarify the connection between expansions of multinomials and binomials, combinations, total probability, and probability mass functions through examples and proofs of theorems.
 
 % FIRST SECTION
 
 \section{Binomial Theorem}
-The Binomial Theorem expresses the expansion of two monomial terms $x$ and $y$ such that $(x + y)^2 = x^2 + 2xy + y^2$. The later is useful in algebra and other fields of mathematics, but how a binomial expansion relates to probability is not intuitvely obvious. The solution is to treat $x$ and $y$ as the two possible outcomes of an independent event. The resulting binomial expansion can express the sample space or total probability of all combinations of the two outcomes for multiple independent events.
+The Binomial Theorem expresses the expansion of two monomial terms $x$ and $y$ such that $(x + y)^2 = x^2 + 2xy + y^2$. The later is useful in algebra and other fields of mathematics, but how a binomial expansion relates to probability is not intuitvely obvious. The solution is to treat $x$ and $y$ as the two possible outcomes of independent event(s). The resulting binomial expansion can express the sample space or sum of probabilities for all combinations of the two outcomes for $n$ independent event(s).
 \begin{example}
   Let an unfair coin be flipped twice with $P(Tails) = 0.3$ and $P(Heads) = 0.7$ \\
-  We know the probability must sum to 1. In two flips then, $(T + H)^2 = T^2 + 2TH + H^2$. This aligns with the outcomes of $T^2 = TT$, $2TH = TH + HT$, and $H^2 = HH$ for 2 flips. Additionally, substituting in the probabilities we have $0.3^2 + 2*0.3*0.7 + 0.7^2 = 1$.
+  The probability must sum to 1. In two flips then, $(T + H)^2 = T^2 + 2TH + H^2$. This aligns with the outcomes of $T^2 = TT$, $2TH = TH + HT$, and $H^2 = HH$ for 2 flips. Additionally, substituting in the probabilities we have $0.3^2 + 2*0.3*0.7 + 0.7^2 = 1$.
 \end{example}
 \begin{theorem}
   The Binomial Theorem can express the sum of all possible outcomes of $n$ independent events.
@@ -83,7 +83,7 @@ The uses of the Binomial Theorem are obvious especially in calculating large num
   \end{align*}
 \end{definition}
 \begin{remark}
-  Note that the binomial coefficient can be used to determine the number of combinations of a particular size the binomial theorem produces.
+  Note that the binomial coefficient can be used to determine the number of combinations for $n$ independent events.
 \end{remark}
 \begin{example}
   3 flips of a coin yields:
@@ -133,7 +133,7 @@ We are now ready to prove the Binomial Theorem by use of Pascal's Identity, Bino
 % SECOND SECTION
 
 \section{Multinomial Theorem}
-While the binomial theorem applies to two independent events, the multinomial theorem generalizes to any number of groups or events. The theorem uses the multinomial coeffecient.
+While the binomial coefficient works with 2 outcomes many cases in probability have more than 2 outcomes. The multinomial coefficient generalizes to handle more than two outcomes.
 % definition 3
 \begin{definition}[Multinomial Coefficient]
   \begin{align*}
@@ -150,7 +150,7 @@ While the binomial theorem applies to two independent events, the multinomial th
                       &=\frac{13!}{5!5!3!}.
   \end{align*}
 \end{example}
-We now combine the multinomial coefficients with monomials raised to a power to get:
+Like the multinomial coefficient, the multionomial theorem generalizes to any number of outcomes and events. Like the binomial theorem the probabilities of the outcomes sum to 1 and the theorem provides an accurate count of the combinations found in the sample space.
 \begin{definition}[multinomial theorem]
   \begin{align*}
     (x_1+...+x_r)^n = \sum_{(n1,...,nr)}\binom{n}{n1,...,nr}x_1^{n1}...x_r^{nr} \\
