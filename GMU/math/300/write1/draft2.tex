@@ -42,7 +42,7 @@
 % INTRODUCTION
 
 \section*{Introduction}
-The application of the Binomial and Multinomial theorems in probability can often lack clarity. However, the relations between polynomials and probability can provide insight into how models work in probability. This article aims to clarify the connection between expansions of multinomials and binomials, combinations, total probability, and probability mass functions through examples and proofs of theorems.
+The application of the Binomial and Multinomial theorems in probability can often lack clarity. However, the relations between polynomials and probability can provide insight into how models work in probability. We intend to clarify the connection between expansions of multinomials and binomials, combinations, total probability, and probability mass functions through examples and proofs of theorems.
 
 % FIRST SECTION
 
@@ -82,6 +82,7 @@ The uses of the Binomial Theorem are obvious especially in calculating large num
     \binom{n}{k} = \frac{n!}{k!(n-k)!}.
   \end{align*}
 \end{definition}
+% note this should be expanded out to a theorem with a proof
 \begin{remark}
   Note that the binomial coefficient can be used to determine the number of combinations for $n$ independent events.
 \end{remark}
@@ -96,7 +97,7 @@ The uses of the Binomial Theorem are obvious especially in calculating large num
 \end{example}
 \begin{remark}
   The total number of combinations of the binomial is $2^n$. \\
-  $2^3 = T^3 + 3T^2H + 3H^2T + H^3 = 1 + 3 + 3 + 1 = 8$
+  $2^3 = T^3 + 3T^2H + 3H^2T + H^3 = 1 + 3 + 3 + 1 = 8$.
 \end{remark}
 \begin{lemma}
   Given two binomial coeffecients $\binom{n-1}{k} + \binom{n-1}{k-1} = \binom{n}{k}$.
@@ -117,7 +118,7 @@ The uses of the Binomial Theorem are obvious especially in calculating large num
 We are now ready to prove the Binomial Theorem by use of Pascal's Identity, Binomial Coefficients, and Factorials.
 % add proof for Binomial Theorem here
 % proof 2
-\begin{proof}[Binomial Theorem]
+\begin{proof}
   Assume that $(a + b)^n = \sum_{k=0}^{n} \binom{n}{k} a^kb^{n-k}$ and by the the definition of the binomial coeffecient $n \geq 0$. For the case $(n = 0) \Rightarrow (a + b)^0 = 1$. For the case $n \ge 0$.
   \begin{align*}
     (a + b)^{n+1} &= (a + b)(a + b)^n = (a+b)\sum_{k=0}^{n}\binom{n}{k}a^kb^{n-k} \\
@@ -133,13 +134,13 @@ We are now ready to prove the Binomial Theorem by use of Pascal's Identity, Bino
 % SECOND SECTION
 
 \section{Multinomial Theorem}
-While the binomial coefficient works with 2 outcomes many cases in probability have more than 2 outcomes. The multinomial coefficient generalizes to handle more than two outcomes.
+While the binomial coefficient works with 2 outcomes many cases in probability have more than 2 outcomes. The multinomial coefficient generalizes to handle more than two outcomes. Hence it can represent the outcomes of a dice roll, picking one of three colored balls, etc.
 % definition 3
 \begin{definition}[Multinomial Coefficient]
   \begin{align*}
     \binom{N}{n_1..n_r} = \frac{N!}{n_1!..n_r!}
   \end{align*}
-  Where $n_1$ to $n_r$ are different group sizes.
+  where $n_1$ to $n_r$ are different group sizes.
 \end{definition}
 
 \begin{example}
@@ -154,7 +155,7 @@ Like the multinomial coefficient, the multionomial theorem generalizes to any nu
 \begin{definition}[multinomial theorem]
   \begin{align*}
     (x_1+...+x_r)^n = \sum_{(n1,...,nr)}\binom{n}{n1,...,nr}x_1^{n1}...x_r^{nr} \\
-    \text{where}\ n1 + ... + nr = n
+    \text{where}\ n1 + ... + nr = n.
   \end{align*}
 \end{definition}
 % proof
