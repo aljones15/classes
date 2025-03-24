@@ -53,17 +53,12 @@ The Binomial Theorem expresses the expansion of two monomial terms $x$ and $y$ s
   The probability must sum to 1. In two flips then, $(T + H)^2 = T^2 + 2TH + H^2$. This aligns with the outcomes of $T^2 = TT$, $2TH = TH + HT$, and $H^2 = HH$ for 2 flips. Additionally, substituting in the probabilities we have $0.3^2 + 2*0.3*0.7 + 0.7^2 = 1$.
 \end{example}
 \begin{theorem}
-  The Binomial Theorem can express the sum of all possible outcomes of $n$ independent events.
+  The Binomial Theorem can express the sum of all possible binomial outcomes of $n$ independent events.
 \end{theorem}
 \begin{proof}
-  Let $A$ and $B$ be the two outcomes of $n$ independent events with probability $A = \frac{1}{a}$, $B = (1 - \frac{1}{a})$, and $n = 2$. By the binomial theorem we have
+  Let $A$ and $B$ be the two outcomes of $n$ independent events with probability $A = \frac{1}{a}$, $B = (1 - \frac{1}{a})$, and $n = 1$. By the binomial theorem we have $(\frac{1}{a} + (1 - \frac{1}{a}))^1$ hence $\frac{1}{a} + \frac{a-1}{a} = 1$. For the case $n \ge 1$:
   \begin{align*}
-    &(\frac{1}{a} + (1-\frac{1}{a}))^2 \\
-    &(\frac{1}{a})^2 + 2\frac{1}{a}(1-\frac{1}{a}) + (1-\frac{1}{a})^2 \\
-    &\frac{1}{a^2} + \frac{2}{a}\frac{a-1}{a} + \frac{(a-1)^2}{a^2} \\
-    &\frac{1}{a^2} + \frac{2(a-1)}{a^2} + \frac{a^2-2a+1}{a^2} \\
-    &\frac{a^2+2-2+2a-2a}{a^2} \\
-    &\frac{a^2}{a^2} = 1.
+    (\frac{1}{a} + \frac{a-1}{a})^n = 1
   \end{align*}
 \end{proof}
 The uses of the Binomial Theorem are obvious especially in calculating large numbers of events. To compute the expansion of two monomials the theorem uses factorials and binomial coefficients:
