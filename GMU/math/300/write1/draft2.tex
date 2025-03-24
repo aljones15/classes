@@ -49,18 +49,8 @@ The application of the Binomial and Multinomial theorems in probability can ofte
 \section{Binomial Theorem}
 The Binomial Theorem expresses the expansion of two monomial terms $x$ and $y$ such that $(x + y)^2 = x^2 + 2xy + y^2$. The later is useful in algebra and other fields of mathematics, but how a binomial expansion relates to probability is not intuitvely obvious. The solution is to treat $x$ and $y$ as the two possible outcomes of independent event(s). The resulting binomial expansion can express the sample space or sum of probabilities for all combinations of the two outcomes for $n$ independent event(s).
 \begin{example}
-  Let an unfair coin be flipped twice with $P(Tails) = 0.3$ and $P(Heads) = 0.7$ \\
-  The probability must sum to 1. In two flips then, $(T + H)^2 = T^2 + 2TH + H^2$. This aligns with the outcomes of $T^2 = TT$, $2TH = TH + HT$, and $H^2 = HH$ for 2 flips. Additionally, substituting in the probabilities we have $0.3^2 + 2*0.3*0.7 + 0.7^2 = 1$.
+  Let an unfair coin be flipped twice with $P(Tails) = 0.3$ and $P(Heads) = 0.7$. In two flips, $(T + H)^2 = T^2 + 2TH + H^2$. This aligns with the outcomes of $T^2 = TT$, $2TH = TH + HT$, and $H^2 = HH$ for 2 flips. Additionally, substituting in the probabilities we have $0.3^2 + 2*0.3*0.7 + 0.7^2 = 1$ hence the probability of the outcomes sum to 1.
 \end{example}
-\begin{theorem}
-  The Binomial Theorem can express the sum of all possible binomial outcomes of $n$ independent events.
-\end{theorem}
-\begin{proof}
-  Let $A$ and $B$ be the two outcomes of $n$ independent events with probability $A = \frac{1}{a}$, $B = (1 - \frac{1}{a})$, and $n = 0$. By the binomial theorem we have $(\frac{1}{a} + (1 - \frac{1}{a}))^0 = 1$ For the case $n \ge 1$:
-  \begin{align*}
-    (\frac{1}{a} + \frac{a-1}{a})^n = 1
-  \end{align*}
-\end{proof}
 The uses of the Binomial Theorem are obvious especially in calculating large numbers of events. To compute the expansion of two monomials the theorem uses factorials and binomial coefficients:
 % definition 1
 \begin{definition}[Factorial n!]
@@ -72,12 +62,12 @@ The uses of the Binomial Theorem are obvious especially in calculating large num
 \end{definition}
 % definition 2
 \begin{definition}[Binomial Coefficient]
-  Count everyway to combine a set of $n$ objects of size $k$.
+  Every combination of a set of $n$ objects of size $k$.
   \begin{align*}
     \binom{n}{k} = \frac{n!}{k!(n-k)!}.
   \end{align*}
 \end{definition}
-% note this should be expanded out to a theorem with a proof
+% note this should be expanded out to a corrollary with a proof
 \begin{remark}
   Note that the binomial coefficient can be used to determine the number of combinations for $n$ independent events.
 \end{remark}
@@ -95,10 +85,10 @@ The uses of the Binomial Theorem are obvious especially in calculating large num
   $2^3 = T^3 + 3T^2H + 3H^2T + H^3 = 1 + 3 + 3 + 1 = 8$.
 \end{remark}
 \begin{lemma}
-  Given two binomial coeffecients $\binom{n-1}{k} + \binom{n-1}{k-1} = \binom{n}{k}$.
+  Given two binomial coeffecients $\binom{n-1}{k} + \binom{n-1}{k-1} = \binom{n}{k}$ by Pascal's Identity.
 \end{lemma}
 % proof 1
-\begin{proof}[Pascal's Identity]
+\begin{proof}
   \begin{align*}
     \binom{n - 1}{k} + \binom{n - 1}{k - 1} &= \frac{(n-1)!}{k!(n - 1 - k)!} + \frac{(n - 1)!}{(k-1)!(n-k)!} \\
     &= (n - 1)![\frac{n-k}{k!(n-k)!} + \frac{k}{k(n-k)!}] \\
@@ -125,11 +115,19 @@ We are now ready to prove the Binomial Theorem by use of Pascal's Identity, Bino
                   &= \sum^{n+1}_{k}\binom{n+1}{k}a^{k}b^{n+1-k}.
   \end{align*}
 \end{proof}
-
+\begin{corollary}
+  The Binomial Theorem can express the sum of the probabilities of all outcomes of $n$ independent events.
+\end{corollary}
+\begin{proof}
+  Let $A$ and $B$ be the two outcomes of $n$ independent events with probability $A = \frac{1}{a}$, $B = (1 - \frac{1}{a})$, and $n = 0$. By the binomial theorem we have $(\frac{1}{a} + (1 - \frac{1}{a}))^0 = 1$ For the case $n \ge 1$:
+  \begin{align*}
+    (\frac{1}{a} + \frac{a-1}{a})^n = 1
+  \end{align*}
+\end{proof}
 % SECOND SECTION
 
 \section{Multinomial Theorem}
-While the binomial coefficient works with 2 outcomes many cases in probability have more than 2 outcomes. The multinomial coefficient generalizes to handle more than two outcomes. Hence it can represent the outcomes of a dice roll, picking one of three colored balls, etc.
+While the binomial coefficient works with 2 outcomes many cases in probability have more than 2 outcomes. The multinomial coefficient generalizes to handle more than two outcomes. Hence it can represent the outcomes of a 6 sided dice, picking one of three colored balls from an urn, and other more complex sets of outcomes. 
 % definition 3
 \begin{definition}[Multinomial Coefficient]
   \begin{align*}
