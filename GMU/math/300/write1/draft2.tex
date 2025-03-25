@@ -73,7 +73,7 @@ The uses of the Binomial Theorem are obvious especially in calculating large num
 \begin{example}
   3 flips of a coin yields:
   \begin{align*}
-  &(T + H)^3 = TTT + TTH + THT + HTT + HHT+ HTH + THH + HHH \\
+  (T + H)^3 &= TTT + TTH + THT + HTT + HHT+ HTH + THH + HHH \\
   &= T^3 + 3T^2H + 3H^2T + H^3 \\
   &\binom{3}{3} = 1\ \text{hence}\ T^3 = TTT\ \text{or}\ H^3 = HHH \\
   &\binom{3}{2} = 3\ \text{hence}\ 3T^2H = TTH + THT + HTT\ \text{or}\ 3H^2T = HHT+HTH+THH. \\
@@ -99,7 +99,7 @@ $2^3 = T^3 + 3T^2H + 3H^2T + H^3 = 1 + 3 + 3 + 1 = 8$.
   \end{align*}
 \end{proof}
 \begin{theorem}
-The binomial theorem gives the expansion of two monomial outcomes for $n$ events.
+The binomial theorem gives the expansion of two outcomes for $n$ events.
 \end{theorem}
 % add proof for Binomial Theorem here
 % proof 2
@@ -127,7 +127,7 @@ The binomial theorem gives the expansion of two monomial outcomes for $n$ events
 % SECOND SECTION
 
 \section{Multinomial Theorem}
-While the binomial coefficient works with 2 outcomes many cases in probability have more than 2 outcomes. The multinomial coefficient generalizes to handle more than two outcomes. Hence it can represent the outcomes of a 6 sided dice, picking one of three colored balls from an urn, and other more complex sets of outcomes.
+While the binomial theorem works with 2 outcomes many cases in probability have more than 2 outcomes. The multinomial coefficient generalizes to handle more than two types. 
 \begin{example}
   For 13 items we want to know how many combinations of 5, 5, and 3 can be made
   \begin{align*}
@@ -144,16 +144,28 @@ While the binomial coefficient works with 2 outcomes many cases in probability h
   where $n_1$ to $n_r$ are different group sizes.
 \end{definition}
 
-Like the multinomial coefficient, the multionomial theorem generalizes to any number of outcomes and events. Like the binomial theorem the probabilities of the outcomes sum to 1 and the theorem provides an accurate count of the combinations found in the sample space.
-\begin{definition}[multinomial theorem]
+Using the multinomial coefficient the multionomial theorem generalizes to any number of outcomes and events. Hence it can represent the outcomes of a 6 sided dice, picking one of three colored balls from an urn, and other more complex sets of outcomes.
+\begin{example}
+  An urn contains 3 red, 4 blue, and 2 green balls. \\
+  Therefore $P(red) = \frac{3}{9}$, $P(blue) = \frac{4}{9}$, and $P(green) = \frac{2}{9}$ \\
+  $n = 2$ representing 2 events where a single ball is picked. \\
   \begin{align*}
-    (x_1+...+x_r)^n = \sum_{(n1,...,nr)}\binom{n}{n1,...,nr}x_1^{n1}...x_r^{nr} \\
-    \text{where}\ n1 + ... + nr = n.
+    (P(r) + P(b) + P(g))^2 &= P(r)^2 + P(b)^2 + P(g)^2 + 2P(r)P(b) + 2P(r)P(g)+ 2P(b)P(g) \\
+    (\frac{3}{9} + \frac{4}{9} + \frac{2}{9})^2 &= \frac{3}{9}^2 + \frac{4}{9}^2 + \frac{2}{9}^2 + 2\frac{3}{9}*\frac{4}{9} + 2\frac{3}{9}*\frac{2}{9} + 2\frac{4}{9}*\frac{2}{9} \\
+    1^2 &= \frac{9}{81} + \frac{16}{81} + \frac{4}{81} + \frac{24}{81} + \frac{12}{81} + \frac{16}{81} \\
+    1 &= \frac{81}{81}
   \end{align*}
-\end{definition}
+\end{example}
+\begin{theorem}
+  The multinomial theorem gives the expansion for $r$ outcomes in $n$ events:
+  \begin{align*}
+    (x_1+...+x_r)^n = \sum_{(n_1,...,n_r) = n}\binom{n}{n_1,...,n_r}x_1^{n_1}...x_r^{n_r}
+  \end{align*}
+\end{theorem}
 % proof
-\begin{proof}[Multinomial Theorem]
-  Fix $r = 1$ and observe that $(x_1)^n=\sum_{(n1 = 1)}\binom{n}{n1 = 1}x_1^{n1 = 1} = nx_1$ \\
-  Fix $m = r + 1$ and $(x_r + x_{r+1})^n = \sum_{(r, ..., r+1)}\binom{n}{x_1,...,x_{r+1}}x_1^rx_{r+1}^{r+1}$  and by the binomial theorem.
+\begin{proof}
+  Fix $r = 1$ and observe that $(x_1)^n=\sum_{1}^n\binom{n}{n_1 = n}x_1^{n_1} = x_1^n$ \\
+  Fix $r = 2$ and observe that the binomial theorem $(x_1 + x_2)^2$ is given. \\
+  Fix $m = r + 1$ where $r > 2$ and $(x_r + ... + x_{r+1})^n = \sum_{(r, ..., r+1)}\binom{n}{x_1,...,x_{r+1}}x_1^rx_{r+1}^{r+1}$  and by the binomial theorem.
 \end{proof}
 \end{document}
