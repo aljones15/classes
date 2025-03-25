@@ -47,7 +47,7 @@ The application of the Binomial and Multinomial theorems in probability can ofte
 % FIRST SECTION
 
 \section{Binomial Theorem}
-The Binomial Theorem expresses the expansion of two monomial terms $x$ and $y$ such that $(x + y)^2 = x^2 + 2xy + y^2$. The later is useful in algebra and other fields of mathematics, but how a binomial expansion relates to probability is not intuitvely obvious. The solution is to treat $x$ and $y$ as the probabilities of the two outcomes of an independent event. The resulting binomial expansion can express the sample space or sum of probabilities for all combinations of the two outcomes for $n$ independent event(s).
+The Binomial Theorem expresses the expansion of two monomial terms $x$ and $y$ such that $(x + y)^2 = x^2 + 2xy + y^2$. The later is useful in algebra and other fields of mathematics, but how a binomial expansion relates to probability is not intuitively obvious. The solution is to treat $x$ and $y$ as the probabilities of the two outcomes of an independent event. The resulting binomial expansion can express the sample space or sum of probabilities for all combinations of the two outcomes for $n$ independent event(s).
 \begin{example}
   Let an unfair coin be flipped twice with $P(Tails) = 0.3$ and $P(Heads) = 0.7$. In two flips, $(T + H)^2 = T^2 + 2TH + H^2$. This aligns with the outcomes of $T^2 = TT$, $2TH = TH + HT$, and $H^2 = HH$ for 2 flips. Additionally, substituting in the probabilities we have $0.3^2 + 2*0.3*0.7 + 0.7^2 = 1$ hence the probability of the outcomes sum to 1.
 \end{example}
@@ -86,7 +86,7 @@ The uses of the Binomial Theorem are obvious especially in calculating large num
 $2^3 = T^3 + 3T^2H + 3H^2T + H^3 = 1 + 3 + 3 + 1 = 8$.
 \end{example}
 \begin{lemma}
-  Given two binomial coeffecients $\binom{n-1}{k} + \binom{n-1}{k-1} = \binom{n}{k}$ by Pascal's Identity.
+  Given two binomial coefficients $\binom{n-1}{k} + \binom{n-1}{k-1} = \binom{n}{k}$ by Pascal's Identity.
 \end{lemma}
 % proof 1
 \begin{proof}
@@ -104,7 +104,7 @@ The binomial theorem gives the expansion of two outcomes for $n$ events.
 % add proof for Binomial Theorem here
 % proof 2
 \begin{proof}
-  Assume that $(a + b)^n = \sum_{k=0}^{n} \binom{n}{k} a^kb^{n-k}$ and by the the definition of the binomial coeffecient $n \geq 0$. For the case $(n = 0) \Rightarrow (a + b)^0 = 1$. For the case $n \ge 0$.
+  Assume that $(a + b)^n = \sum_{k=0}^{n} \binom{n}{k} a^kb^{n-k}$ and by the the definition of the binomial coefficient $n \geq 0$. For the case $(n = 0) \Rightarrow (a + b)^0 = 1$. For the case $n \ge 0$.
   \begin{align*}
     (a + b)^{n+1} &= (a + b)(a + b)^n = (a+b)\sum_{k=0}^{n}\binom{n}{k}a^kb^{n-k} \\
                   &= \sum^{n}_{k=0}\binom{n}{k}a^{k+1}n{n-k} + \sum^{n}_{k=o}\binom{n}{k}a^{k}b^{n-k+1} \\
@@ -144,7 +144,7 @@ While the binomial theorem works with 2 outcomes many cases in probability have 
   where $n_1$ to $n_r$ are different group sizes.
 \end{definition}
 
-Using the multinomial coefficient the multionomial theorem generalizes to any number of outcomes and events. Hence it can represent the outcomes of a 6 sided dice, picking one of three colored balls from an urn, and other more complex sets of outcomes.
+Using the multinomial coefficient the multinomial theorem generalizes to any number of outcomes and events. Hence it can represent the outcomes of a 6 sided dice, picking one of three colored balls from an urn, and other more complex sets of outcomes.
 \begin{example}
   An urn contains 3 red, 4 blue, and 2 green balls. \\
   Therefore $P(red) = \frac{3}{9}$, $P(blue) = \frac{4}{9}$, and $P(green) = \frac{2}{9}$ \\
