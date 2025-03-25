@@ -148,7 +148,7 @@ Using the multinomial coefficient the multionomial theorem generalizes to any nu
 \begin{example}
   An urn contains 3 red, 4 blue, and 2 green balls. \\
   Therefore $P(red) = \frac{3}{9}$, $P(blue) = \frac{4}{9}$, and $P(green) = \frac{2}{9}$ \\
-  $n = 2$ representing 2 events where a single ball is picked. \\
+  $n = 2$ representing 2 events. \\
   \begin{align*}
     (P(r) + P(b) + P(g))^2 &= P(r)^2 + P(b)^2 + P(g)^2 + 2P(r)P(b) + 2P(r)P(g)+ 2P(b)P(g) \\
     (\frac{3}{9} + \frac{4}{9} + \frac{2}{9})^2 &= \frac{3}{9}^2 + \frac{4}{9}^2 + \frac{2}{9}^2 + 2\frac{3}{9}*\frac{4}{9} + 2\frac{3}{9}*\frac{2}{9} + 2\frac{4}{9}*\frac{2}{9} \\
@@ -166,6 +166,14 @@ Using the multinomial coefficient the multionomial theorem generalizes to any nu
 \begin{proof}
   Fix $r = 1$ and observe that $(x_1)^n=\sum_{1}^n\binom{n}{n_1 = n}x_1^{n_1} = x_1^n$ \\
   Fix $r = 2$ and observe that the binomial theorem $(x_1 + x_2)^n$ is given. \\
-  Fix $m = r + 1$ where $r > 2$ and $(x_r + ... + x_{r+1})^n = \sum_{(r, ..., r+1)}\binom{n}{x_1,...,x_{r+1}}x_1^rx_{r+1}^{r+1}$  and by the binomial theorem.
+  Fix $r > 2$ and
+  \begin{align*}
+    (x_1 + ... + x_{r-1} + x_{r})^n &= (x_1 + ... + (x_{r-1} + x_{r}))^n \\
+    &= \sum_{(n_1, ..., K) = n}\binom{n}{n_1,...,K}x_1^{n_1}(x_{r-1}+x_r)^K \\
+    &= \sum_{(n_1, ..., K) = n}\binom{n}{n_1,...,K}x_1^{n_1}\sum_{n_{r-1} + n_r = K}\binom{K}{n_{r-1}, n_r}(x_{r-1}+x_r)^K \text{by the binomial theorem} \\
+   \binom{n}{n_1,...,n_r} &= \binom{n}{n_1,...,K}\binom{K}{n_{r-1},n_r} \\
+    \frac{n!}{n_1!,...,n_r!} &= \frac{n!}{n_1!,...,K!}\frac{K!}{n_{r-1}!r_r!} \\
+    &= \sum_{(n_1, ..., n_{r-1}, n_r) = n}\binom{n}{n_1,...,n_{r-1}n_{r}}x_1^{n_1}x_{r-1}^{n_{r-1}}x_r^{n_r}.
+  \end{align*}
 \end{proof}
 \end{document}
