@@ -47,11 +47,11 @@ The application of the Binomial and Multinomial theorems in probability can ofte
 % FIRST SECTION
 
 \section{Binomial Theorem}
-The Binomial Theorem expresses the expansion of two monomial terms $x$ and $y$ such that $(x + y)^2 = x^2 + 2xy + y^2$. The later is useful in algebra and other fields of mathematics, but how a binomial expansion relates to probability is not intuitvely obvious. The solution is to treat $x$ and $y$ as the two possible outcomes of independent event(s). The resulting binomial expansion can express the sample space or sum of probabilities for all combinations of the two outcomes for $n$ independent event(s).
+The Binomial Theorem expresses the expansion of two monomial terms $x$ and $y$ such that $(x + y)^2 = x^2 + 2xy + y^2$. The later is useful in algebra and other fields of mathematics, but how a binomial expansion relates to probability is not intuitvely obvious. The solution is to treat $x$ and $y$ as the probabilities of the two outcomes of an independent event. The resulting binomial expansion can express the sample space or sum of probabilities for all combinations of the two outcomes for $n$ independent event(s).
 \begin{example}
   Let an unfair coin be flipped twice with $P(Tails) = 0.3$ and $P(Heads) = 0.7$. In two flips, $(T + H)^2 = T^2 + 2TH + H^2$. This aligns with the outcomes of $T^2 = TT$, $2TH = TH + HT$, and $H^2 = HH$ for 2 flips. Additionally, substituting in the probabilities we have $0.3^2 + 2*0.3*0.7 + 0.7^2 = 1$ hence the probability of the outcomes sum to 1.
 \end{example}
-The uses of the Binomial Theorem are obvious especially in calculating large numbers of events. To compute the expansion of two monomials the theorem uses factorials and binomial coefficients:
+The uses of the Binomial Theorem are obvious especially in calculating large numbers of events. To compute the expansion of two monomials the theorem uses factorials, binomial coefficients, and Pascal's Identity:
 % definition 1
 \begin{definition}[Factorial n!]
   The factorial of a nonnegative integer $n$ is given by
@@ -67,10 +67,9 @@ The uses of the Binomial Theorem are obvious especially in calculating large num
     \binom{n}{k} = \frac{n!}{k!(n-k)!}.
   \end{align*}
 \end{definition}
-% note this should be expanded out to a corrollary with a proof
 \begin{remark}
-  Note that the binomial coefficient can be used to determine the number of combinations for $n$ independent events.
-\end{remark}
+  The binomial coefficient can be used to determine the number of combinations for $n$ independent events.
+ \end{remark}
 \begin{example}
   3 flips of a coin yields:
   \begin{align*}
@@ -81,9 +80,11 @@ The uses of the Binomial Theorem are obvious especially in calculating large num
   \end{align*}
 \end{example}
 \begin{remark}
-  The total number of combinations of the binomial is $2^n$. \\
-  $2^3 = T^3 + 3T^2H + 3H^2T + H^3 = 1 + 3 + 3 + 1 = 8$.
+  The total number of combinations of the binomial is $2^n$.
 \end{remark}
+\begin{example}
+$2^3 = T^3 + 3T^2H + 3H^2T + H^3 = 1 + 3 + 3 + 1 = 8$.
+\end{example}
 \begin{lemma}
   Given two binomial coeffecients $\binom{n-1}{k} + \binom{n-1}{k-1} = \binom{n}{k}$ by Pascal's Identity.
 \end{lemma}
@@ -97,10 +98,9 @@ The uses of the Binomial Theorem are obvious especially in calculating large num
     &= \binom{n}{k}.
   \end{align*}
 \end{proof}
-\begin{remark}
- Pascal's Identity can be used to simplify multiple binomial coefficients into a single coefficient.
-\end{remark}
-We are now ready to prove the Binomial Theorem by use of Pascal's Identity, Binomial Coefficients, and Factorials.
+\begin{theorem}
+The binomial theorem gives the expansion of two monomial outcomes for $n$ events.
+\end{theorem}
 % add proof for Binomial Theorem here
 % proof 2
 \begin{proof}
