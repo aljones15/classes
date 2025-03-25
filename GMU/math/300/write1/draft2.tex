@@ -42,7 +42,7 @@
 % INTRODUCTION
 
 \section*{Introduction}
-The application of the Binomial and Multinomial theorems in probability can often lack clarity. However, the relations between polynomials and probability can provide insight into how models work in probability. We intend to clarify the connection between expansions of multinomials and binomials, combinations, total probability, and probability mass functions through examples and proofs of theorems.
+The application of the Binomial and Multinomial theorems in probability can often lack clarity. However, the relations between polynomials and probability can provide insights into some of the fundamental aspects of probability itself. We intend to clarify the connection between expansions of multinomials and binomials, combinations, total probability, and probability mass functions through examples and proofs of theorems.
 
 % FIRST SECTION
 
@@ -127,15 +127,7 @@ The binomial theorem gives the expansion of two monomial outcomes for $n$ events
 % SECOND SECTION
 
 \section{Multinomial Theorem}
-While the binomial coefficient works with 2 outcomes many cases in probability have more than 2 outcomes. The multinomial coefficient generalizes to handle more than two outcomes. Hence it can represent the outcomes of a 6 sided dice, picking one of three colored balls from an urn, and other more complex sets of outcomes. 
-% definition 3
-\begin{definition}[Multinomial Coefficient]
-  \begin{align*}
-    \binom{N}{n_1..n_r} = \frac{N!}{n_1!..n_r!}
-  \end{align*}
-  where $n_1$ to $n_r$ are different group sizes.
-\end{definition}
-
+While the binomial coefficient works with 2 outcomes many cases in probability have more than 2 outcomes. The multinomial coefficient generalizes to handle more than two outcomes. Hence it can represent the outcomes of a 6 sided dice, picking one of three colored balls from an urn, and other more complex sets of outcomes.
 \begin{example}
   For 13 items we want to know how many combinations of 5, 5, and 3 can be made
   \begin{align*}
@@ -144,6 +136,14 @@ While the binomial coefficient works with 2 outcomes many cases in probability h
                       &=\frac{13!}{5!5!3!}.
   \end{align*}
 \end{example}
+% definition 3
+\begin{definition}[Multinomial Coefficient]
+  \begin{align*}
+    \binom{N}{n_1..n_r} = \frac{N!}{n_1!..n_r!}
+  \end{align*}
+  where $n_1$ to $n_r$ are different group sizes.
+\end{definition}
+
 Like the multinomial coefficient, the multionomial theorem generalizes to any number of outcomes and events. Like the binomial theorem the probabilities of the outcomes sum to 1 and the theorem provides an accurate count of the combinations found in the sample space.
 \begin{definition}[multinomial theorem]
   \begin{align*}
