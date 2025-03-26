@@ -1,0 +1,203 @@
+\documentclass{beamer}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage[shortlabels]{enumitem}
+\usepackage{fullpage}
+\usepackage{indentfirst}
+
+% mathematical environments - see https://en.wikibooks.org/wiki/LaTeX/Theorems
+
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposition}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\usefonttheme{structuresmallcapsserif}
+\usetheme{Madrid}
+\AtBeginEnvironment{proof}{\footnotesize}
+
+% commands
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+
+\renewcommand{\emptyset}{\varnothing}
+\renewcommand{\subset}{\subseteq}
+\renewcommand{\supset}{\supseteq}
+\renewcommand{\d}{\mathrm{d}}
+
+
+
+\title{Parsing Binomials \& Multinomials in Probability}
+\institute{George Mason University}
+\author{Andrew Jones}\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+
+% INTRODUCTION
+
+\begin{frame}
+\frametitle{Introduction}
+The application of the Binomial and Multinomial theorems in probability can often lack clarity. However, the relations between polynomials and probability can provide insights into some of the fundamental aspects of probability itself. We intend to clarify the connection between expansions of multinomials and binomials, combinations, total probability, and probability mass functions through examples and proofs of theorems.
+\end{frame}
+% FIRST SECTION
+
+\begin{frame}
+\frametitle{Binomial Theorem}
+The Binomial Theorem expresses the expansion of two monomial terms $x$ and $y$ such that $(x + y)^2 = x^2 + 2xy + y^2$. The later is useful in algebra and other fields of mathematics, but how a binomial expansion relates to probability is not intuitively obvious. The solution is to treat $x$ and $y$ as the probabilities of the two outcomes of an independent event. The resulting binomial expansion can express the sample space or sum of probabilities for all combinations of the two outcomes for $n$ independent event(s).
+\begin{example}
+  Let an unfair coin be flipped twice with $P(Tails) = 0.3$ and $P(Heads) = 0.7$. In two flips, $(T + H)^2 = T^2 + 2TH + H^2$. This aligns with the outcomes of $T^2 = TT$, $2TH = TH + HT$, and $H^2 = HH$ for 2 flips. Additionally, substituting in the probabilities we have $0.3^2 + 2*0.3*0.7 + 0.7^2 = 1$ hence the probability of the outcomes sum to 1.
+\end{example}
+\end{frame}
+\begin{frame}
+The uses of the Binomial Theorem are obvious especially in calculating large numbers of events. To compute the expansion of two monomials the theorem uses factorials, binomial coefficients, and Pascal's Identity:
+% definition 1
+\begin{definition}[Factorial n!]
+  The factorial of a nonnegative integer $n$ is given by
+  \begin{align*}
+    n! = {\displaystyle\prod_{i=1}^{n}i}
+  \end{align*}
+  where $0! = 1$.
+\end{definition}
+% definition 2
+\begin{definition}[Binomial Coefficient]
+  Every combination of a set of $n$ objects of size $k$.
+  \begin{align*}
+    \binom{n}{k} = \frac{n!}{k!(n-k)!}.
+  \end{align*}
+\end{definition}
+\end{frame}
+\begin{frame}
+\begin{remark}
+  The binomial coefficient can be used to determine the number of combinations for $n$ independent events.
+ \end{remark}
+\begin{example}
+  3 flips of a coin yields:
+  \begin{align*}
+  (T + H)^3 &= TTT + TTH + THT + HTT + HHT+ HTH + THH + HHH \\
+  &= T^3 + 3T^2H + 3H^2T + H^3 \\
+  &\binom{3}{3} = 1\ \text{hence}\ T^3 = TTT\ \text{or}\ H^3 = HHH \\
+  &\binom{3}{2} = 3\ \text{hence}\ 3T^2H = TTH + THT + HTT\ \text{or}\ 3H^2T = HHT+HTH+THH. \\
+  \end{align*}
+\end{example}
+\end{frame}
+\begin{frame}
+\begin{remark}
+  The total number of combinations of the binomial is $2^n$.
+\end{remark}
+\begin{example}
+$2^3 = T^3 + 3T^2H + 3H^2T + H^3 = 1 + 3 + 3 + 1 = 8$.
+\end{example}
+\end{frame}
+\begin{frame}
+\begin{lemma}
+  Given two binomial coefficients $\binom{n-1}{k} + \binom{n-1}{k-1} = \binom{n}{k}$ by Pascal's Identity.
+\end{lemma}
+% proof 1
+\begin{proof}
+  \begin{align*}
+    \binom{n - 1}{k} + \binom{n - 1}{k - 1} &= \frac{(n-1)!}{k!(n - 1 - k)!} + \frac{(n - 1)!}{(k-1)!(n-k)!} \\
+    &= (n - 1)![\frac{n-k}{k!(n-k)!} + \frac{k}{k(n-k)!}] \\
+    &= (n - 1)!\frac{n}{k!(n-k)!} \\
+    &= \frac{n!}{k!(n - k)!} \\
+    &= \binom{n}{k}.
+  \end{align*}
+\end{proof}
+\end{frame}
+\begin{frame}
+\begin{theorem}
+The binomial theorem gives the expansion of two outcomes for $n$ events.
+\end{theorem}
+% add proof for Binomial Theorem here
+% proof 2
+\begin{proof}
+  \begin{tiny}
+  Assume that $(a + b)^n = \sum_{k=0}^{n} \binom{n}{k} a^kb^{n-k}$ and by the the definition of the binomial coefficient $n \geq 0$. For the case $(n = 0) \Rightarrow (a + b)^0 = 1$. For the case $n \ge 0$.
+  \begin{align*}
+    (a + b)^{n+1} &= (a + b)(a + b)^n = (a+b)\sum_{k=0}^{n}\binom{n}{k}a^kb^{n-k} \\
+                  &= \sum^{n}_{k=0}\binom{n}{k}a^{k+1}n{n-k} + \sum^{n}_{k=o}\binom{n}{k}a^{k}b^{n-k+1} \\
+    m &= k + 1 \\
+                  &= \sum^{n+1}_{m=1}\binom{n}{m-1}a^{m}b^{n-m+1}+\sum^{n}_{k=0}\binom{n}{k}a^{k}b^{n-k+1} \\
+                  &= b^{n+1}+\sum^{n}_{k=1}[\binom{n}{k} + \binom{n}{k-1}]a^kb^{n-k+1}+a^{n+1}\\
+                  &= b^{n+1}+\sum^{n}_{k=1}\binom{n+1}{k}a^{k}b^{n-k+1}+a^{n+1} \\
+                  &= \sum^{n+1}_{k}\binom{n+1}{k}a^{k}b^{n+1-k}.
+  \end{align*}
+  \end{tiny}
+\end{proof}
+\end{frame}
+\begin{frame}
+\begin{corollary}
+  The Binomial Theorem can express the sum of the probabilities of all outcomes of $n$ independent events.
+\end{corollary}
+\begin{proof}
+  Let $A$ and $B$ be the two outcomes of $n$ independent events with probability $A = \frac{1}{a}$, $B = (1 - \frac{1}{a})$, and $n = 0$. By the binomial theorem we have $(\frac{1}{a} + (1 - \frac{1}{a}))^0 = 1$ For the case $n \ge 1$:
+  \begin{align*}
+    (\frac{1}{a} + \frac{a-1}{a})^n = \sum_{k=0}^{n} \binom{n}{k} (\frac{1}{a})^k(\frac{a-1}{a})^{n-k} = 1
+  \end{align*}
+\end{proof}
+\end{frame}
+% SECOND SECTION
+
+\begin{frame}
+\frametitle{Multinomial Theorem}
+While the binomial theorem works with 2 outcomes many cases in probability have more than 2 outcomes. The multinomial coefficient generalizes to handle more than two types. 
+\begin{example}
+  For 13 items we want to know how many combinations of 5, 5, and 3 can be made
+  \begin{align*}
+    \binom{13}{5,5,3} &= \binom{13}{5}\binom{8}{5}\binom{3}{3} \\
+                      &= \frac{13!}{5!(13-5)!}\frac{8!}{5!(8-5)!}\frac{3!}{3!(3-3)!} \\
+                      &=\frac{13!}{5!5!3!}.
+  \end{align*}
+\end{example}
+\end{frame}
+\begin{frame}
+% definition 3
+\begin{definition}[Multinomial Coefficient]
+  \begin{align*}
+    \binom{N}{n_1..n_r} = \frac{N!}{n_1!..n_r!}
+  \end{align*}
+  where $n_1$ to $n_r$ are different group sizes.
+\end{definition}
+\end{frame}
+\begin{frame}
+Using the multinomial coefficient the multinomial theorem generalizes to any number of outcomes and events. Hence it can represent the outcomes of a 6 sided dice, picking one of three colored balls from an urn, and other more complex sets of outcomes.
+\begin{example}
+  An urn contains 3 red, 4 blue, and 2 green balls. \\
+  Therefore $P(red) = \frac{3}{9}$, $P(blue) = \frac{4}{9}$, and $P(green) = \frac{2}{9}$ \\
+  $n = 2$ representing 2 events. \\
+  \begin{align*}
+    (P(r) + P(b) + P(g))^2 &= P(r)^2 + P(b)^2 + P(g)^2 + 2P(r)P(b) + 2P(r)P(g)+ 2P(b)P(g) \\
+    (\frac{3}{9} + \frac{4}{9} + \frac{2}{9})^2 &= \frac{3}{9}^2 + \frac{4}{9}^2 + \frac{2}{9}^2 + 2\frac{3}{9}*\frac{4}{9} + 2\frac{3}{9}*\frac{2}{9} + 2\frac{4}{9}*\frac{2}{9} \\
+    1^2 &= \frac{9}{81} + \frac{16}{81} + \frac{4}{81} + \frac{24}{81} + \frac{12}{81} + \frac{16}{81} \\
+    1 &= \frac{81}{81}
+  \end{align*}
+\end{example}
+\end{frame}
+\begin{frame}
+\begin{theorem}
+  The multinomial theorem gives the expansion for $r$ outcomes in $n$ events:
+  \begin{align*}
+    (x_1+...+x_r)^n = \sum_{(n_1,...,n_r) = n}\binom{n}{n_1,...,n_r}x_1^{n_1}...x_r^{n_r}
+  \end{align*}
+\end{theorem}
+% proof
+\begin{proof}
+  \begin{tiny}
+  Fix $r = 1$ and observe that $(x_1)^n=\sum_{1}^n\binom{n}{n_1 = n}x_1^{n_1} = x_1^n$ \\
+  Fix $r = 2$ and observe that the binomial theorem $(x_1 + x_2)^n$ is given. \\
+  Fix $r > 2$ and
+  \begin{align*}
+    (x_1 + ... + x_{r-1} + x_{r})^n &= (x_1 + ... + (x_{r-1} + x_{r}))^n \\
+    &= \sum_{(n_1, ..., K) = n}\binom{n}{n_1,...,K}x_1^{n_1}(x_{r-1}+x_r)^K \\
+    &= \sum_{(n_1, ..., K) = n}\binom{n}{n_1,...,K}x_1^{n_1}\sum_{n_{r-1} + n_r = K}\binom{K}{n_{r-1}, n_r}(x_{r-1}+x_r)^K \text{by the binomial theorem} \\
+   \binom{n}{n_1,...,n_r} &= \binom{n}{n_1,...,K}\binom{K}{n_{r-1},n_r} \\
+    \frac{n!}{n_1!,...,n_r!} &= \frac{n!}{n_1!,...,K!}\frac{K!}{n_{r-1}!r_r!} \\
+    &= \sum_{(n_1, ..., n_{r-1}, n_r) = n}\binom{n}{n_1,...,n_{r-1}n_{r}}x_1^{n_1}x_{r-1}^{n_{r-1}}x_r^{n_r}.
+  \end{align*}
+  \end{tiny}
+\end{proof}
+\end{frame}
+\end{document}
