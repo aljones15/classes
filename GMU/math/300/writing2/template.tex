@@ -1,0 +1,130 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage[shortlabels]{enumitem}
+\usepackage{fullpage}
+
+% mathematical environments - see https://en.wikibooks.org/wiki/LaTeX/Theorems
+
+\theoremstyle{plain}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
+
+% commands
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+
+\renewcommand{\emptyset}{\varnothing}
+\renewcommand{\subset}{\subseteq}
+\renewcommand{\supset}{\supseteq}
+\renewcommand{\d}{\mathrm{d}}
+
+
+
+\title{A primer on ABC}
+\author{Casey Blacker}\date{}
+
+\begin{document}\maketitle
+
+
+% INTRODCUTION
+
+\section*{Introduction}
+
+Note that
+\begin{enumerate}[i.,noitemsep]
+	\item first point
+	\item second point
+	\item third point
+\end{enumerate}
+
+
+
+% FIRST SECTION
+
+\section{First section}
+
+\begin{definition}
+	A \emph{number} is a\textellipsis
+\end{definition}
+
+
+
+% SECOND SECTION
+
+\section{Second section}
+
+\begin{lemma}
+	We have
+	\[
+		\int_0^\pi \sin(3x)\,\d x = \frac{2}{3}.
+	\]
+\end{lemma}
+
+\begin{proof}
+	A direct computation yields
+	\begin{align*}
+		\int_0^\pi \sin(3x)\,\d x
+			&=	\frac{1}{3}\int_0^{3\pi} \sin u \,\d u,		\hspace{1cm} u=3x,		\\
+			&=	\frac{1}{3} \big[-\cos u\big]_0^{3\pi}						\\
+			&=	\frac{1}{3} \big[1-(-1)\big]						\\
+			&=	\frac{2}{3}.
+	\end{align*}
+\end{proof}
+
+\begin{remark}
+	This is interesting since\textellipsis
+\end{remark}
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
