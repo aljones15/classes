@@ -1,6 +1,7 @@
 Topics:
 - Yonneda Lemma
 - Lawvere Theories and Computer Science
+- Introduction to Category Theory
 
 Fundamentals:
 1. Category
@@ -33,4 +34,40 @@ Qoutes:
 Questions:
 1. What does *monotone* mean? [Def](https://en.wikipedia.org/wiki/Monotonic_function)
   > monotonic function (or monotone function) is a function between ordered sets that preserves or reverses the given order
-2. 
+2.
+
+#Yonneda Lemma
+
+Defs:
+
+Proofs:
+
+Cites:
+
+Refs:
+
+#Lawveres Theories
+
+Defs:
+
+Proofs:
+- proof that n array of integers is a functor?
+
+Cites:
+
+Refs:
+
+
+#Intro to Cat Theory
+
+Defs:
+1. Arrows
+2. Objects
+3. Categories
+
+Proofs:
+- Proof that Z is a functor
+
+Cites:
+
+Refs:
