@@ -1,91 +1,48 @@
 \documentclass{article}
-\usepackage{amsmath,amssymb,amsfonts,amsthm}
-\usepackage[shortlabels]{enumitem}
-\usepackage{fullpage}
+\usepackage{math}
 
-% mathematical environments - see https://en.wikibooks.org/wiki/LaTeX/Theorems
-
-\theoremstyle{plain}
-\newtheorem{lemma}{Lemma}
-\newtheorem{proposition}{Proposition}
-\newtheorem{theorem}{Theorem}
-\newtheorem{corollary}{Corollary}
-
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}
-
-\theoremstyle{remark}
-\newtheorem{remark}{Remark}
-\newtheorem{example}{Example}
-
-% commands
-
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\R}{\mathbb{R}}
-
-\renewcommand{\emptyset}{\varnothing}
-\renewcommand{\subset}{\subseteq}
-\renewcommand{\supset}{\supseteq}
-\renewcommand{\d}{\mathrm{d}}
-
-
-
-\title{A primer on ABC}
+\title{Template}
 \author{Casey Blacker}\date{}
 
-\begin{document}\maketitle
+\begin{document}
+\maketitle
 
 
-% INTRODCUTION
+% INTRODUCTION
 
 \section*{Introduction}
+Lorem ipsum dolor sit amet, consectetur adipisci tempor incidunt ut labore et dolore magna aliqua veniam, quis nostrud exercitation ullamcorpor s commodo consequat. Duis autem vel eum irrure esse molestiae consequat, vel illum dolore eu fugi et iusto odio dignissim qui blandit praesent luptat exceptur sint occaecat cupiditat non provident, deserunt mollit anim id est laborum et dolor fuga distinct. Nam liber tempor cum soluta nobis elige quod maxim placeat facer possim omnis volupt
 
-Note that
-\begin{enumerate}[i.,noitemsep]
-	\item first point
-	\item second point
-	\item third point
-\end{enumerate}
-
-
-
-% FIRST SECTION
+% FIRST SECTION 
 
 \section{First section}
 
-\begin{definition}
-	A \emph{number} is a\textellipsis
+Lorem ipsum dolor sit amet, consectetur adipisci tempor incidunt ut labore et dolore magna aliqua veniam, quis nostrud exercitation ullamcorpor s commodo consequat. 
+
+\begin{definition}\label{def:lorem}
+	Lorem ipsum dolor sit amet, consectetur adipisci tempor incidunt ut labore et dolore magna aliqua veniam, quis nostrud exercitation ullamcorpor s commodo consequat.
 \end{definition}
 
+Lorem ipsum dolor sit amet, consectetur adipisci tempor incidunt ut labore et dolore magna aliqua veniam, quis nostrud exercitation ullamcorpor s commodo consequat. 
+
+\begin{theorem}\label{thm:ipsum}
+	Duis autem vel eum irrure esse molestiae consequat, vel illum dolore eu fugi et iusto odio dignissim qui blandit praesent luptat exceptur sint occaecat cupiditat non provident, deserunt mollit anim id est laborum et dolor fuga distinct.
+\end{theorem}
 
 
 % SECOND SECTION
 
 \section{Second section}
 
-\begin{lemma}
-	We have
-	\[
-		\int_0^\pi \sin(3x)\,\d x = \frac{2}{3}.
-	\]
-\end{lemma}
+Applying Theorem \ref{thm:ipsum} to Definition \ref{def:lorem}, it follows that ipsum. This was previously established in \cite{Gauss86} and \cite{Euclid02,Euclid03}.
 
-\begin{proof}
-	A direct computation yields
-	\begin{align*}
-		\int_0^\pi \sin(3x)\,\d x
-			&=	\frac{1}{3}\int_0^{3\pi} \sin u \,\d u,		\hspace{1cm} u=3x,		\\
-			&=	\frac{1}{3} \big[-\cos u\big]_0^{3\pi}						\\
-			&=	\frac{1}{3} \big[1-(-1)\big]						\\
-			&=	\frac{2}{3}.
-	\end{align*}
-\end{proof}
 
-\begin{remark}
-	This is interesting since\textellipsis
-\end{remark}
+
+
+% BIBLIOGRAPHY
+
+\bibliographystyle{plain}  % see:  https://www.overleaf.com/learn/latex/Bibtex_bibliography_styles
+\bibliography{template}
 
 
 
