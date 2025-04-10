@@ -69,5 +69,7 @@ Proofs:
 - Proof that Z is a functor
 
 Cites:
+"Alternatively, set theory and category theory may be viewed as proposals for the organi-
+zation of Mathematics" - MacLane (cat theory is not so much a foundations as set theory is).
 
 Refs:
