@@ -11,7 +11,7 @@
 % INTRODUCTION
 
 \section*{Introduction}
-One of math's most abstract fields: Category Theory arose from the habit of representing relations as diagrams on blackboards. While it's origins might be in the corporeal world of chalkboards and erasers, Category Theory is a field of mathematics that extends the abstract study of mathematics as form and relation over the applied use of mathematics as calculation.
+One of math's most abstract fields: Category Theory arose from the habit of representing relations as diagrams on blackboards. While it's origins might be in the corporeal world of chalkboards and erasers, Category Theory is a field of mathematics that ephaises the abstract study of mathematics as form and relation over the applied use of mathematics as calculation.
 
 % FIRST SECTION 
 
@@ -21,15 +21,30 @@ Fundamental to Category Theory are categories.
 A category consists of
 \begin{enumerate}
   \item A class of Objects ob(c)
-  \item A class mor(C) of arrows
-  \item A source
-  \item A target
+  \item A class mor(C) of Arrows
+  \item A source of Objects to map from
+  \item A target of Objects to map to
+  \end{enumerate}
+  Categories must satisfy three conditions:
+  \begin{enumerate}
+    \item
+    \item
+    \item
   \end{enumerate}
 \end{definition}
+Arrows can be and usually are functions. Objects can be and usually are sets. Both arrows and objects are members of classes which allows Category Theory to abstract over collections that are often problematic to define in terms of their objects. Hence Category Theory can reason about large sets resulting in a field that is more about structure than content. “Category theory is extreme in the sense that it actively discourages us from looking inside the objects. An object in category theory is an abstract nebulous entity.” - Page 10 - Category Theory for Programmers - Bartosz Milewski.
+
+\begin{theorem}
+  The set of all sets is a category
+\end{theorem}
+
+\begin{proof}
+Let $\Omega$ be the set of all sets. Fix $s\in \Omega$. As $\Omega$ is a set of sets, it is therefore a class which implies $s$ is an Object.
+\end{proof}
+
 \begin{example}
 Use the Monoid A(Z, +) here.
 \end{example}
-Arrows can be and usually are functions. Objects can be and usually are sets.
 
 Lorem ipsum dolor sit amet, consectetur adipisci tempor incidunt ut labore et dolore magna aliqua veniam, quis nostrud exercitation ullamcorpor s commodo consequat. 
 
