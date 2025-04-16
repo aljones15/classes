@@ -11,23 +11,24 @@
 % INTRODUCTION
 
 \section*{Introduction}
-One of math's most abstract fields: Category Theory arose from the habit of representing relations as diagrams on blackboards. While it's origins might be in the corporeal world of chalkboards and erasers, Category Theory is a field of mathematics that ephaises the abstract study of mathematics as form and relation over the applied use of mathematics as calculation.
+One of the most abstract fields of mathematics: Category Theory arose from the habit of representing relations as diagrams on blackboards. Although its origins might be in the corporeal world of chalkboards and erasers, Category Theory is a field of mathematics that emphasizes the abstract study of mathematics as form and relation over the applied use of mathematics as calculation. As Lawvere states, it "has long been felt in advanced algebra and topology, namely that the substance of mathematics resides not in Substance (as it is made to seem when $\in$ is the irreducible predicate, with the accompanying necessity of defining all concepts in terms of a rigid elementhood relation) but in Form" \cite{Lawvere01}. Category theory is a language that allows mathematicians to study math as form.
 
 % FIRST SECTION 
 
 \section{Objects and Arrows}
-Fundamental to Category Theory are categories.
+Fundamental to the study of mathematical form is the concept of a Category.
 \begin{definition}
-A category consists of a class of Objects ob(c); a class mor(C) of Arrows; a source of Objects to map from; a target of Objects to map to. Categories must satisfy three conditions:
-  \begin{enumerate}
+A category consists of a class of Objects ob(c); a class mor(C) of Arrows; a source of Objects to map from $dom(C)$; a target of Objects to map to. Categories must satisfy three conditions: \begin{enumerate}
     \item Arrows must be associative
     \item Arrows most compose with other Arrows
     \item All Objects must have a left and right identity that is part of the Arrows
   \end{enumerate}
 \end{definition}
-Arrows can be and usually are functions. Objects can be and usually are sets. Both arrows and objects are members of classes which allows Category Theory to abstract over collections that are often problematic to define in terms of their objects. Hence Category Theory can reason about large sets resulting in a field that is more about structure than content. “Category theory is extreme in the sense that it actively discourages us from looking inside the objects. An object in category theory is an abstract nebulous entity.” - (Page 10 - Category Theory for Programmers - Bartosz Milewski). "Category Theory involves the next level of abstraction-i.e., comparing forests." - (Page 1, Herrlich Cat Theory 2nd).
-it "has long been felt in advanced algebra and topology, namely that the substance of mathematics resides not in Substance (as it is made to seem when ∈ is the irreducible predicate, with the accompanying necessity of defining all concepts in terms of a rigid elementhood relation) but in Form " (F. WILLIAM LAWVERE, An Elementary Theory
-of the Category of Sets, 1)
+\subsection{Concrete Categories}
+Arrows can be and usually are functions. Objects can be and usually are sets.
+
+\subsection{Abstract Categories}
+Both arrows and objects are members of classes which allows Category Theory to abstract over collections that are often problematic to define in terms of their objects. Hence Category Theory can reason about large sets resulting in a field that is more about structure than content. “Category theory is extreme in the sense that it actively discourages us from looking inside the objects. An object in category theory is an abstract nebulous entity.” \cite{Milewski01}. "Category Theory involves the next level of abstraction-i.e., comparing forests." \cite{Herrlich01}
 
 \begin{theorem}
   The set of all sets is a category
@@ -41,25 +42,10 @@ Let $\Omega$ be the set of all sets. Observe that $\Omega$ is a class containing
 Use the Monoid A(Z, +) here.
 \end{example}
 
-Lorem ipsum dolor sit amet, consectetur adipisci tempor incidunt ut labore et dolore magna aliqua veniam, quis nostrud exercitation ullamcorpor s commodo consequat. 
-
-\begin{definition}\label{def:lorem}
-	Lorem ipsum dolor sit amet, consectetur adipisci tempor incidunt ut labore et dolore magna aliqua veniam, quis nostrud exercitation ullamcorpor s commodo consequat.
-\end{definition}
-
-Lorem ipsum dolor sit amet, consectetur adipisci tempor incidunt ut labore et dolore magna aliqua veniam, quis nostrud exercitation ullamcorpor s commodo consequat. 
-
-\begin{theorem}\label{thm:ipsum}
-	Duis autem vel eum irrure esse molestiae consequat, vel illum dolore eu fugi et iusto odio dignissim qui blandit praesent luptat exceptur sint occaecat cupiditat non provident, deserunt mollit anim id est laborum et dolor fuga distinct.
-\end{theorem}
-
 
 % SECOND SECTION
 
 \section{Functors and Natural Transformations}
-
-This was previously established in \cite{Gauss86} and \cite{Euclid02,Euclid03}.
-
 
 % BIBLIOGRAPHY
 
