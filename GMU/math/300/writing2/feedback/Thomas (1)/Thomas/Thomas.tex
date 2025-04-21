@@ -1,0 +1,242 @@
+\documentclass{article}
+\usepackage{math}
+
+% For automatically made sources, see https://mathscinet.ams.org/mathscinet/publications-search
+
+\bibliographystyle{plain}
+
+\title{An Introduction to Asymptotic Analysis}
+\author{Thomas Rockwell Tucker}\date{}
+
+\begin{document}
+ \maketitle
+
+ \section*{Introduction} % Introduce what an algorithm is and how we measure it's effectiveness.
+
+ In computer science, an algorithm is a finite list of well-defined instructions for calculating a function relating to a defined set of problems. The given algorithm will always provide an answer which is correct, complete its execution in a finite number of steps, and will work for all instances of that class.\cite{mcquain11}
+
+ When considering the algorithm for a given problem, it is important to observe two different aspects: is the algorithm an effective solution to it's given problem in all cases, and how does it perform in terms of amount of space and number of steps?
+
+ In this paper we will take the former question for granted and focus on the latter, with most of our concern centering around the amount of steps an algorithm would take given the specific task it was given to solve (i.e. a sorting algorithm being tasked to sort an array with $n$ elements), and even more concerning the rate at which the number of steps taken by the algorithm grows when given a larger and larger input.
+
+
+
+ \section{Steps of an Algorithm and the $T(n)$ Equation} % Define a step, the T equation, provide example
+
+ % Need to find a place to source a formal definition for step
+ \begin{definition}\label{def:step}
+  In computer science, we say that a \emph{step} in an algorithm is a bounded-size set of instructions which executes in a consistent, constant time.\cite{roughgarden22}
+ \end{definition}
+ \begin{remark}\label{rem:step}
+  While it is common convention for a single line of code which meets the definition above to be considered one step, we can also consider a group of lines which all execute in constant time to be a single step.
+ \end{remark}
+
+
+ \begin{definition}\label{def:T}
+  The function $T : \mathbb{N}\to\mathbb{N}$ denotes the worst-case number of steps taken to execute a given algorithm given an input which is conventionally written as $n$.
+ \end{definition}
+ \begin{remark}
+  Often an algorithm's speed is only dependent on one input $n$, but it is not uncommon for an algorithm's execution to have more than one dependency, i.e. how the copying of a matrix has a runtime dependent on both the number of rows $m$ and the number of columns $n$.
+ \end{remark}
+ \begin{example}\label{ex:1}
+ Consider the block of python code below, which finds the factorial of a given natural number $n$.
+ \begin{lstlisting}
+  1 def factorial(int n):
+  2   let fac = 1
+  3   let i = 1
+  4   while (i <= n):
+  5     fac = fac * i
+  6     i = i + 1
+  7   return fac
+ \end{lstlisting}
+  Lines 1 and 2 both run in constant time, and therefore take 1 step in total, as per remark \ref{rem:step}. Line 4 runs a total of $n+1$ times, since it checks each time we increment $i$. Lines 5 and 6 are both constant and therefore 1 step, but they will be run $n$ times due to being inside the while loops above, meaning they add $n\cdot1$ to the total. The last line runs only once and is consistent, so it takes $1$ step.
+
+  In total we have a runtime of $T(n) = 1+(n+1)+(n\cdot1)+1 = 2n+2$.
+
+ \end{example}
+
+
+
+ \section{Big $\Theta$ Notation} % Define Big O, Omega, Theta. Provide example, talk about different classes of big Theta, practical tractible and intractible
+
+ \begin{definition}\label{def:BigTheta}
+  Given a function $f:\mathbb{N}\to\mathbb{N}$, and an algorithm with a runtime of $T:\mathbb{N}\to\mathbb{N}$, we say that
+  \begin{align*}
+  T\in O(f) &\Longleftrightarrow \exists a,n_0>0 : \forall n>n_0 : T(n)\leq af(n) \\
+  T\in \Omega(f) &\Longleftrightarrow \exists b,n_0>0 : \forall n>n_0 : T(n)\geq bf(n) \\
+  T\in \Theta(f) &\Longleftrightarrow \exists a,b,n_0>0 : \forall n>n_0 : af(n) < T(n) < b(f(n)).
+  \end{align*}\cite{blum06}
+ \end{definition}
+
+ \begin{remark}
+  Notice that $\Theta(f) = \Omega(f) \cap O(f)$.
+ \end{remark}
+ \begin{remark}
+  While uncommon, there are two other types of classification of an algorithm's runtime, where
+  \begin{align*}
+   T(n) \in o(f(n)) &\Longleftrightarrow T\in O(f(n)) \land  \lim_{n\to\infty}\frac{T(n)}{f(n)}\to0 \\
+   T(n) \in \omega(f(n)) &\Longleftrightarrow T\in \Omega(f(n)) \land  \lim_{n\to\infty}\frac{T(n)}{f(n)}\to\infty.
+  \end{align*}
+  These are to represent when an algorithm's runtime is significantly less than $f$ and significantly more than $f$, respectively. \cite{blum06, roughgarden22}
+ \end{remark}
+ \begin{remark}
+  It is common convention to write $T(n) = \Theta(n)$ rather than $T(n) \in \Theta(n)$, due to ease of reading when working with arithmetic.
+ \end{remark}
+ \begin{remark}
+  When $T = \Theta(f)$, we say that the given algorithm with the runtime of $T$ is in the \emph{runtime class} of $f$.
+ \end{remark}
+
+ \begin{definition}\label{def:RunClass}
+  Given a function $f$ and an algorithm with a runtime $T$ such that $T=\Theta(f)$, we say that that algorithm is in the \emph{runtime class} of $f$. The common runtime classes in this regard are, in order of their magnitude:
+
+  \begin{center}
+  \begin{tabular}{c | c | c} % ignore this jank layout lol
+   \textbf{Name} & \textbf{Runtime class} & \textbf{Example} \\
+   \hline        &                        & \\[-.9em]
+   Constant      & $\Theta(1)$            & Accessing an element of an array \\
+   Logarithmic   & $\Theta(\lg n)$        & Binary Search \\
+   Linear        & $\Theta(n)$            & Linear Search \\
+   Log-Linear    & $\Theta(n\lg n)$       & Mergesort \\
+   Quadratic     & $\Theta(n^2)$          & Initializing a square matrix \\
+   Cubic         & $\Theta(n^3)$          & Na\"ively multiplying matrices \\
+   Polynomial    & $\Theta(n^k)$          & \\
+   Exponential   & $\Theta(2^n)$          & Listing all subsets of a set \\
+   Factorial     & $\Theta(n!)$           & Listing all orderings of an array
+  \end{tabular}
+  \end{center}\cite{roughgarden22}
+ \end{definition}
+
+ \begin{remark}
+  Computer scientists commonly consider anything better than log-linear time to be practical. Anything which performs at least as well as polynomial time is said to be \emph{tractable}, or that it can successfully complete any size task given enough computing resources. The runtime classes beyond are considered \emph{intractable}, meaning that it will rapidly reach an estimated runtime which exceeds the lifetime of the universe. \cite{roughgarden22}
+ \end{remark}
+ \begin{remark}
+  Note that just because an algorithm has a nice runtime class, it does not mean that it runs in a reasonable amount of time. Even constant time algorithms can have an enormous constant.
+ \end{remark}
+
+ \begin{example}\label{ex:2}
+  Observe the algorithm from example \ref{ex:1}, where $T(n)=2n+2$. Suppose we want to prove that our function has a runtime class of $\Theta(n)$. In this instance, we would give the following proof:
+  \begin{proof}
+   Let $k=1,a=4,b=2$. We have $an \geq 2n+2 \geq bn$ for all $n>k$.
+  \end{proof}
+ \end{example}
+
+
+
+ % Deal with arithmetic within theta and between thetas. Provide a method of easily finding the runtime class of a function.
+ \section{Arithmetic with Runtime Classes}
+
+ \begin{theorem}[Rule of Sums \cite{gimel16}]\label{thm:sums}
+  Given functions $f_1,f_2,g_1,g_2$,
+  $$ g_1=\Theta(f_1) \land g_2=\Theta(f_2) \Longrightarrow g_1+g_2 = \Theta(\text{max}\{f_1,f_2\}). $$
+ \end{theorem}
+ \begin{proof}
+  From definition \ref{def:BigTheta} it is known that $a_1f_1(n) \geq g_1(n) \geq b_1f_1(n)$ for all $n>k_1$, and $a_2f_2(n) \geq g_2(n) \geq b_2f_2(n)$ for all $n>k_2$. By adding the inequalities we find that
+  \begin{align*} % proving the O side
+   g_1(n)+g_2(n) &\leq a_1f_1(n) + a_2f_2(n) \\
+   &\leq \text{max}\{a_1,a_2\}(f_1(n) + f_2(n)) \\
+   &\leq 2 \cdot \text{max}\{a_1,a_2\} \cdot \text{max}\{f_1(n), f_2(n)\}
+  \end{align*}
+  for all $n>\text{max}\{k_1,k_2\}$.
+  \begin{align*} % proving the Omega side
+   g_1(n)+g_2(n) &\geq b_1f_1(n) + b_2f_2(n) \\
+   &\geq \text{min}\{b_1,b_2\}(f_1(n) + f_2(n)) \\
+   &\geq \frac{1}{2} \cdot \text{min}\{b_1,b_2\} \cdot \text{max}\{f_1(n),f_2(n)\}
+  \end{align*}
+  for all $n>\text{max}\{k_1,k_2\}$.
+ \end{proof}
+
+ \begin{theorem}[Rule of Products \cite{gimel16}]\label{thm:prods}
+  Given functions $f_1,f_2,g_1,g_2$,
+  $$ g_1=\Theta(f_1) \land g_2=\Theta(f_2) \Longrightarrow g_1g_2 = \Theta(f_1f_2) $$
+ \end{theorem}
+ \begin{proof}
+  From definition \ref{def:BigTheta} we have $a_1f_1(n) \geq g_1(n) \geq b_1f_1(n)$ for all $n>k_1$, and $a_2f_2(n) \geq g_2(n) \geq b_2f_2(n)$ for all $n>k_2$. By multiplying the inequalities, we have
+  $$ a_1a_2f_1(n)f_2(n) \geq g_1(n)g_2(n) \geq b_1b_2f_1(n)f_2(n). $$
+  for all $n \geq \text{max}\{k_1,k_2\}$.
+ \end{proof}
+
+ \begin{example}\label{ex:3}
+  Suppose we have an algorithm with a runtime of $T(n) = 2n^3 + 5n$, and we wanted to find the algorithm's runtime class. Rather than making an educated guess and attempting to prove it, we can instead use theorem \ref{thm:sums} to break up the function into the smaller sub-functions $f_1(n)=2n^3$ and $f_2(n)=5n$. From here, we can just see which of the two functions has a greater runtime class.
+
+  Using theorem \ref{thm:prods} we can see that $f_1$ is made up of two sub-functions $f_11(n) = 2, f_12(n) = n^3$, and that $f_2$ is similarly made up of the sub-functions $f_21(n) = 5, f_22(n) = n$, and that the multiplied funtions have the respective runtime classes of $\Theta(n^3)$ and $\Theta(n)$. From here, it is obvious that $n^3 \geq n$ for all $n \geq 1$, and therefore we have
+  $$ T(n) = 2n^3 + 5n = \Theta(n^3). $$
+ \end{example}
+
+
+ \section{Recurrence Relations and the Master Theorem}
+
+ \begin{definition}\label{def:d&c}
+  A \emph{divide \& conquer algorithm} is an algorithm which breaks up a problem into smaller versions of the same problem and solves them recursively, that is, solves the sub-problems using another instance of itself.\cite{roughgarden22}
+ \end{definition}
+ \begin{example}\label{ex:4}
+  The following is a classic example of a divide \& conquer algorithm called mergesort which sorts a list of $n$ comparable items:
+  \begin{lstlisting}
+   1 def mergesort(array):
+   2   let n == length(array)
+   3   if n<2 then done.
+   4   let a1 = array[0 to n/2 - 1]
+   5   let a2 = array[n/2 to n-1]
+   6   mergesort(a1)
+   7   mergesort(a2)
+   8   let i = j = 0
+   9   for k from 0 to n-1 do:
+   10     if j == length(a2) or (i<length(a1) and a1[i] < a2[j]) then:
+   11     array[k] = a1[i]
+   12        increment i
+   13     else:
+   14        array[k] = a2[j]
+   15        increment j
+  \end{lstlisting}\cite{roughgarden22}
+ \end{example}
+
+ \begin{definition}\label{def:recurrence}
+  A \emph{recurrence relation} is a description of the running time of a recursive algorithm with an input of size $n$ as a function of $n$.\cite{blum06}
+ \end{definition}
+ \begin{example}\label{ex:5}
+  The recurrence relation for the algorithm in example \ref{ex:4} can be found by observing that, on any given call, the sub-problem is reduced to two subproblems with the size $\frac{n}{2}$, with each instance requiring combing through every element in the list (an operation with a runtime class of $\Theta(n)$). This results in a recurrence relation of
+  $$ T(n) = 2T\left(\frac{n}{2}\right) + \Theta(n). $$
+ \end{example}
+
+ \begin{theorem}[Master Theorem \cite{blum06}]\label{thm:master}
+  Given an algorithm with the recurrence relation
+  \begin{align*}
+   T(n) &= aT\left(\frac{n}{b}\right) + cn^k \\
+   T(1) &= c
+  \end{align*}
+  Where $a,b,c,k$ are positive constants, it is generally true that
+  \begin{enumerate}[i.]
+   \item $a < b^k \Longrightarrow T(n) = \Theta(n^k)$
+   \item $a = b^k \Longrightarrow T(n) = \Theta(n^k\lg n)$
+   \item $a > b^k \Longrightarrow T(n) = \Theta(n^{\log_ba})$
+  \end{enumerate}
+ \end{theorem}
+ \begin{proof}
+  The total amount of recurrence is the sum of work at each level. At the top level, we do $cn^k$, at the first we do $ca\frac{n}{b^k}$, the next $ca^2\frac{n}{b^k}^k$, and so on. The amount of levels is equal to $\log_b(n)$, so we get the summation of
+  $$ cn^k\sum_{i=0}^{log_bn} \left(\frac{a}{b^k}\right)^i $$
+
+  (i) Suppose $a < b^k$. It follows that $\frac{a}{b^k} < 1$, causing our summation to be a convergent series. If we have a maximum of infinite levels, we have a total of $\frac{cn^k}{1 - a/b^k}$, and since $a,b,c,k$ are constants, the total has a runtime class of $\Theta(n^k)$.
+
+  (ii) Suppose $a = b^k$. In this case, all terms of the summation are equal to 1, and since there are $\log_bn$ terms in the summation, we have a total recurrence of $cn^k(\log_bn + 1) = \Theta(n^k\lg n)$.
+
+  (iii) Suppose $a > b^k$. Observe that the last term of the summation dominates the entire equation, with a final summation of
+  $$ cn^k\left(\frac{a}{b^k}\right)^{\log_bn} \left[\left(\frac{b^k}{a}\right)^{\log_bn} + \cdots + \frac{b^k}{a} + 1 \right]. $$
+  Since $\frac{b^k}{a} < 1$, we can use similar reasoning to our first case: leaving us with a maximum summation of
+  \begin{align*}
+   \frac{cn^k\left(\frac{a}{b^k}\right)^{\log_bn}}{1-\frac{b^k}{a}} &= \Theta\left(n^k\left(\frac{a}{b^k}\right)^{\log_bn}\right) \\
+   &= \Theta\left(a^{\log_bn}\right) \\
+   &= \Theta\left(n^{\log_ba}\right).
+  \end{align*}
+ \end{proof}
+
+ \begin{example}\label{ex:6}
+  Take our recurrence relation from example \ref{ex:5}, where
+  $$ T(n) = 2T\left(\frac{n}{2}\right) + \Theta(n). $$
+  Using theorem \ref{thm:master}, we can find the runtime class of mergesort. We have $a=2,b=2,c=1,k=1$, and it is evident that $a=b^k$. It follows that we have a runtime class of
+  $$ T(n) = \Theta(n^k\lg n) = \Theta(n\lg n). $$
+ \end{example}
+
+
+
+ \bibliography{sources}
+
+\end{document}

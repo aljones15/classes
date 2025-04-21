@@ -1,0 +1,100 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsfonts, amsthm}
+\usepackage[shortlabels]{enumitem}
+\usepackage{fullpage}
+\usepackage{biblatex}
+
+\addbibresource{symmetry.bib}  % Bibliography file
+
+% Mathematical environments
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
+
+% Commands
+\newcommand{\R}{\mathbb{R}}  % Real numbers
+
+\title{Symmetry in Geometry: Reflectional, Rotational, and Translational Symmetry}
+\author{Tamanno Alimova}
+\date{April 10 2025}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+Symmetry is a basic and important concept in mathematics. In geometry, symmetry refers to a situation where an object remains unchanged under certain transformations, such as reflection, rotation, or translation. These transformations help in understanding the properties of geometric objects.
+
+In this document, I will discuss three major types of symmetry: reflectional symmetry, rotational symmetry, and translational symmetry. Each type of symmetry is examined with simple definitions, examples, and proofs. This exploration will show how these symmetries help classify and understand different geometric objects. The concepts of symmetry are well-established in the literature \cite{Greenberg2008} and provide foundational principles for geometric analysis.
+
+\section{Reflectional Symmetry}
+Reflectional symmetry, or mirror symmetry, occurs when one-half of an object is the mirror image of the other-half. This symmetry is created by reflecting an object across a line, called a line of reflection.
+
+\begin{definition}\label{def:reflectional}
+An object has \textit{ reflection symmetry} if there exists a line such that folding the object along this line results in two identical halves.
+\end{definition}
+
+\begin{example}
+Consider the letter "A". It has a line of reflectional symmetry along its vertical axis. Similarly, an equilateral triangle has three lines of reflectional symmetry, each passing through a vertex and the midpoint of the opposite side.
+\end{example}
+
+\begin{theorem}\label{thm:rectangle}
+A rectangle has two lines of reflectional symmetry: one through the midpoints of the opposite sides and one along the diagonals.
+\end{theorem}
+
+\begin{proof}
+Consider a rectangle with vertices \(A(x_1, y_1)\), \(B(x_2, y_1)\), \(C(x_2, y_2)\), and \(D(x_1, y_2)\). The line through the midpoints of sides \(AB\) and \(CD\) divides the rectangle into two identical parts. Similarly, the line through the midpoints of sides \(AD\) and \(BC\) divides the rectangle into two identical parts. Additionally, the diagonals also divide the rectangle symmetrically.
+\end{proof}
+
+\section{Rotational Symmetry}
+Rotational symmetry occurs when an object can be rotated around a central point and still coincide with its original position. The number of times an object matches itself during one complete rotation is called its order of rotational symmetry.
+
+\begin{definition}\label{def:rotational}
+An object has \textit{rotational symmetry} of order \(n\) if rotating the object by an angle of \( \frac{360^\circ}{n} \) results in the object coinciding with its original position.
+\end{definition}
+
+\begin{example}
+A square has rotational symmetry of order 4, as it matches itself after rotations of \(90^\circ\), \(180^\circ\), \(270^\circ\), and \(360^\circ\).
+\end{example}
+
+\begin{theorem}\label{thm:square}
+A square has rotational symmetry of order 4.
+\end{theorem}
+
+\begin{proof}
+Consider a square with vertices \(A(0,0)\), \(B(1,0)\), \(C(1,1)\), and \(D(0,1)\). Rotating the square by \(90^\circ\) about its center brings vertex \(A\) to the position of vertex \(B\), vertex \(B\) to \(C\), vertex \(C\) to \(D\), and vertex \(D\) back to \(A\). Similar arguments can be made for rotations of \(180^\circ\), \(270^\circ\), and \(360^\circ\), which restore the square’s appearance to its original form.
+\end{proof}
+
+\section{Translational Symmetry}
+Translational symmetry occurs when an object can be moved (translated) in a certain direction and still coincide with its original position. This symmetry is observed in patterns, like tiling and wallpaper designs.
+
+\begin{definition}\label{def:translational}
+An object has \textit{translational symmetry} if there exists a vector such that translating the object by this vector results in the object coinciding with its original position.
+\end{definition}
+
+\begin{example}
+A wallpaper pattern exhibits translational symmetry, where the pattern repeats itself after a certain horizontal or vertical translation. Similarly, a regular tiling of squares also exhibits translational symmetry along the axes of the grid.
+\end{example}
+
+\begin{theorem}\label{thm:hexagon}
+A regular hexagon has translational symmetry.
+\end{theorem}
+
+\begin{proof}
+Consider a regular hexagon with vertices \(A_1, A_2, A_3, A_4, A_5, A_6\). Translating the hexagon by the vector from \(A_1\) to \(A_2\) results in the same arrangement of vertices, effectively "shifting" the hexagon without changing its appearance. Therefore, the regular hexagon exhibits translational symmetry.
+\end{proof}
+
+\section{Conclusion}
+Symmetry is a powerful and essential concept in mathematics, particularly in geometry. Reflectional, rotational, and translational symmetries allow us to classify and understand the structure of geometric objects. These symmetries are not just theoretical concepts but provide practical insights in many areas of art, architecture, and science.
+
+By understanding how symmetry works, we can recognize patterns and apply geometric transformations to solve problems and appreciate the beauty of the structures around us. Whether through simple reflections or complex rotations, symmetry helps us connect the mathematical world with the real world.
+
+\printbibliography
+
+\end{document}
