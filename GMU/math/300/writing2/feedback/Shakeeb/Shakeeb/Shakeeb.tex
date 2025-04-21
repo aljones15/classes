@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage{math}
+\usepackage{todonotes}
 
 \title{Rings to Fields and the Necessity of These Terms}
 \author{Shakeeb Uddin}\date{}
@@ -14,13 +15,13 @@
 
 % FIRST SECTION 
 
-In the field of Abstract Algebra, where we focus on systems and structures of computation, we break down the understanding of our everyday arithmetic to make sense of it. There are certain type of structures that we use on a daily basis and those structures can be specified. In this paper, we will first dive into what a \textbf{ring} is, then we will look at \textbf{integral domains}, and finally take a look at \textbf{fields}. 
+In the field of Abstract Algebra, where we focus on systems and structures of computation, we break down the understanding of our everyday arithmetic to make sense of it. There are certain type of structures that we use on a daily basis and those structures can be specified.\todo{type(s) or types} In this paper, we will first dive into what a \textbf{ring} is, then we will look at \textbf{integral domains}, and finally take a look at \textbf{fields}. 
 
-However, one may question, what is the need of specifying that this group is a ring and this is an integral domain. In the text below, we will see what happens when the definition of a ring nor integral domain is given beforehand.
+However, one may question, what is the need of specifying that this group is a ring and this is an integral domain. In the text below, we will see what happens when the definition of a ring nor integral domain is given beforehand.\todo{However usually comes after a sentence and is not the start of a paragraph.}
 
 \section{Rings}
 
-One of the first definitions that we will need is that of a ring.
+One of the first definitions that we will need is that of a ring.\todo{a little more context here might help.}
 
 \begin{definition}\label{def:Ring}
     A \emph{ring} $(R, +, \cdot)$ comprises a set R and two binary operations $+, \cdot:R\times R \rightarrow R$, such that
@@ -48,15 +49,15 @@ One of the first definitions that we will need is that of a ring.
 
 This is the definition of a ring that will be found in most texts that are on the topic of Abstract Algebra. One thing to note about
 this definition is that we focus on the operation of $+$ more than we focus on the operation of $\cdot$.
-Every ring is a group.
+Every ring is a group.\todo{seems like a corrollary}
 
 \begin{remark}
-    There may be some discrepancies when reading other texts of Abstract Algebra. Most texts will only have three cases, while other will have four. The 4th one comes to be because most texts will omit mentioning the existence of a multiplicative identity element in R. However, we have covered this in our definition by mentioning that a ring is a monoid. A monoid is both associative and has an identity element \cite{FirstCourse}. \\
+    There may be some discrepancies when reading other texts of Abstract Algebra. Most texts will only have three cases, while other will have four. The 4th one comes to be because most texts will omit mentioning the existence of a multiplicative identity element in R. However, we have covered this in our definition by mentioning that a ring is a monoid.\todo{might be a corollary as a Ring's definition ensures it is also a monoid.} A monoid is both associative and has an identity element \cite{FirstCourse}. \\
     % cite pg 238 of A First course in Abstract Algebra
 \end{remark}
 
 % For defintion, theorem, and proof, it was cited from the textbook pg 308
-An example of a ring would be the modulus integer structure $(\mathbb{Z}_m, +,\cdot)$.
+An example of a ring would be the modulus integer structure $(\mathbb{Z}_m, +,\cdot)$.\todo{this could be an example.}
 
 \begin{theorem}\label{thm:ring_example}
     For every $n \in \mathbb{N}, (\mathbb{Z}_n, +,\cdot)$ is a ring \cite{AdvancedMath}.
@@ -72,11 +73,11 @@ An example of a ring would be the modulus integer structure $(\mathbb{Z}_m, +,\c
     \end{align*}
     The proof of $(b + c) \cdot a$ is done within a similar manner.
     This concludes the proof.
-\end{proof}
+\end{proof}\todo{are you sure the naturals have an id for + or is that not needed?}
 
 \section{Integral Domains}
 
-Applying Definition \ref{def:Ring}, we are now able to define what an integral domain is.
+Applying Definition \ref{def:Ring}, we are now able to define what an integral domain is.\todo{good use of the refs}
 Now that we know what a ring is \ref{def:Ring}, we can now look at a specific type of ring.
 
 \begin{definition}\label{def:integralDomain}
@@ -90,7 +91,7 @@ Now that we know what a ring is \ref{def:Ring}, we can now look at a specific ty
 
 \begin{remark}
     Definition \ref{def:integralDomain} is concise here because the Definition \ref{def:Ring}. However, it may not always be the case
-    that other texts will discuss a ring before an integral domain. Some works of Abstract Algebra might not even discuss a ring at all. If that is the case, the following may be used in which there are six conditions \cite{FirstCourse}. \\
+    that other texts will discuss a ring before an integral domain. Some works of Abstract Algebra might not even discuss a ring at all.\todo{is the politics of textbooks really relevant to the paper?} If that is the case, the following may be used in which there are six conditions \cite{FirstCourse}. \\
 
 \begin{definition}\label{def:integralDomain2}
     Let $(S,+,\cdot)$ be an algebraic system consists of two binary operations on S. \\  
@@ -140,7 +141,7 @@ Now that we know what a ring is \ref{def:Ring}, we can now look at a specific ty
 
 \section{Fields}
 
-Applying Definition \ref{def:Ring} and Definition \ref{def:integralDomain}, we are now able to define what a field is. As stated before, a field is a specification of something. An integral domain is a specific type of ring, and a field is a specific type of integral domain.
+Applying Definition \ref{def:Ring} and Definition \ref{def:integralDomain}, we are now able to define what a field is. As stated before, a field is a specification of something. An integral domain is a specific type of ring, and a field is a specific type of integral domain.\todo{found this a little confusing.}
 
 \begin{definition}[Field]
     The ring $(R, +, \cdot)$ is a \emph{field} if and only if $(R, +, \cdot)$ is an integral domain and $(R-{0}, \cdot)$ is an ablelian 
@@ -149,7 +150,7 @@ Applying Definition \ref{def:Ring} and Definition \ref{def:integralDomain}, we a
 
     Similar to the six conditions of an integral domain that was mentioned earlier \ref{def:integralDomain2}, in \cite{Concrete}, they also give an informal and formal definition of a field. The informal definition was that a field was any structure that you could add, subtract, multiply, and divide. These types of structures act very close to the ones we use in everyday arithmetic.
 
-In a more formal definition, the author states 12 tests that a structure must go through to be considered a field as cited within his text.
+In a more formal definition, the author states 12 tests that a structure must go through to be considered a field as cited within his text.\todo{which author? is this a textbook review?}
 \begin{definition}
     The following twelve test are to be referenced as the axioms for a \emph{field}.
     \begin{enumerate}
