@@ -4,6 +4,7 @@
 \usepackage[shortlabels]{enumitem}
 \usepackage{fullpage}
 \usepackage{url}
+\usepackage{todonotes}
 
 \title{The Role of Linear Algebra in Deep Learning}
 \author{Thienkim Nguyen}
@@ -16,16 +17,16 @@
 % INTRODUCTION
 
 \section{Introduction}
-Deep learning has revolutionized fields such as computer vision, natural language processing, and autonomous systems by enabling models to learn intricate patterns from vast datasets. At the heart of these deep learning models lies linear algebra—a mathematical framework that provides the tools to represent and manipulate data efficiently. Understanding the role of linear algebra in deep learning is crucial for comprehending how these models operate and for developing more effective algorithms. This paper explores the foundational linear algebra concepts that underpin deep learning architectures, highlighting their applications and significance in the design and training of neural networks.
+Deep learning has revolutionized fields such as computer vision, natural language processing, and autonomous systems by enabling models to learn intricate patterns from vast datasets. At the heart of these deep learning models lies linear algebra—a mathematical framework that provides the tools to represent and manipulate data efficiently. Understanding the role of linear algebra in deep learning is crucial for comprehending how these models operate and for developing more effective algorithms. This paper explores the foundational linear algebra concepts that underpin deep learning architectures, highlighting their applications and significance in the design and training of neural networks.\todo{good intro, that algebra-a seems off, maybe that should be algebra, a?}
 
 % FIRST SECTION
 
 \section{Vectors and Matrices in Neural Networks}
-Neural networks fundamentally rely on linear transformations of data, represented through vectors and matrices. Each layer of a neural network transforms its inputs via matrix multiplication followed by an activation function. Formally, the transformation at a given layer can be expressed as:
+Neural networks fundamentally rely on linear transformations of data, represented through vectors and matrices.\todo{this is an advanced level course, but perhaps defs of vector, matrix, and linear transformation would help here rather than later. Also proving something is a linear transformation might be a good step} Each layer of a neural network transforms its inputs via matrix multiplication followed by an activation function. Formally, the transformation at a given layer can be expressed as:
 
 where $X$ is the input vector, $W$ is the weight matrix, $b$ is the bias vector, and $Z$ is the resulting output. These simple matrix operations enable deep networks to perform complex tasks such as classification and regression by chaining multiple such transformations together.
 
-In a typical feedforward neural network, the input data is a vector of features, which is transformed as it passes through successive layers of the network. At each layer, the dot product between the input vector and the weight matrix is computed, and a bias is added. This operation can be interpreted as a projection or rotation in a high-dimensional space, depending on the values of the weights. The non-linear activation function that follows introduces the ability to model complex, non-linear relationships.
+In a typical feedforward neural network, the input data is a vector of features, which is transformed as it passes through successive layers of the network. At each layer, the dot product between the input vector and the weight matrix is computed, and a bias is added. This operation can be interpreted as a projection or rotation in a high-dimensional space, depending on the values of the weights. The non-linear activation function that follows introduces the ability to model complex, non-linear relationships.\todo{love these explanations. good work.}
 
 To illustrate, consider a layer with input vector $X \in \mathbb{R}^3$, weight matrix $W \in \mathbb{R}^{4 \times 3}$, and bias vector $b \in \mathbb{R}^4$. The output $Z \in \mathbb{R}^4$ is computed as:
 
@@ -67,7 +68,7 @@ This matrix multiplication allows for parallelization, which is crucial for comp
 % SECOND SECTION
 
 \section{Automatic Differentiation and Linear Algebra}
-Modern deep learning frameworks heavily depend on automatic differentiation to compute gradients efficiently. According to Seeger et al. (2017), automatic differentiation leverages linear algebra operations like the Jacobian and Hessian matrices to propagate gradients through complex networks \cite{seeger2017auto}. These operations allow for scalable optimization, which is vital when training large models with millions of parameters. The key idea is that derivatives of composite functions can be decomposed using the chain rule, with matrix multiplication serving as the primary computational mechanism.
+Modern deep learning frameworks heavily depend on automatic differentiation to compute gradients efficiently.\todo{gradients were not discussed previously, so new term.} According to Seeger et al. (2017)\todo{can this be a citation?}, automatic differentiation leverages linear algebra operations like the Jacobian and Hessian matrices to propagate gradients through complex networks \cite{seeger2017auto}. These operations allow for scalable optimization, which is vital when training large models with millions of parameters. The key idea is that derivatives of composite functions can be decomposed using the chain rule, with matrix multiplication serving as the primary computational mechanism.\todo{wow, these summaries are amazingly clear.}
 
 \begin{theorem}\label{thm:backprop}
     Let $f(x) = g(h(x))$ be a composition of two differentiable functions. Then, by the chain rule:
@@ -75,7 +76,7 @@ Modern deep learning frameworks heavily depend on automatic differentiation to c
 If $h : \mathbb{R}^n \to \mathbb{R}^m$ and $g : \mathbb{R}^m \to \mathbb{R}$, then the Jacobian of $f$ is:
 
 where $J_g$ and $J_h$ are Jacobian matrices. This matrix product forms the basis of backpropagation.
-\end{theorem}
+\end{theorem} \todo{maybe a proof here? backprop is also a little poorly contextualized}
 
 % THIRD SECTION
 
@@ -93,7 +94,7 @@ The eigenvectors of $C$ point in the directions of maximum variance, and the cor
 
 where $W_k$ is a matrix containing the top $k$ eigenvectors as columns.
 
-This linear transformation reduces computational complexity and is useful in training more efficient neural networks, particularly for image data, text embeddings, and high-dimensional sensor readings.
+This linear transformation reduces computational complexity and is useful in training more efficient neural networks, particularly for image data, text embeddings, and high-dimensional sensor readings.\todo{thanks I finally kind of understand PCA}
 
 % FIFTH SECTION
 
@@ -118,7 +119,7 @@ where $I$ is the identity matrix. If we assume $A$ is ill-conditioned, small per
 % SEVENTH SECTION
 
 \section*{Conclusion}
-Linear algebra is far more than a mathematical tool in deep learning—it is the very fabric of how models are defined, trained, and optimized. From fundamental operations like matrix multiplication to advanced topics such as tensor decompositions and automatic differentiation, linear algebra enables the scalability and expressiveness of modern neural networks. As deep learning continues to evolve, so too will the sophistication of its mathematical underpinnings, with linear algebra remaining at the core of this transformation.
+Linear algebra is far more than a mathematical tool in deep learning—it is the very fabric of how models are defined, trained, and optimized. From fundamental operations like matrix multiplication to advanced topics such as tensor decompositions and automatic differentiation, linear algebra enables the scalability and expressiveness of modern neural networks. As deep learning continues to evolve, so too will the sophistication of its mathematical underpinnings, with linear algebra remaining at the core of this transformation. \todo{over all well written, but as I got further in I lost track of what a lot of this means. Also where are the proofs?}
 
 \pagebreak
 

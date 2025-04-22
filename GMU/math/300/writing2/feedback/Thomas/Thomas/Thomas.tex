@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage{math}
+\usepackage{todonotes}
 
 % For automatically made sources, see https://mathscinet.ams.org/mathscinet/publications-search
 
@@ -17,7 +18,7 @@
 
  When considering the algorithm for a given problem, it is important to observe two different aspects: is the algorithm an effective solution to it's given problem in all cases, and how does it perform in terms of amount of space and number of steps?
 
- In this paper we will take the former question for granted and focus on the latter, with most of our concern centering around the amount of steps an algorithm would take given the specific task it was given to solve (i.e. a sorting algorithm being tasked to sort an array with $n$ elements), and even more concerning the rate at which the number of steps taken by the algorithm grows when given a larger and larger input.
+ In this paper we will take the former question for granted and focus on the latter, with most of our concern centering around the amount of steps an algorithm would take given the specific task it was given to solve (i.e. a sorting algorithm being tasked to sort an array with $n$ elements), and even more concerning the rate at which the number of steps taken by the algorithm grows when given a larger and larger input.\todo{Excellent intro}
 
 
 
@@ -29,7 +30,7 @@
  \end{definition}
  \begin{remark}\label{rem:step}
   While it is common convention for a single line of code which meets the definition above to be considered one step, we can also consider a group of lines which all execute in constant time to be a single step.
- \end{remark}
+ \end{remark}\todo{good remark}
 
 
  \begin{definition}\label{def:T}
@@ -233,7 +234,7 @@
   $$ T(n) = 2T\left(\frac{n}{2}\right) + \Theta(n). $$
   Using theorem \ref{thm:master}, we can find the runtime class of mergesort. We have $a=2,b=2,c=1,k=1$, and it is evident that $a=b^k$. It follows that we have a runtime class of
   $$ T(n) = \Theta(n^k\lg n) = \Theta(n\lg n). $$
- \end{example}
+ \end{example}\todo{good work and really interesting.}
 
 
 
