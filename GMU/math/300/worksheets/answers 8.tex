@@ -1,0 +1,140 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{fullpage}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+\renewcommand{\epsilon}{\varepsilon}
+
+
+
+
+\title{Worksheet 8 Answer Key}
+\author{}\date{}
+
+
+
+\begin{document}\maketitle
+
+\begin{enumerate}
+	\item 
+		\begin{proof}
+			Fix $x\in\R$ and let $\epsilon>0$. By the continuity of $f$ and $g$, there are $\delta_1$ and $\delta_2>0$ such that
+			\[
+				|x-y|<\delta_1 \implies |f(x)-f(y)| < \frac{\epsilon}{2}
+			\]
+			and
+			\[
+				|x-y|<\delta_2 \implies |g(x)-g(y)| < \frac{\epsilon}{2}.
+			\]
+			Let $\delta$ be the lesser of $\delta_1$ and $\delta_2$ and suppose that $|x-y|<\delta$. We have
+			\begin{align*}
+				|(f+g)(x)-(f+g)(y)|
+					&=	|f(x)+g(x)-f(y)-g(y)|			\\
+					&\leq	|f(x)-f(y)| + |g(x)-g(y)|		\\
+					&<	\epsilon.
+			\end{align*}
+		\end{proof}
+	\item No.
+	\item No, $(f(x_i))_i$ is not necessarily divergent.
+		\begin{proof}
+			Let $X=\R$ with the standard metric $d_\R(x,y)=|x-y|$, let $Y=\{0\}$, and let $f:\R\to\{0\}$ be the constant function. Observe that the sequence $(x_i)_\subset\R$ given by $x_i=i$ diverges while the constant sequence $f(x_i)=0$ converges.
+		\end{proof}
+	\item 
+		\begin{proof}
+			Let $x\in X$ and suppose that $\epsilon>0$. If $y\in X$ with $d_X(x,y)<\epsilon$, then $d_Y(f(x),f(y)))=d_X(x,y)<\epsilon$.
+		\end{proof}
+	\item 
+		\begin{proof}
+			Suppose that $(x_i)_i\subset X$ converges to $x\in X$. Let $\epsilon>0$ and choose $N\geq 0$ so that $d(x_i,x)<\frac{\epsilon}{2}$ for all $i\geq N$. Let $m,n\geq N$ and observe that
+			\[
+				d(x_n,x_m) \leq d(x_m,x) + d(x,x_m) < \epsilon.
+			\]
+		\end{proof}
+	\item Let $X=\R_{>0}$ with the standard metric $d(x,y)=|x-y|$. The sequence $(x_i)_i$ with $x_i = \frac{1}{i}$ does not converge to any element of $\R_{>0}$.
+	\item 
+		\begin{proof}
+			Fix $x\in X$ and let $\epsilon>0$. Since $f$ is uniformly continuous, there is a $\delta>0$ for which
+			\[
+				d_X(x,y) < \delta \implies d_Y(f(x),f(y))<\epsilon.
+			\]
+		\end{proof}
+	\item
+		\begin{proof}
+			Let $x\in\R$ and $\epsilon>0$. If $y\in\R$ satisfies $|x-y|<\min\big(1,\frac{\epsilon}{1+2|x|}\big)$, then
+			\begin{align*}
+				|f(x)-f(y)|
+					&=	|x^2-y^2|					\\
+					&=	|x-y|\,|x+y|				\\
+					&=	|x-y|\,|2x-x+y|				\\
+					&\leq	|x-y|\,\big(2|x| + |x-y| \big)		\\
+					&<	\frac{\epsilon}{1+2|x|}  \big(2|x|+1\big)	\\
+					&=	\epsilon.
+			\end{align*}
+		\end{proof}
+	\item 
+		\begin{proof}
+			Put $\epsilon=1$ and let $\delta>0$. Put $x=\frac{1}{\delta}+\frac{\delta}{2}$ and $y=\frac{1}{\delta}$. Observe that $|x-y|<\delta$ while
+			\begin{align*}
+				|f(x)-f(y)|
+					&=	\Big|\Big(\frac{1}{\delta}+\frac{\delta}{2}\Big)^2 - \Big(\frac{1}{\delta}\Big)^2\Big|		\\
+					&=	1 + \frac{\delta^2}{4}										\\
+					&\geq	\epsilon.
+			\end{align*}
+		\end{proof}
+	\item 
+		\begin{proof}
+			Fix $\epsilon>0$. If $x,y\in X$ satisfy $d_X(x,y)< \epsilon$, then
+			\[
+				d_Y(f(x),f(y)) < d_X(x,y) < \epsilon.
+			\]
+		\end{proof}
+\end{enumerate}
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

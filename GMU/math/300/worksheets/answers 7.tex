@@ -1,0 +1,155 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{fullpage}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\renewcommand{\epsilon}{\varepsilon}
+
+
+
+\title{Worksheet 7 Answer Key}
+\author{}\date{}
+
+
+
+\begin{document}\maketitle
+
+\begin{enumerate}
+	\item magma, semigroup, monoid, group
+	\item Yes, $\epsilon_a$ is a ring homomorphism.
+		\begin{proof}
+			First observe that $\epsilon_a(1_{k[X]})=1_k$.
+
+			Let $p(X)=\sum_{i\leq m} c_iX^i$ and $q(X)=\sum_{j\leq n}d_jX^j$ be elements of $k[X]$. We will assume that $m=n$ by introducing leading coefficients $c_i=0$ or $d_j=0$, if necessary. We have
+			\begin{align*}
+				\epsilon_a\big(p(X)+q(X)\big)				
+					&=	(c_0+d_0) + (c_1+d_1)a + (c_2+d_2)a^2 + \cdots + (c_n+d_n)a^n				\\
+					&=	(c_0 + c_1a + c_2a^2 + \cdots + c_na^n) + (d_0 + d_1a + d_2a^2 + \cdots + d_na^n)	\\
+					&=	\epsilon_a(p(X)) + \epsilon_a(q(X))
+			\end{align*}
+			and
+			\begin{align*}
+				\epsilon_a\big(p(X)\cdot q(X)\big)
+					&=	\epsilon_a\Big( \sum_{k=0}^n \;\; \sum_{i+j=k} (c_i\cdot d_j)\, X^k \Big)		\\
+					&=	\sum_{k=0}^n \;\; \sum_{i+j=k} (c_i\cdot d_j)\, a^k					\\
+					&=	\Big(\sum_{i=0}^n c_ia^i\Big) \cdot \Big(\sum_{j=0}^n d_ja^j\Big)			\\
+					&=	\epsilon_a(p(X)) \cdot \epsilon_a(q(X)).
+			\end{align*}
+		\end{proof}
+	\item Yes, $G$ and $H$ are isomorphic.
+		\begin{proof}
+			Observe that
+			\begin{align*}
+				f :	H	&\to		G	\\
+					k	&\mapsto	e^{ik}
+			\end{align*}
+			is a bijective homomorphism.
+		\end{proof}
+	\item No, $G$ is not isomorphic to $\Z_2$.
+		\begin{proof}
+			The only homomorphism $f:G\to\Z_2$ is the trivial homomorphism
+			\begin{align*}
+				f:	G	\to	\Z_2	\\
+					e	\mapsto	0.
+			\end{align*}
+			Since $f$ is not a bijection, it follows that $f$ is not an isomorphism.
+		\end{proof}
+	\item No, $(\Z,\leq)$ is not isomorphic to $(\N,\leq)$.
+		\begin{proof}
+			Suppose for a contradiction that $f:\Z\to\N$ is an order isomorphism. In particular, $f$ is a bijection, whence there is a unique $n\in \Z$ with $f(n)=0$. As $f$ is monotone, we deduce that $f(n-1)=0$, which contradicts the assumption that $f$ is bijective.
+		\end{proof}
+	\item 
+		\begin{proof}
+			Let $f:\N\to\N$ be an automorphism of $(\N,\leq)$ and fix $k\in \Z$. Since $f$ maps $\{0<\cdots< k\}$ bijectively onto $\{f(0)<\cdots<f(k)\}$, we deduce that $k\leq f(k)$. As a similar argument yields $k\leq f^{-1}(k)$, from which $f(k)\leq f(f^{-1}(k))=k$, we obtain $f(k)=k$. Thus, $f=\mathrm{id}$ and we conclude that $\mathrm{Aut}(\Z,\leq) = \{\mathrm{id}\}$.
+		\end{proof}
+	\item 
+		\begin{proof}
+			Let $f_n:\Z\to\Z$ be the order automorphism given by
+			\[
+				f_n(k) = n + k,		\hspace{1cm}k\in\Z,
+			\]
+			and observe that
+			\begin{align*}
+				\phi :	\Z	&\longrightarrow	\mathrm{Aut}(\Z,\leq)		\\
+					n	&\longmapsto		\;f_n
+			\end{align*}
+			is an injective homomorphism.
+
+			It remains to show that $\phi$ is surjective. Let $f:\Z\to\Z$ be an order isomorphism and put $n=f(0)$. Since $f$ establishes a bijection between $\{0<\cdots<k\}$ and $\{f(0)<\cdots<f(k)\}$, it follows that $k\leq f(k)-f(0)$. Similarly, as $f^{-1}$ maps $\{f(0)<\cdots<f(k)\}$ bijectively onto $\{0<\cdots<k\}$, we infer that $f(k)-f(0)\leq k$. Thus,
+			\[
+				f(k)=f(0)+k = n+k
+			\]
+			and we conclude that $f=f_n=\phi(n)$.
+		\end{proof}
+	\item No, $f$ is not a group homomorphism.
+		\begin{proof}
+			Observe that
+			\[
+				f(1+1) = 4 \neq 2 = f(1) + f(1).
+			\]
+		\end{proof}
+	\item No, $g$ is not necessarily constant.
+		\begin{proof}
+			Consider the set $A=B=\{a,b\}$ with partial order $\leq$ given by $\{(a,a),(b,b)\}\subset A\times A$ and let $f:A\to B$ be given by
+			\[
+				f(a) = b,\hspace{1cm}f(b)=a.
+			\]
+			Then $f$ is monotone, antitone, and nonconstant.
+		\end{proof}
+	\item No, the two groups are not isomorphic.
+		\begin{proof}
+			Suppose for a contradiction that $f:\Z_4\to\Z_2\times\Z_2$ is a group isomorphism. Observe that $g+g=(0,0)$ for every $g\in \Z_2\times\Z_2$. In particular, $f(2)=f(1)+f(1)=(0,0)$. Thus,
+			\[
+				f(3) = f(1) + f(2) = f(1),
+			\]
+			contradicting the bijectivity of $f$.
+		\end{proof}
+\end{enumerate}
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
