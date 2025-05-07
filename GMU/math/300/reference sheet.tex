@@ -1,0 +1,593 @@
+\documentclass{article}
+%\usepackage{fullpage}
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=2.5cm]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[shortlabels]{enumitem}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\renewcommand{\subset}{\subseteq}
+%\setlength{\leftmargini}{0pt}
+
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\newcommand{\id}{\mathrm{id}}
+\renewcommand{\d}{\mathrm{d}}
+
+
+\title{\emph{\Large Final Exam} \\ Reference Sheet}
+\author{}\date{}
+
+
+
+\begin{document}\maketitle
+
+
+\section*{Set operations and functions}
+
+\begin{definition}
+	The \emph{empty set} $\emptyset$ is the set that contains no elements. 
+\end{definition}
+
+\begin{definition}
+	The \emph{union} of $A$ and $B$ is
+	\[
+		A\cup B = \big\{x \,|\, x\in A \text{ or }x\in B\big\}.
+	\]
+\end{definition}
+
+\begin{definition}
+	The \emph{intersection} of $A$ and $B$ is
+	\[
+		A\cap B = \big\{x \,|\, x\in A \text{ and }x\in B\big\}.
+	\]
+\end{definition}
+
+\begin{definition}
+	We say that $A$ and $B$ are \emph{disjoint} when $A\cap B=\emptyset$.
+\end{definition}
+
+\begin{definition}
+	We say that $A$ is a \emph{subset} of $B$ if
+	\[
+		\forall x : \big(x\in A \to x\in B\big).
+	\]
+	In this case, we write $A\subset B$.
+\end{definition}
+
+\begin{definition}
+	The \emph{difference} of $A$ and $B$ is
+	\[
+		B\backslash A = \{x\in B \,|\, x\notin A\}.
+	\]
+\end{definition}
+
+\begin{definition}
+	The \emph{symmetric difference} of $A$ and $B$ is $A\,\Delta\, B = A\backslash B \cup B\backslash A$.
+\end{definition}
+
+\begin{definition}
+	If $A\subset B$, then the \emph{complement} of $A$ in $B$ is $A^c=B\backslash A$.
+\end{definition}
+
+\begin{definition}
+	The \emph{composition} of $f:A\to B$ and $g:B\to C$ is
+	\begin{align*}
+		g\circ f:	A	&\to		C	\\
+				x	&\mapsto	g(f(x)).
+	\end{align*}
+\end{definition}
+
+
+\section*{Injective and surjective functions}
+
+\begin{definition}
+	The function $f:A\to B$ is said to be \emph{injective} if $f(x)=f(y)$ implies $x=y$.
+\end{definition}
+
+\begin{definition}
+	The function $f:A\to B$ is called \emph{surjective} when for every $y\in B$ there is an $x\in A$ with $f(x)=y$.
+\end{definition}
+
+\begin{definition}
+	We say that $f:A\to B$ is \emph{bijective} when it is both injective and surjective.
+\end{definition}
+
+\begin{definition}
+	The \emph{restriction} of $f:A\to B$ to $S$ is the function
+	\begin{align*}
+		f|_S:	S	&\to		\;B	\\
+			x	&\mapsto	f(x).
+	\end{align*}
+\end{definition}
+
+
+\section*{Limits}
+
+\begin{definition}
+	We say that $f(x)\to\infty$ as $x\to\infty$, or that $\displaystyle\lim_{x\to\infty}f(x)=\infty$, when
+	\[
+		\forall M>0 : \exists N>0 : \forall x>N : f(x)>M.
+	\]
+	In this case, we write $\displaystyle\lim_{x\to\infty}f(x)=\infty$.
+\end{definition}
+
+\begin{definition}
+	Fix $L\in\R$. We say that $f(x)\to L$ as $x\to\infty$, or that $\displaystyle\lim_{x\to\infty}f(x)=L$, when
+	\[
+		\forall \epsilon>0 : \exists N>0 : \forall x>N : |f(x)-L|<\epsilon.
+	\]
+\end{definition}
+
+\begin{definition}
+	Fix $x_0\in\R$. We say that $f(x)\to\infty$ as $x\to x_0$, or that $\displaystyle\lim_{x\to x_0}f(x)=\infty$, when
+	\[
+		\forall M>0 : \exists \delta>0 : \forall x\in\R : |x-x_0|<\delta \implies f(x)>M.
+	\]
+\end{definition}
+
+\begin{definition}
+	Fix $x_0\in\R$ and $L\in\R$. We say that $f(x)\to L$ as $x\to x_0$, or that $\displaystyle\lim_{x\to\infty}f(x)=L$, when
+	\[
+		\forall\epsilon>0 : \exists \delta>0 : \forall x\in\R : |x-x_0|<\delta \implies |f(x)-L|<\epsilon.
+	\]
+\end{definition}
+
+
+\section*{Relations}
+
+\begin{definition}
+	The \emph{Cartesian product} of $A$ and $B$ is the set of ordered pairs
+	\[
+		A\times B = \{(a,b)\mid a\in A, b\in B\}.
+	\]
+\end{definition}
+
+\begin{definition}
+	A \emph{relation} from $A$ to $B$ is a subset $R\subset A\times B$.
+\end{definition}
+
+\begin{definition}
+	The \emph{domain} of $R\subset A\times B$ is the subset
+	\[
+		\mathrm{Dom}\, R = \{a\in A \mid \exists b\in B : aRb\},
+	\]
+	and the \emph{range} is
+	\[
+		\mathrm{Rng}\, R = \{b\in B \mid \exists a\in A : aRb\}.
+	\]
+\end{definition}
+
+\begin{definition}
+	A \emph{function} from $A$ to $B$ is a relation $f\subset A\times B$ such that
+	\[
+		\forall a\in A : \exists!\, b\in B : (a,b)\in f.
+	\]
+	We usually write $(a,b)\in f$ as $f(a)=b$.
+\end{definition}
+
+\begin{definition}
+	If $R\subset A\times B$ is a relation from $A$ to $B$, then the \emph{inverse} of $R$ is the relation $R^{-1}\subset B\times A$ given by
+	\[
+		bR^{-1}a \iff aRb.
+	\]
+\end{definition}
+
+\begin{definition}
+	If $R$ is a relation from $A$ to $B$, and if $S$ is a relation from $B$ to $C$, then the \emph{composition} of $R$ and $S$ is
+	\[
+		S\circ R = \{(a,c) \mid \exists b\in B : aRb \:\wedge\: bSc\}.
+	\]
+\end{definition}
+
+
+\section*{Equivalence relations and partial orders}
+
+\begin{definition}
+	We say that the relation $R$ on $A$ is
+	\begin{itemize}
+		\item \emph{reflexive} when $\forall a\in A : aRa$
+		\item \emph{transitive} when $\forall a,b,c\in A : (aRb\wedge bRc) \implies aRc$
+		\item \emph{symmetric} when $\forall a,b\in A : aRb \implies bRa$
+		\item \emph{antisymmetric} when $\forall a,b\in A : (aRb \wedge bRa) \implies a=b$
+	\end{itemize}
+\end{definition}
+
+\begin{definition}
+	The relation $R$ on $A$ is
+	\begin{itemize}
+		\item an \emph{equivalence relation} when it is reflexive, transitive, and symmetric;
+		\item a \emph{partial order} when it is reflexive, transitive, and antisymmetric.
+	\end{itemize}
+\end{definition}
+
+\begin{definition}
+	A set $A$ equipped with a partial order $R$ is called a \emph{partially ordered set} or a \emph{poset}.
+\end{definition}
+
+\begin{definition}
+	The \emph{quotient map} associated to a set $A$ with equivalence relation $\sim$ is the function
+	\begin{align*}
+		q:	A	&\to		A/\!\sim	\\
+			a	&\mapsto	[a].
+	\end{align*}
+\end{definition}
+
+\section*{Number systems}
+
+\begin{definition}
+	The \emph{complex numbers} $(\C,+,\times)$ comprise
+	\begin{enumerate}
+		\item the set $\C=\R^2$,
+		\item the binary operation
+			\begin{align*}
+				+:	\hspace{.8cm}\C^2\hspace{.8cm}	&\longrightarrow	\hspace{.8cm}\C		\\
+					((a,b),(a',b'))			&\longmapsto		(a+a',b+b'),
+			\end{align*}
+		\item the binary operation
+			\begin{align*}
+				\times:	\hspace{.8cm}\C^2\hspace{.8cm}	&\longrightarrow	\hspace{1.2cm}\C	\\
+					((a,b),(a',b'))			&\longmapsto		(aa'-bb',ab'+a'b).
+			\end{align*}
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}
+	The \emph{rational numbers} $(\Q,+,\times)$ consist of
+	\begin{enumerate}
+		\item the set $\Q=\{(p,q) \in\Z^2 \mid q\neq 0\}\,/\!\sim$,
+		\item the binary operation
+			\begin{align*}
+				+:	\hspace{1.5cm}\Q^2\hspace{.8cm}	&\longrightarrow	\hspace{.8cm}\Q		\\
+					\big([(p,q)],[(p',q')]\big)	&\longmapsto		\big[(pq'+p'q,qq')\big],
+			\end{align*}
+		\item the binary operation
+			\begin{align*}
+				\times:	\hspace{1.2cm}\Q^2\hspace{1.0cm}	&\longrightarrow	\hspace{.8cm}\Q	\\
+					\big([(p,q),(p',q')]\big)		&\longmapsto		\big[(pp',qq')\big].
+			\end{align*}
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}
+	The \emph{integers} $(\Z,+,\times)$ consist of
+	\begin{enumerate}[i.]
+		\item the set $\Z=\N^2$,
+		\item the binary operation
+			\begin{align*}
+				+:	\hspace{.8cm}\Z^2\hspace{.8cm}	&\longrightarrow	\hspace{.8cm}\Z		\\
+					((m,n),(m',n'))			&\longmapsto		(m+m',n+n'),
+			\end{align*}
+		\item the binary operation
+			\begin{align*}
+				\times:	\hspace{1.0cm}\Z^2\hspace{.8cm}	&\longrightarrow	\hspace{1.2cm}\Z	\\
+					((m,n),(m',n'))			&\longmapsto		(mm'+nn',mn'+m'n).
+			\end{align*}
+	\end{enumerate}
+\end{definition}
+
+
+\section*{Algebraic structures with one binary operation}
+
+\begin{definition}
+	A \emph{binary operation} on $A$ is a function
+	\[
+		* : A\times A \to A.
+	\]
+\end{definition}
+
+\begin{definition}
+	A \emph{magma} $(A,*)$ is a set $A$ equipped with a binary operation $*:A\times A\to A$.
+\end{definition}
+
+\begin{definition}
+	We say that $*$ is
+	\begin{itemize}
+		\item \emph{commutative} when
+			\[
+				\forall a,b\in A : a*b = b*a
+			\]
+		\item \emph{associative} when
+			\[
+				\forall a,b,c\in A : (a*b)*c = a*(b*c)
+			\]
+	\end{itemize}
+\end{definition}
+
+\begin{definition}
+	We say that $(A,*)$ is a \emph{semigroup} when $*$ is associative. If $*$ is additionally commutative, then $(A,*)$ is called a \emph{commutative semigroup}.
+\end{definition}
+
+\begin{definition}
+	We say that $e\in A$ is an \emph{identity element} for $*:A\times A\to A$ when
+	\[
+		\forall a\in A : a*e = a = e*a.
+	\]
+\end{definition}
+
+\begin{definition}
+	A semigroup $(A,*)$ that admits an identity element $e\in A$ is called a \emph{monoid}.
+\end{definition}
+
+\begin{definition}
+	Fix an element $a\in A$. If $b\in A$ satisfies
+	\[
+		a*b = e = b*a
+	\]
+	then $b$ is called an \emph{inverse element} of $a$, and we write $b=a^{-1}$.
+\end{definition}
+
+\begin{definition}
+	A semigroup $(A,*)$ is called a \emph{group} when every $a\in A$ has an inverse $a^{-1}\in A$.
+\end{definition}
+
+\begin{definition}
+	A group $(A,*)$ is an \emph{abelian group} when $*$ is commutative.
+\end{definition}
+
+
+\section*{Algebraic structures with multiple binary operations}
+
+\begin{definition}
+	A \emph{ring} $(R,+,\cdot)$ comprises a set $R$ and two binary operations $+,\cdot : R\times R\to R$, such that
+	\begin{enumerate}[i.]
+		\item $(R,+)$ is an abelian group,
+		\item $(R,\cdot)$ is a monoid,
+		\item the operation $\cdot$ \emph{distributes} over $+$, that is, for all $a,b,c\in R$,
+			\begin{align*}
+				a\cdot(b+c)	&=	(a\cdot b)+(a\cdot c)		\\
+				(a+b)\cdot c	&=	(a\cdot c)+(b\cdot c)
+			\end{align*}
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}
+	A \emph{zero divisor} in a commutative ring $(A,+,\cdot)$ is an element $a\in A$ for which there exists a nonzero $b\in A$ with $ab=0$.
+\end{definition}
+
+\begin{definition}
+	A commutative ring $(R,+,\cdot)$ is called an \emph{integral domain} when
+	\begin{enumerate}[i.]
+		\item it does not contain any nonzero zero divisor,
+		\item $0\neq 1$.
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}
+	An integral domain $(R,+,\cdot)$ is called a \emph{field} when every nonzero element $a\in R\backslash\{0\}$ has a multiplicative inverse $a^{-1}\in R$,
+\end{definition}
+
+\begin{definition}
+	A \emph{$k$-vector space} $(V,+,\cdot)$ comprises a set $V$ together with operations
+	\[
+		+ : V\times V \to V
+	\]
+	and
+	\[
+		\cdot : k\times V \to V
+	\]
+	such that
+	\begin{enumerate}[i.]
+		\item $(V,+)$ is an abelian group
+		\item \emph{scalar multiplication} $\cdot$ and \emph{vector addition} $+$ satisfy
+			\begin{align*}
+				1 \cdot u		&=	u			\\
+				(a+b)\cdot u		&=	(a\cdot u) + (b\cdot u)	\\
+				a\cdot(b\cdot u)	&=	(a\cdot b)\cdot u	\\
+				a\cdot(u+v)		&=	(a\cdot u)+(a\cdot v)
+			\end{align*}
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}
+	An \emph{$R$-module} $(V,+,\cdot)$ comprises a set $V$ together with operations
+	\[
+		+ : V\times V \to V
+	\]
+	and
+	\[
+		\cdot : k\times V \to V
+	\]
+	that together satisfy the familiar vector space conditions.
+\end{definition}
+
+
+\section*{Homomorphisms}
+
+\begin{definition}
+	A homomorphism $f:X\to Y$ is called a
+	\begin{enumerate}[i.]
+		\item \emph{monomorphism} if
+			\[
+				\forall \,(g,g' : Z\to X) : (f\circ g = f\circ g') \implies g=g',
+			\]
+			that is, $f$ is \emph{left-cancellative},
+		\item \emph{epimorphism} if
+			\[
+				\exists \,(h : Y\to X) : (h\circ f = h'\circ f) \implies h=h',
+			\]
+			that is, $f$ is \emph{right-cancellative},
+		\item \emph{isomorphism} if
+			\[
+				\exists \,(k : Y\to X) : (f\circ k = \id_Y) \:\wedge\: (k\circ f=\id_X),
+			\]
+			that is, $f$ has an \emph{inverse} $k$.
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}
+	\begin{enumerate}[i.]
+		\item A homomorphism $f:X\to X$ is called an \emph{endomorphism}.
+		\item An isomorphism $f:X\to X$ is called an \emph{automorphism}.
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}
+	We say that $X$ and $Y$ are \emph{isomorphic} if there exists an isomorphism $f:X\xrightarrow{\sim}Y$.
+\end{definition}
+
+\begin{definition}
+	A \emph{group homomorphism} from $(G,\cdot)$ to $(H,*)$ is a function $f:G\to H$ such that
+	\[
+		\forall g,g'\in G \;:\; f(g\cdot g') = f(g) * f(g').
+	\]
+\end{definition}
+
+\begin{definition}
+	A \emph{ring homomorphism} from $(R,+,\cdot)$ to $(S,\oplus,*)$ is a function $f:R\to S$ such that for all $r,r'\in R$,
+	\begin{enumerate}[i.]
+		\item $f(r+r')=f(r)\oplus f(r')$,
+		\item $f(r\cdot r') = f(r)*f(r')$,
+		\item $f(1_R)=1_S$.
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}
+	A \emph{field homomorphism} is a ring homomorphism between fields.
+\end{definition}
+
+\begin{definition}
+	A \emph{monotone map} of posets from $(A,\leq)$ to $(B,\preccurlyeq)$ is a function $f:A\to B$ such that
+	\[
+		\forall a,a'\in A : a\leq a' \implies f(a) \preccurlyeq f(a').
+	\]
+	An \emph{order embedding} is an injective monotone map, and an \emph{order isomorphism} is a bijective monotone map.
+\end{definition}
+
+\begin{definition}
+	A \emph{linear map} of $k$-vector spaces from $U$ to $V$ is a function $f:U\to V$ such that
+		\begin{enumerate}[i.]
+			\item $f(u+u') = f(u) + f(u')$ for all $u,u'\in U$, and
+			\item $f(su) = sf(u)$ for all $u\in U$ and $s\in k$.
+		\end{enumerate}
+\end{definition}
+
+
+\section*{Metric spaces}
+
+\begin{definition}
+	A \emph{metric} on $X$ is a function
+	\[
+		d:X\times X \to \R_{\geq0}
+	\]
+	satisfying
+	\begin{enumerate}[i.]
+		\item $d(x,y)=0$ if and only if $x=y$,
+		\item $d(x,y) = d(y,x)$,
+		\item $d(x,z) \leq d(x,y) + d(y,z)$ \hspace{.7cm}(\emph{triangle inequality}).
+	\end{enumerate}
+	The pair $(X,d)$ is called a \emph{metric space}.
+\end{definition}
+
+\begin{definition}
+	A \emph{norm} on a vector space $V$ is a function
+	\[
+		\|\cdot\| : V\to\R_{\geq0}
+	\]
+	such that
+	\begin{enumerate}[i.]
+		\item $\|v\| = 0$ if and only if $v=0$,
+		\item $\|sv\| = |s| \,\|v\|$,
+		\item $\|u+v\| \leq \|u\| + \|v\|$ \hspace{.7cm}(\emph{triangle inequality}).
+	\end{enumerate}
+	The pair $(V,\|\cdot\|)$ is called a \emph{normed vector space}.
+\end{definition}
+
+\begin{definition}
+	Let $(x_i)_i$ be a sequence in $(X,d)$ and fix $x\in X$. We say that $(x_i)_i$ \emph{converges} to $x$ if
+	\[
+		\forall \epsilon>0 : \exists N\in \N : \forall n\geq N : d(x_n,x) \leq \epsilon.
+	\]
+	In this case, we write $x_i\to x$ or $\displaystyle\lim_{i\to\infty}x_i = x$ and we say that $x$ is the \emph{limit} of $(x_i)_i$.
+\end{definition}
+
+\begin{definition}
+	If the sequence $(x_i)_i$ does not converge to any point $x\in X$, then $(x_i)_i$ is said to \emph{diverge}.
+\end{definition}
+
+
+\section*{Continuous functions}
+
+\begin{definition}
+	A function $f:X\to Y$ is \emph{continuous at $x\in X$} when
+	\[
+		\forall \epsilon>0 : \exists \delta>0 : \forall y\in X : d_X(x,y) <\delta \implies d_Y(f(x),f(y)) <\epsilon.
+	\]
+\end{definition}
+
+\begin{definition}
+	We say that $f:X\to Y$ is \emph{continuous} if it is continuous at every $x\in X$.
+\end{definition}
+
+
+\section*{Cardinality}
+
+\begin{definition}
+	Two sets $A$ and $B$ are \emph{equivalent} (or in \emph{one-to-one correspondence}) if there exists a bijection from $A$ to $B$. In this case, we write $A\approx B$.
+\end{definition}
+
+\begin{definition}
+	The \emph{cardinality} of a finite set $A=\{a_1,\ldots, a_k\}$ is the number $k\in\N$ of elements in $A$.
+\end{definition}
+
+\begin{definition}
+	We write
+	\begin{align*}
+		|A| = |B|	&\text{ when } \exists \text{ bijection }f:A\xrightarrow{\sim} B,		\\[2pt]
+		|A| \leq |B|	&\text{ when } \exists \text{ injection }f:A\hookrightarrow B,			\\[2pt]
+		|A| < |B|	&\text{ when } |A|\leq |B| \text{ and } |A|\neq|B|.
+	\end{align*}
+\end{definition}
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
