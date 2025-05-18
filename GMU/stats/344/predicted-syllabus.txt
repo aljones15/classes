@@ -1,0 +1,21 @@
+1. Introduction to Probability: An overview of basic probability concepts, including 
+sample spaces, events, outcomes, and probability calculations.
+2. Basic Probability Concepts and Formulas: In-depth coverage of conditional probability 
+and Bayes' theorem, as well as independence and dependent events.
+3. Discrete and Continuous Random Variables: Introduction to discrete and continuous 
+random variables, including uniform, exponential, and normal distributions.
+4. Expectation, Variance, and Covariance: Explanation of expectation, variance, and 
+covariance for both discrete and continuous random variables.
+5. Joint Probability Density Functions and Transformations: Introduction to joint 
+probability density functions and how to apply them in transformations.
+6. Confidence Intervals and Hypothesis Testing: Explanation of confidence intervals and 
+hypothesis testing, including chi-square and ANOVA tests.
+7. Statistics for Engineers: Introduction to statistics for engineers, including 
+sampling and experimental design.
+8. Linear Regression and Correlation: Coverage of linear regression and correlation, as 
+well as multivariate analysis.
+9. Time Series and Forecasting: Explanation of time series and forecasting techniques, 
+such as Monte Carlo simulation and optimization.
+10. Stochastic Processes: Introduction to stochastic processes, including Markov chains 
+and random walks.
+
